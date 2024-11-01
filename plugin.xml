@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.tablayout"
+        version="1.0">
+
+  <name>CordovaTabLayoutPlugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CordovaTabLayoutPlugin">
+        <param name="android-package" value="com.ashera.tablayout.CordovaTabLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+   	 <!-- start src -->
+     <source-file src="android/src/com/ashera/tablayout/CordovaTabLayoutPlugin.java" target-dir="src/com/ashera/tablayout"/>
+     <source-file src="android/src/com/ashera/tablayout/TabItemImpl.java" target-dir="src/com/ashera/tablayout"/>
+     <source-file src="android/src/com/ashera/tablayout/TabLayoutImpl.java" target-dir="src/com/ashera/tablayout"/>
+     <source-file src="android/src/com/ashera/tablayout/TabLayoutPlugin.java" target-dir="src/com/ashera/tablayout"/>
+     <!-- src end -->
+     <!-- start res -->
+     <source-file src="android/res/layout/design_layout_tab_icon_new.xml" target-dir="res/layout"/>
+     <source-file src="android/res/layout/design_layout_tab_text_new.xml" target-dir="res/layout"/>
+     <source-file src="android/res/layout/design_sliding_tab_indicator.xml" target-dir="res/layout"/>
+     <source-file src="android/res/layout/design_tab_view.xml" target-dir="res/layout"/>
+     <!-- res end -->
+     <!-- start tsc -->
+     <source-file src="android/tsc/src/android/widget/TabItemImpl.ts" target-dir="tsc/src/android/widget"/>
+     <source-file src="android/tsc/src/android/widget/TabLayoutImpl.ts" target-dir="tsc/src/android/widget"/>
+     <!-- tsc end -->
+  </platform>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="com.ashera.tablayout.ios">
+        	<param name="ios-package" value="CordovaTabLayoutPlugin" />
+         	<param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+   	 <!-- start ios -->
+     <header-file src="ios/ios/src/CordovaTabLayoutPlugin.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/ios/src/CordovaTabLayoutPlugin.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/SlidingTabIndicatorImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/ios/src/SlidingTabIndicatorImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/TabItemImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/ios/src/TabItemImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/TabLayoutImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/ios/src/TabLayoutImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/TabLayoutPlugin.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/ios/src/TabLayoutPlugin.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/TabViewImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/ios/src/TabViewImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <!-- ios end -->
+     <!-- start tsc -->
+     <source-file src="ios/tsc/src/ios/widget/SlidingTabIndicatorImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="ios/tsc/src/ios/widget/TabItemImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="ios/tsc/src/ios/widget/TabLayoutImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="ios/tsc/src/ios/widget/TabViewImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <!-- tsc end -->
+     <!-- start AndroidJTablayout -->
+     <header-file src="ios/library/AndroidJTablayout/src/ElasticTabIndicatorInterpolator.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="ios/library/AndroidJTablayout/src/ElasticTabIndicatorInterpolator.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <header-file src="ios/library/AndroidJTablayout/src/FadeTabIndicatorInterpolator.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="ios/library/AndroidJTablayout/src/FadeTabIndicatorInterpolator.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <header-file src="ios/library/AndroidJTablayout/src/TabIndicatorInterpolator.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="ios/library/AndroidJTablayout/src/TabIndicatorInterpolator.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <header-file src="ios/library/AndroidJTablayout/src/TabLayout.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="ios/library/AndroidJTablayout/src/TabLayout.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <!-- AndroidJTablayout end -->
+  </platform>
+  <platform name="browser">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CordovaTabLayoutPlugin">
+        <param name="android-package" value="com.ashera.tablayout.CordovaTabLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<framework src="browser/core.gradle" custom="true" type="gradleReference" />
+   	 <!-- start src -->
+     <!-- src end -->
+     <!-- start res -->
+     <!-- res end -->
+     <!-- start tsc -->
+     <source-file src="browser/tsc/src/web/widget/SlidingTabIndicatorImpl.ts" target-dir="tsc/src/web/widget"/>
+     <source-file src="browser/tsc/src/web/widget/TabItemImpl.ts" target-dir="tsc/src/web/widget"/>
+     <source-file src="browser/tsc/src/web/widget/TabLayoutImpl.ts" target-dir="tsc/src/web/widget"/>
+     <source-file src="browser/tsc/src/web/widget/TabViewImpl.ts" target-dir="tsc/src/web/widget"/>
+     <!-- tsc end -->
+  </platform>
+  <platform name="swt">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CordovaTabLayoutPlugin">
+        <param name="android-package" value="com.ashera.tablayout.CordovaTabLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<framework src="swt/core.gradle" custom="true" type="gradleReference" />
+   	 <!-- start src -->
+     <!-- src end -->
+     <!-- start res -->
+     <!-- res end -->
+     <!-- start tsc -->
+     <source-file src="swt/tsc/src/swt/widget/CTabFolderImpl.ts" target-dir="tsc/src/swt/widget"/>
+     <source-file src="swt/tsc/src/swt/widget/SlidingTabIndicatorImpl.ts" target-dir="tsc/src/swt/widget"/>
+     <source-file src="swt/tsc/src/swt/widget/TabFolderImpl.ts" target-dir="tsc/src/swt/widget"/>
+     <source-file src="swt/tsc/src/swt/widget/TabItemImpl.ts" target-dir="tsc/src/swt/widget"/>
+     <source-file src="swt/tsc/src/swt/widget/TabLayoutImpl.ts" target-dir="tsc/src/swt/widget"/>
+     <source-file src="swt/tsc/src/swt/widget/TabViewImpl.ts" target-dir="tsc/src/swt/widget"/>
+     <!-- tsc end -->
+  </platform>
+
+
+
+
+
+</plugin>

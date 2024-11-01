@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.tablayout.ios"
+        version="1.0">
+
+  <name>CordovaTabLayoutPlugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="com.ashera.tablayout.ios">
+        	<param name="ios-package" value="CordovaTabLayoutPlugin" />
+         	<param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+   	 <!-- start ios -->
+     <header-file src="ios/src/CordovaTabLayoutPlugin.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/src/CordovaTabLayoutPlugin.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/SlidingTabIndicatorImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/src/SlidingTabIndicatorImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/TabItemImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/src/TabItemImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/TabLayoutImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/src/TabLayoutImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/TabLayoutPlugin.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/src/TabLayoutPlugin.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/TabViewImpl.h" target-dir="TabLayout/ios/src"/>
+     <source-file src="ios/src/TabViewImpl.m" target-dir="TabLayout/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <!-- ios end -->
+     <!-- start tsc -->
+     <source-file src="tsc/src/ios/widget/SlidingTabIndicatorImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="tsc/src/ios/widget/TabItemImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="tsc/src/ios/widget/TabLayoutImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="tsc/src/ios/widget/TabViewImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <!-- tsc end -->
+     <!-- start AndroidJTablayout -->
+     <header-file src="library/AndroidJTablayout/src/ElasticTabIndicatorInterpolator.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="library/AndroidJTablayout/src/ElasticTabIndicatorInterpolator.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <header-file src="library/AndroidJTablayout/src/FadeTabIndicatorInterpolator.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="library/AndroidJTablayout/src/FadeTabIndicatorInterpolator.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <header-file src="library/AndroidJTablayout/src/TabIndicatorInterpolator.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="library/AndroidJTablayout/src/TabIndicatorInterpolator.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <header-file src="library/AndroidJTablayout/src/TabLayout.h" target-dir="TabLayout/AndroidJTablayout/src"/>
+     <source-file src="library/AndroidJTablayout/src/TabLayout.m" target-dir="TabLayout/AndroidJTablayout/src" compiler-flags="-fno-objc-arc"/>
+     <!-- AndroidJTablayout end -->
+  </platform>
+
+</plugin>
