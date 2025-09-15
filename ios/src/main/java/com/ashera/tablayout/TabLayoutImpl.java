@@ -1557,6 +1557,7 @@ public java.util.Map<String, Object> getOnTabSelectedEventObj(Tab tab) {
     obj.put("eventType", "tabselected");
     obj.put("fragmentId", w.getFragment().getFragmentId());
     obj.put("actionUrl", w.getFragment().getActionUrl());
+    obj.put("namespace", w.getFragment().getNamespace());
     
     if (w.getComponentId() != null) {
     	obj.put("componentId", w.getComponentId());
@@ -1616,6 +1617,7 @@ public java.util.Map<String, Object> getOnTabUnselectedEventObj(Tab tab) {
     obj.put("eventType", "tabunselected");
     obj.put("fragmentId", w.getFragment().getFragmentId());
     obj.put("actionUrl", w.getFragment().getActionUrl());
+    obj.put("namespace", w.getFragment().getNamespace());
     
     if (w.getComponentId() != null) {
     	obj.put("componentId", w.getComponentId());
@@ -1675,6 +1677,7 @@ public java.util.Map<String, Object> getOnTabReselectedEventObj(Tab tab) {
     obj.put("eventType", "tabreselected");
     obj.put("fragmentId", w.getFragment().getFragmentId());
     obj.put("actionUrl", w.getFragment().getActionUrl());
+    obj.put("namespace", w.getFragment().getNamespace());
     
     if (w.getComponentId() != null) {
     	obj.put("componentId", w.getComponentId());

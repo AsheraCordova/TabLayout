@@ -843,14 +843,18 @@ return getTextSize();			}
 	
 
 
+    private FontData[] getFontData() {
+    	FontData[] fontData = this.newFont == null ? tabFolder.getFont().getFontData() : this.newFont.getFontData();
+    	return fontData;
+    }
 	private int nativeGetFontSize() {
-		FontData[] fontData = tabFolder.getFont().getFontData();
+		FontData[] fontData = getFontData();
         int height = fontData[0].getHeight();
 		return height;
 	}
 
 	private int nativeGetFontStyle() {
-		FontData[] fontData = tabFolder.getFont().getFontData();
+		FontData[] fontData = getFontData();
         int style = fontData[0].getStyle();
 		return style;
 	}
@@ -861,7 +865,7 @@ return getTextSize();			}
 	}
 
 	private void nativeSetFontStyle(int style) {
-		FontData[] fontData = tabFolder.getFont().getFontData();
+		FontData[] fontData = getFontData();
 		for(int i = 0; i < fontData.length; ++i) {
 		    fontData[i].setStyle(style);
 		}
@@ -877,7 +881,7 @@ return getTextSize();			}
     }
 
     private void setMyTextSize(Object objValue) {
-        FontData[] fontData = tabFolder.getFont().getFontData();
+        FontData[] fontData = getFontData();
         for(int i = 0; i < fontData.length; ++i) {
             float fontSize = ((float) objValue) * getFragment().getRootActivity().getScaleFactor();
 			fontData[i].setHeight((int) fontSize);
@@ -889,7 +893,7 @@ return getTextSize();			}
     
 	
 	private Object getTextSize() {
-		return tabFolder.getFont().getFontData()[0].getHeight();
+		return getFontData()[0].getHeight();
 	}
     
 
@@ -954,6 +958,7 @@ public java.util.Map<String, Object> getOnTabSelectedEventObj(Tab tab) {
     obj.put("eventType", "tabselected");
     obj.put("fragmentId", w.getFragment().getFragmentId());
     obj.put("actionUrl", w.getFragment().getActionUrl());
+    obj.put("namespace", w.getFragment().getNamespace());
     
     if (w.getComponentId() != null) {
     	obj.put("componentId", w.getComponentId());
@@ -1013,6 +1018,7 @@ public java.util.Map<String, Object> getOnTabUnselectedEventObj(Tab tab) {
     obj.put("eventType", "tabunselected");
     obj.put("fragmentId", w.getFragment().getFragmentId());
     obj.put("actionUrl", w.getFragment().getActionUrl());
+    obj.put("namespace", w.getFragment().getNamespace());
     
     if (w.getComponentId() != null) {
     	obj.put("componentId", w.getComponentId());
@@ -1072,6 +1078,7 @@ public java.util.Map<String, Object> getOnTabReselectedEventObj(Tab tab) {
     obj.put("eventType", "tabreselected");
     obj.put("fragmentId", w.getFragment().getFragmentId());
     obj.put("actionUrl", w.getFragment().getActionUrl());
+    obj.put("namespace", w.getFragment().getNamespace());
     
     if (w.getComponentId() != null) {
     	obj.put("componentId", w.getComponentId());
