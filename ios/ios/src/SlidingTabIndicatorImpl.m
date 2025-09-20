@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-ios-widgets\IOSTabLayoutPlugin\src\main\java\com\ashera\tablayout\SlidingTabIndicatorImpl.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "AbstractBitFlagConverter.h"
 #include "BaseHasWidgets.h"
 #include "Canvas.h"
@@ -47,10 +52,14 @@
 
 #include "ASUIImageView.h"
 
-static jboolean (*ASSlidingTabIndicatorImpl_super$_removeWithInt_)(id, SEL, jint);
+static bool (*ASSlidingTabIndicatorImpl_super$_removeWithInt_)(id, SEL, int32_t);
 
-@protocol JavaUtilList;
-@protocol JavaUtilMap;
+
+@class NSString;
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 #pragma clang diagnostic ignored "-Wprotocol"
@@ -115,12 +124,12 @@ J2OBJC_FIELD_SETTER(ASSlidingTabIndicatorImpl_Divider, mapping_, id<JavaUtilMap>
 
 @interface ASSlidingTabIndicatorImpl_SlidingTabIndicatorExt () {
  @public
-  __unsafe_unretained ASSlidingTabIndicatorImpl *this$1_;
+  WEAK_ ASSlidingTabIndicatorImpl *this$1_;
   ASMeasureEvent *measureFinished_;
   ASOnLayoutEvent *onLayoutEvent_;
   id<JavaUtilList> overlays_;
-  jint mMaxWidth_;
-  jint mMaxHeight_;
+  int32_t mMaxWidth_;
+  int32_t mMaxHeight_;
   id<JavaUtilMap> templates_;
 }
 
@@ -133,10 +142,10 @@ J2OBJC_FIELD_SETTER(ASSlidingTabIndicatorImpl_SlidingTabIndicatorExt, templates_
 
 @interface ASSlidingTabIndicatorImpl_CanvasImpl : NSObject < ADCanvas > {
  @public
-  jboolean canvasReset_;
-  jboolean requiresAttrChangeListener_;
+  bool canvasReset_;
+  bool requiresAttrChangeListener_;
   id<JavaUtilList> imageViews_;
-  __unsafe_unretained id<ASIWidget> widget_;
+  WEAK_ id<ASIWidget> widget_;
 }
 
 - (instancetype)initWithASIWidget:(id<ASIWidget>)widget;
@@ -161,6 +170,7 @@ __attribute__((unused)) static ASSlidingTabIndicatorImpl_CanvasImpl *create_ASSl
 
 J2OBJC_TYPE_LITERAL_HEADER(ASSlidingTabIndicatorImpl_CanvasImpl)
 
+
 @interface ASSlidingTabIndicatorImpl_CanvasImpl_$Lambda$1 : NSObject < ADDrawable_AttributeChangeListener > {
  @public
   id val$imageView_;
@@ -179,6 +189,7 @@ __attribute__((unused)) static ASSlidingTabIndicatorImpl_CanvasImpl_$Lambda$1 *n
 
 __attribute__((unused)) static ASSlidingTabIndicatorImpl_CanvasImpl_$Lambda$1 *create_ASSlidingTabIndicatorImpl_CanvasImpl_$Lambda$1_initWithId_(id capture$0);
 
+
 @interface ASSlidingTabIndicatorImpl_$Lambda$1 : NSObject < JavaLangRunnable > {
  @public
   id<ASIWidget> val$widget_;
@@ -195,6 +206,7 @@ __attribute__((unused)) static void ASSlidingTabIndicatorImpl_$Lambda$1_initWith
 __attribute__((unused)) static ASSlidingTabIndicatorImpl_$Lambda$1 *new_ASSlidingTabIndicatorImpl_$Lambda$1_initWithASIWidget_(id<ASIWidget> capture$0) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASSlidingTabIndicatorImpl_$Lambda$1 *create_ASSlidingTabIndicatorImpl_$Lambda$1_initWithASIWidget_(id<ASIWidget> capture$0);
+
 
 J2OBJC_INITIALIZED_DEFN(ASSlidingTabIndicatorImpl)
 
@@ -260,14 +272,14 @@ J2OBJC_IGNORE_DESIGNATED_END
   return slidingTabIndicator_;
 }
 
-- (jboolean)removeWithASIWidget:(id<ASIWidget>)w {
-  jboolean remove = [super removeWithASIWidget:w];
+- (bool)removeWithASIWidget:(id<ASIWidget>)w {
+  bool remove = [super removeWithASIWidget:w];
   [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) removeViewWithADView:(ADView *) cast_chk([((id<ASIWidget>) nil_chk(w)) asWidget], [ADView class])];
   ASSlidingTabIndicatorImpl_nativeRemoveViewWithASIWidget_(self, w);
   return remove;
 }
 
-- (jboolean)removeWithInt:(jint)index {
+- (bool)removeWithInt:(int32_t)index {
   [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) removeViewAtWithInt:index];
   return true;
 }
@@ -277,7 +289,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)addWithASIWidget:(id<ASIWidget>)w
-                 withInt:(jint)index {
+                 withInt:(int32_t)index {
   if (index != -2) {
     ADView *view = (ADView *) cast_chk([((id<ASIWidget>) nil_chk(w)) asWidget], [ADView class]);
     ASSlidingTabIndicatorImpl_createLayoutParamsWithADView_(self, view);
@@ -469,7 +481,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return uiView_;
 }
 
-- (jboolean)checkIosVersionWithNSString:(NSString *)v {
+- (bool)checkIosVersionWithNSString:(NSString *)v {
   return ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending);
 }
 
@@ -518,7 +530,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   }
 }
 
-- (void)setVisibleWithBoolean:(jboolean)b {
+- (void)setVisibleWithBoolean:(bool)b {
   [((ADView *) nil_chk(((ADView *) cast_chk([self asWidget], [ADView class])))) setVisibilityWithInt:b ? ADView_VISIBLE : ADView_GONE];
 }
 
@@ -605,7 +617,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 + (void)initialize {
   if (self == [ASSlidingTabIndicatorImpl class]) {
-    ASSlidingTabIndicatorImpl_super$_removeWithInt_ = (jboolean (*)(id, SEL, jint))[ASBaseHasWidgets instanceMethodForSelector:@selector(removeWithInt:)];
+    ASSlidingTabIndicatorImpl_super$_removeWithInt_ = (bool (*)(id, SEL, int32_t))[ASBaseHasWidgets instanceMethodForSelector:@selector(removeWithInt:)];
     J2OBJC_SET_INITIALIZED(ASSlidingTabIndicatorImpl)
   }
 }
@@ -709,6 +721,8 @@ void ASSlidingTabIndicatorImpl_createCanvas(ASSlidingTabIndicatorImpl *self) {
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl)
 
+J2OBJC_NAME_MAPPING(ASSlidingTabIndicatorImpl, "com.ashera.tablayout", "AS")
+
 @implementation ASSlidingTabIndicatorImpl_Divider
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
@@ -753,10 +767,10 @@ void ASSlidingTabIndicatorImpl_Divider_init(ASSlidingTabIndicatorImpl_Divider *s
   ASAbstractBitFlagConverter_init(self);
   self->mapping_ = new_JavaUtilHashMap_init();
   {
-    (void) [self->mapping_ putWithId:@"none" withId:JavaLangInteger_valueOfWithInt_((jint) 0x0)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"beginning" withId:JavaLangInteger_valueOfWithInt_((jint) 0x1)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"end" withId:JavaLangInteger_valueOfWithInt_((jint) 0x4)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"middle" withId:JavaLangInteger_valueOfWithInt_((jint) 0x2)];
+    (void) [self->mapping_ putWithId:@"none" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x0)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"beginning" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x1)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"end" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x4)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"middle" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x2)];
   }
 }
 
@@ -776,19 +790,19 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
   return this$1_;
 }
 
-- (void)setMaxWidthWithInt:(jint)width {
+- (void)setMaxWidthWithInt:(int32_t)width {
   mMaxWidth_ = width;
 }
 
-- (void)setMaxHeightWithInt:(jint)height {
+- (void)setMaxHeightWithInt:(int32_t)height {
   mMaxHeight_ = height;
 }
 
-- (jint)getMaxWidth {
+- (int32_t)getMaxWidth {
   return mMaxWidth_;
 }
 
-- (jint)getMaxHeight {
+- (int32_t)getMaxHeight {
   return mMaxHeight_;
 }
 
@@ -798,8 +812,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
   return self;
 }
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec {
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec {
   if (mMaxWidth_ > 0) {
     widthMeasureSpec = ADView_MeasureSpec_makeMeasureSpecWithInt_withInt_(mMaxWidth_, ADView_MeasureSpec_AT_MOST);
   }
@@ -815,11 +829,11 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
   }
 }
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b {
+- (void)onLayoutWithBoolean:(bool)changed
+                    withInt:(int32_t)l
+                    withInt:(int32_t)t
+                    withInt:(int32_t)r
+                    withInt:(int32_t)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   ASViewImpl_setDrawableBoundsWithASIWidget_withInt_withInt_withInt_withInt_(this$1_, l, t, r, b);
   if (![self isOverlay]) {
@@ -848,8 +862,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
           withNSObjectArray:(IOSObjectArray *)canvas {
 }
 
-- (void)updateMeasuredDimensionWithInt:(jint)width
-                               withInt:(jint)height {
+- (void)updateMeasuredDimensionWithInt:(int32_t)width
+                               withInt:(int32_t)height {
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
@@ -917,12 +931,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
   displayFrame->bottom_ = displayFrame->top_ + [self getHeight];
 }
 
-- (void)offsetTopAndBottomWithInt:(jint)offset {
+- (void)offsetTopAndBottomWithInt:(int32_t)offset {
   [super offsetTopAndBottomWithInt:offset];
   ASViewImpl_nativeMakeFrameWithId_withInt_withInt_withInt_withInt_([this$1_ asNativeWidget], [self getLeft], [self getTop], [self getRight], [self getBottom]);
 }
 
-- (void)offsetLeftAndRightWithInt:(jint)offset {
+- (void)offsetLeftAndRightWithInt:(int32_t)offset {
   [super offsetLeftAndRightWithInt:offset];
   ASViewImpl_nativeMakeFrameWithId_withInt_withInt_withInt_withInt_([this$1_ asNativeWidget], [self getLeft], [self getTop], [self getRight], [self getBottom]);
 }
@@ -952,7 +966,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
   [this$1_ setAttributeWithNSString:name withId:value withBoolean:!([value isKindOfClass:[NSString class]])];
 }
 
-- (void)setVisibilityWithInt:(jint)visibility {
+- (void)setVisibilityWithInt:(int32_t)visibility {
   [super setVisibilityWithInt:visibility];
   ASViewImpl_nativeSetVisibilityWithId_withBoolean_([this$1_ asNativeWidget], visibility != ADView_VISIBLE);
 }
@@ -1010,7 +1024,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_Divider)
   [this$1_ runBufferedRunnables];
 }
 
-- (void)removeViewAtWithInt:(jint)index {
+- (void)removeViewAtWithInt:(int32_t)index {
   [super removeViewAtWithInt:index];
   id<ASIWidget> widget = [((id<JavaUtilList>) nil_chk(this$1_->widgets_)) getWithInt:index];
   ASSlidingTabIndicatorImpl_super$_removeWithInt_(this$1_, @selector(removeWithInt:), index);
@@ -1193,8 +1207,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_SlidingTabIndicatorEx
   return imageView;
 }
 
-- (void)translateWithInt:(jint)arg0
-                 withInt:(jint)arg1 {
+- (void)translateWithInt:(int32_t)arg0
+                 withInt:(int32_t)arg1 {
   ADCanvas_translateWithInt_withInt_(self, arg0, arg1);
 }
 
@@ -1255,7 +1269,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASSlidingTabIndicatorImpl_CanvasImpl)
                                withId:(id)value {
   {
     ADRect *rect;
-    jint alpha;
+    int32_t alpha;
     switch (JreIndexOfStr(name, (id[]){ @"bounds", @"alpha" }, 2)) {
       case 0:
       rect = (ADRect *) cast_chk(value, [ADRect class]);

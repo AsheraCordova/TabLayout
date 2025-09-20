@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-ios-widgets\IOSTabLayoutPlugin\src\main\java\com\ashera\tablayout\TabLayoutImpl.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "AbstractEnumToIntConverter.h"
 #include "BadgeDrawable.h"
 #include "BaseHasWidgets.h"
@@ -60,8 +65,12 @@
 
 #include "ASUIScrollView.h"
 
-@protocol JavaUtilList;
-@protocol JavaUtilMap;
+
+@class NSString;
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 #pragma clang diagnostic ignored "-Wprotocol"
@@ -70,8 +79,8 @@
  @public
   id uiView_;
   ADMTabLayout *tabLayout_;
-  jint tabTextColor_;
-  jint tabSelectedTextColor_;
+  int32_t tabTextColor_;
+  int32_t tabSelectedTextColor_;
   id<JavaUtilList> badgeMenuItemIds_;
 }
 
@@ -119,15 +128,15 @@
 
 - (void)selectTabWithId:(id)objValue;
 
-- (ADMTabLayout_Tab *)findTabByIdWithInt:(jint)id_;
+- (ADMTabLayout_Tab *)findTabByIdWithInt:(int32_t)id_;
 
 - (void)setupWithViewPagerWithNSString:(NSString *)strValue;
 
 - (void)setBackgroundDrawableWithId:(id)objValue;
 
-- (void)removeTabByIdWithInt:(jint)id_;
+- (void)removeTabByIdWithInt:(int32_t)id_;
 
-- (void)removeTabByAtWithInt:(jint)pos;
+- (void)removeTabByAtWithInt:(int32_t)pos;
 
 - (void)setScrollXWithId:(id)objValue;
 
@@ -167,13 +176,13 @@
 
 - (void)applyRequestedTabMaxWidthWithId:(id)objValue;
 
-- (jint)getTabPaddingBottom;
+- (int32_t)getTabPaddingBottom;
 
-- (jint)getTabPaddingEnd;
+- (int32_t)getTabPaddingEnd;
 
-- (jint)getTabPaddingTop;
+- (int32_t)getTabPaddingTop;
 
-- (jint)getTabPaddingStart;
+- (int32_t)getTabPaddingStart;
 
 - (void)applyTabPaddingBottomWithId:(id)objValue;
 
@@ -240,15 +249,15 @@ __attribute__((unused)) static void ASTabLayoutImpl_setMaxWidthWithId_(ASTabLayo
 
 __attribute__((unused)) static void ASTabLayoutImpl_selectTabWithId_(ASTabLayoutImpl *self, id objValue);
 
-__attribute__((unused)) static ADMTabLayout_Tab *ASTabLayoutImpl_findTabByIdWithInt_(ASTabLayoutImpl *self, jint id_);
+__attribute__((unused)) static ADMTabLayout_Tab *ASTabLayoutImpl_findTabByIdWithInt_(ASTabLayoutImpl *self, int32_t id_);
 
 __attribute__((unused)) static void ASTabLayoutImpl_setupWithViewPagerWithNSString_(ASTabLayoutImpl *self, NSString *strValue);
 
 __attribute__((unused)) static void ASTabLayoutImpl_setBackgroundDrawableWithId_(ASTabLayoutImpl *self, id objValue);
 
-__attribute__((unused)) static void ASTabLayoutImpl_removeTabByIdWithInt_(ASTabLayoutImpl *self, jint id_);
+__attribute__((unused)) static void ASTabLayoutImpl_removeTabByIdWithInt_(ASTabLayoutImpl *self, int32_t id_);
 
-__attribute__((unused)) static void ASTabLayoutImpl_removeTabByAtWithInt_(ASTabLayoutImpl *self, jint pos);
+__attribute__((unused)) static void ASTabLayoutImpl_removeTabByAtWithInt_(ASTabLayoutImpl *self, int32_t pos);
 
 __attribute__((unused)) static void ASTabLayoutImpl_setScrollXWithId_(ASTabLayoutImpl *self, id objValue);
 
@@ -286,13 +295,13 @@ __attribute__((unused)) static void ASTabLayoutImpl_applyRequestedTabMinWidthWit
 
 __attribute__((unused)) static void ASTabLayoutImpl_applyRequestedTabMaxWidthWithId_(ASTabLayoutImpl *self, id objValue);
 
-__attribute__((unused)) static jint ASTabLayoutImpl_getTabPaddingBottom(ASTabLayoutImpl *self);
+__attribute__((unused)) static int32_t ASTabLayoutImpl_getTabPaddingBottom(ASTabLayoutImpl *self);
 
-__attribute__((unused)) static jint ASTabLayoutImpl_getTabPaddingEnd(ASTabLayoutImpl *self);
+__attribute__((unused)) static int32_t ASTabLayoutImpl_getTabPaddingEnd(ASTabLayoutImpl *self);
 
-__attribute__((unused)) static jint ASTabLayoutImpl_getTabPaddingTop(ASTabLayoutImpl *self);
+__attribute__((unused)) static int32_t ASTabLayoutImpl_getTabPaddingTop(ASTabLayoutImpl *self);
 
-__attribute__((unused)) static jint ASTabLayoutImpl_getTabPaddingStart(ASTabLayoutImpl *self);
+__attribute__((unused)) static int32_t ASTabLayoutImpl_getTabPaddingStart(ASTabLayoutImpl *self);
 
 __attribute__((unused)) static void ASTabLayoutImpl_applyTabPaddingBottomWithId_(ASTabLayoutImpl *self, id objValue);
 
@@ -352,12 +361,12 @@ J2OBJC_FIELD_SETTER(ASTabLayoutImpl_TabMode, mapping_, id<JavaUtilMap>)
 
 @interface ASTabLayoutImpl_TabLayoutExt () {
  @public
-  __unsafe_unretained ASTabLayoutImpl *this$0_;
+  WEAK_ ASTabLayoutImpl *this$0_;
   ASMeasureEvent *measureFinished_;
   ASOnLayoutEvent *onLayoutEvent_;
   id<JavaUtilList> overlays_;
-  jint mMaxWidth_;
-  jint mMaxHeight_;
+  int32_t mMaxWidth_;
+  int32_t mMaxHeight_;
   id<JavaUtilMap> templates_;
 }
 
@@ -424,6 +433,7 @@ __attribute__((unused)) static ASTabLayoutImpl_OnTabSelectedListener *create_AST
 
 J2OBJC_TYPE_LITERAL_HEADER(ASTabLayoutImpl_OnTabSelectedListener)
 
+
 @interface ASTabLayoutImpl_$Lambda$1 : NSObject < JavaLangRunnable > {
  @public
   id<ASIWidget> val$widget_;
@@ -440,6 +450,7 @@ __attribute__((unused)) static void ASTabLayoutImpl_$Lambda$1_initWithASIWidget_
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$1 *new_ASTabLayoutImpl_$Lambda$1_initWithASIWidget_(id<ASIWidget> capture$0) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$1 *create_ASTabLayoutImpl_$Lambda$1_initWithASIWidget_(id<ASIWidget> capture$0);
+
 
 @interface ASTabLayoutImpl_$Lambda$2 : NSObject < ASTabLayoutImpl_ValueSetter >
 
@@ -460,6 +471,7 @@ __attribute__((unused)) static ASTabLayoutImpl_$Lambda$2 *new_ASTabLayoutImpl_$L
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$2 *create_ASTabLayoutImpl_$Lambda$2_init(void);
 
+
 @interface ASTabLayoutImpl_$Lambda$3 : NSObject < ASTabLayoutImpl_ValueSetter >
 
 - (void)setValueOnBadgeDrawableWithADXBadgeDrawable:(ADXBadgeDrawable *)badge
@@ -478,6 +490,7 @@ __attribute__((unused)) static void ASTabLayoutImpl_$Lambda$3_init(ASTabLayoutIm
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$3 *new_ASTabLayoutImpl_$Lambda$3_init(void) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$3 *create_ASTabLayoutImpl_$Lambda$3_init(void);
+
 
 @interface ASTabLayoutImpl_$Lambda$4 : NSObject < ASTabLayoutImpl_ValueSetter >
 
@@ -498,6 +511,7 @@ __attribute__((unused)) static ASTabLayoutImpl_$Lambda$4 *new_ASTabLayoutImpl_$L
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$4 *create_ASTabLayoutImpl_$Lambda$4_init(void);
 
+
 @interface ASTabLayoutImpl_$Lambda$5 : NSObject < ASTabLayoutImpl_ValueSetter >
 
 - (void)setValueOnBadgeDrawableWithADXBadgeDrawable:(ADXBadgeDrawable *)badge
@@ -516,6 +530,7 @@ __attribute__((unused)) static void ASTabLayoutImpl_$Lambda$5_init(ASTabLayoutIm
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$5 *new_ASTabLayoutImpl_$Lambda$5_init(void) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$5 *create_ASTabLayoutImpl_$Lambda$5_init(void);
+
 
 @interface ASTabLayoutImpl_$Lambda$6 : NSObject < ASTabLayoutImpl_ValueSetter >
 
@@ -536,6 +551,7 @@ __attribute__((unused)) static ASTabLayoutImpl_$Lambda$6 *new_ASTabLayoutImpl_$L
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$6 *create_ASTabLayoutImpl_$Lambda$6_init(void);
 
+
 @interface ASTabLayoutImpl_$Lambda$7 : NSObject < ASTabLayoutImpl_ValueSetter >
 
 - (void)setValueOnBadgeDrawableWithADXBadgeDrawable:(ADXBadgeDrawable *)badge
@@ -554,6 +570,7 @@ __attribute__((unused)) static void ASTabLayoutImpl_$Lambda$7_init(ASTabLayoutIm
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$7 *new_ASTabLayoutImpl_$Lambda$7_init(void) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$7 *create_ASTabLayoutImpl_$Lambda$7_init(void);
+
 
 @interface ASTabLayoutImpl_$Lambda$8 : NSObject < ASTabLayoutImpl_ValueSetter >
 
@@ -574,6 +591,7 @@ __attribute__((unused)) static ASTabLayoutImpl_$Lambda$8 *new_ASTabLayoutImpl_$L
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$8 *create_ASTabLayoutImpl_$Lambda$8_init(void);
 
+
 @interface ASTabLayoutImpl_$Lambda$9 : NSObject < ASTabLayoutImpl_ValueSetter >
 
 - (void)setValueOnBadgeDrawableWithADXBadgeDrawable:(ADXBadgeDrawable *)badge
@@ -592,6 +610,7 @@ __attribute__((unused)) static void ASTabLayoutImpl_$Lambda$9_init(ASTabLayoutIm
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$9 *new_ASTabLayoutImpl_$Lambda$9_init(void) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$9 *create_ASTabLayoutImpl_$Lambda$9_init(void);
+
 
 @interface ASTabLayoutImpl_$Lambda$10 : NSObject < ASTabLayoutImpl_ValueSetter >
 
@@ -612,6 +631,7 @@ __attribute__((unused)) static ASTabLayoutImpl_$Lambda$10 *new_ASTabLayoutImpl_$
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$10 *create_ASTabLayoutImpl_$Lambda$10_init(void);
 
+
 @interface ASTabLayoutImpl_$Lambda$11 : NSObject < ASTabLayoutImpl_ValueSetter >
 
 - (void)setValueOnBadgeDrawableWithADXBadgeDrawable:(ADXBadgeDrawable *)badge
@@ -630,6 +650,7 @@ __attribute__((unused)) static void ASTabLayoutImpl_$Lambda$11_init(ASTabLayoutI
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$11 *new_ASTabLayoutImpl_$Lambda$11_init(void) NS_RETURNS_RETAINED;
 
 __attribute__((unused)) static ASTabLayoutImpl_$Lambda$11 *create_ASTabLayoutImpl_$Lambda$11_init(void);
+
 
 NSString *ASTabLayoutImpl_LOCAL_NAME = @"com.google.android.material.tabs.TabLayout";
 NSString *ASTabLayoutImpl_GROUP_NAME = @"com.google.android.material.tabs.TabLayout";
@@ -728,16 +749,16 @@ J2OBJC_IGNORE_DESIGNATED_END
   return tabLayout_;
 }
 
-- (jboolean)removeWithASIWidget:(id<ASIWidget>)w {
-  jboolean remove = [super removeWithASIWidget:w];
+- (bool)removeWithASIWidget:(id<ASIWidget>)w {
+  bool remove = [super removeWithASIWidget:w];
   [((ADMTabLayout *) nil_chk(tabLayout_)) removeViewWithADView:(ADView *) cast_chk([((id<ASIWidget>) nil_chk(w)) asWidget], [ADView class])];
   ASTabLayoutImpl_nativeRemoveViewWithASIWidget_(self, w);
   return remove;
 }
 
-- (jboolean)removeWithInt:(jint)index {
+- (bool)removeWithInt:(int32_t)index {
   id<ASIWidget> widget = [((id<JavaUtilList>) nil_chk(widgets_)) getWithInt:index];
-  jboolean remove = [super removeWithInt:index];
+  bool remove = [super removeWithInt:index];
   if (index + 1 <= [((ADMTabLayout *) nil_chk(tabLayout_)) getChildCount]) {
     [((ADMTabLayout *) nil_chk(tabLayout_)) removeViewAtWithInt:index];
     ASTabLayoutImpl_nativeRemoveViewWithASIWidget_(self, widget);
@@ -750,7 +771,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)addWithASIWidget:(id<ASIWidget>)w
-                 withInt:(jint)index {
+                 withInt:(int32_t)index {
   if (index != -2) {
     ADView *view = (ADView *) cast_chk([((id<ASIWidget>) nil_chk(w)) asWidget], [ADView class]);
     ASTabLayoutImpl_createLayoutParamsWithADView_(self, view);
@@ -1091,7 +1112,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return uiView_;
 }
 
-- (jboolean)checkIosVersionWithNSString:(NSString *)v {
+- (bool)checkIosVersionWithNSString:(NSString *)v {
   return ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending);
 }
 
@@ -1192,7 +1213,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   ASTabLayoutImpl_selectTabWithId_(self, objValue);
 }
 
-- (ADMTabLayout_Tab *)findTabByIdWithInt:(jint)id_ {
+- (ADMTabLayout_Tab *)findTabByIdWithInt:(int32_t)id_ {
   return ASTabLayoutImpl_findTabByIdWithInt_(self, id_);
 }
 
@@ -1210,11 +1231,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   ASTabLayoutImpl_setBackgroundDrawableWithId_(self, objValue);
 }
 
-- (void)removeTabByIdWithInt:(jint)id_ {
+- (void)removeTabByIdWithInt:(int32_t)id_ {
   ASTabLayoutImpl_removeTabByIdWithInt_(self, id_);
 }
 
-- (void)removeTabByAtWithInt:(jint)pos {
+- (void)removeTabByAtWithInt:(int32_t)pos {
   ASTabLayoutImpl_removeTabByAtWithInt_(self, pos);
 }
 
@@ -1223,7 +1244,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)nativeSetScrollXWithId:(id)view
-                       withInt:(jint)value {
+                       withInt:(int32_t)value {
   [((ASUIScrollView*)view) setContentOffset:CGPointMake(value ,((ASUIScrollView*)view).contentOffset.y)];
 }
 
@@ -1232,7 +1253,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)nativeSetScrollYWithId:(id)view
-                       withInt:(jint)value {
+                       withInt:(int32_t)value {
   [((ASUIScrollView*)view) setContentOffset:CGPointMake(((ASUIScrollView*)view).contentOffset.x, value)];
 }
 
@@ -1240,7 +1261,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return JavaLangDouble_valueOfWithDouble_([self nativeGetScrollXWithId:[self asNativeWidget]]);
 }
 
-- (jdouble)nativeGetScrollXWithId:(id)view {
+- (double)nativeGetScrollXWithId:(id)view {
   return ((ASUIScrollView*)view).contentOffset.x;
 }
 
@@ -1248,7 +1269,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return JavaLangDouble_valueOfWithDouble_([self nativeGetScrollYWithId:[self asNativeWidget]]);
 }
 
-- (jdouble)nativeGetScrollYWithId:(id)view {
+- (double)nativeGetScrollYWithId:(id)view {
   return ((ASUIScrollView*)view).contentOffset.y;
 }
 
@@ -1318,19 +1339,19 @@ J2OBJC_IGNORE_DESIGNATED_END
   ASTabLayoutImpl_applyRequestedTabMaxWidthWithId_(self, objValue);
 }
 
-- (jint)getTabPaddingBottom {
+- (int32_t)getTabPaddingBottom {
   return ASTabLayoutImpl_getTabPaddingBottom(self);
 }
 
-- (jint)getTabPaddingEnd {
+- (int32_t)getTabPaddingEnd {
   return ASTabLayoutImpl_getTabPaddingEnd(self);
 }
 
-- (jint)getTabPaddingTop {
+- (int32_t)getTabPaddingTop {
   return ASTabLayoutImpl_getTabPaddingTop(self);
 }
 
-- (jint)getTabPaddingStart {
+- (int32_t)getTabPaddingStart {
   return ASTabLayoutImpl_getTabPaddingStart(self);
 }
 
@@ -1374,7 +1395,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   }
 }
 
-- (void)setVisibleWithBoolean:(jboolean)b {
+- (void)setVisibleWithBoolean:(bool)b {
   [((ADView *) nil_chk(((ADView *) cast_chk([self asWidget], [ADView class])))) setVisibilityWithInt:b ? ADView_VISIBLE : ADView_GONE];
 }
 
@@ -1666,8 +1687,8 @@ ADFrameLayout_LayoutParams *ASTabLayoutImpl_getLayoutParamsWithADView_(ASTabLayo
 void ASTabLayoutImpl_updateTabTextsWithId_(ASTabLayoutImpl *self, id objValue) {
   if (self->badgeMenuItemIds_ != nil) {
     id<JavaUtilList> badgeAttrs = ASPluginInvoker_getListWithId_(objValue);
-    for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) size]; i++) {
-      jint id_ = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) getWithInt:i], [JavaLangInteger class]))) intValue];
+    for (int32_t i = 0; i < [((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) size]; i++) {
+      int32_t id_ = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) getWithInt:i], [JavaLangInteger class]))) intValue];
       ADMTabLayout_Tab *tab = ASTabLayoutImpl_findTabByIdWithInt_(self, id_);
       id value = [((id<JavaUtilList>) nil_chk(badgeAttrs)) getWithInt:i];
       (void) [((ADMTabLayout_Tab *) nil_chk(tab)) setTextWithJavaLangCharSequence:(NSString *) cast_chk(value, [NSString class])];
@@ -1716,18 +1737,18 @@ void ASTabLayoutImpl_addTabWithId_withId_withId_withId_withId_withId_withId_(AST
   else {
     if ([whereStr java_hasPrefix:@"at:"]) {
       whereStr = [whereStr java_replace:@"at:" withSequence:@""];
-      jint position = JavaLangInteger_parseIntWithNSString_(whereStr);
+      int32_t position = JavaLangInteger_parseIntWithNSString_(whereStr);
       [((ADMTabLayout *) nil_chk(self->tabLayout_)) addTabWithADMTabLayout_Tab:tab withInt:position];
     }
     else if ([whereStr java_hasPrefix:@"before:"]) {
       whereStr = [whereStr java_replace:@"before:" withSequence:@""];
-      jint tabId = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([self quickConvertWithId:whereStr withNSString:@"id"], [JavaLangInteger class]))) intValue];
+      int32_t tabId = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([self quickConvertWithId:whereStr withNSString:@"id"], [JavaLangInteger class]))) intValue];
       ADMTabLayout_Tab *mytab = ASTabLayoutImpl_findTabByIdWithInt_(self, tabId);
       [((ADMTabLayout *) nil_chk(self->tabLayout_)) addTabWithADMTabLayout_Tab:tab withInt:[((ADMTabLayout_Tab *) nil_chk(mytab)) getPosition]];
     }
     else if ([whereStr java_hasPrefix:@"after:"]) {
       whereStr = [whereStr java_replace:@"after:" withSequence:@""];
-      jint tabId = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([self quickConvertWithId:whereStr withNSString:@"id"], [JavaLangInteger class]))) intValue];
+      int32_t tabId = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([self quickConvertWithId:whereStr withNSString:@"id"], [JavaLangInteger class]))) intValue];
       ADMTabLayout_Tab *mytab = ASTabLayoutImpl_findTabByIdWithInt_(self, tabId);
       [((ADMTabLayout *) nil_chk(self->tabLayout_)) addTabWithADMTabLayout_Tab:tab withInt:[((ADMTabLayout_Tab *) nil_chk(mytab)) getPosition] + 1];
     }
@@ -1752,7 +1773,7 @@ void ASTabLayoutImpl_setTabTextAppearanceWithId_(ASTabLayoutImpl *self, id objVa
 }
 
 void ASTabLayoutImpl_setPaddingWithId_(ASTabLayoutImpl *self, id objValue) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     ADXViewCompat_setPaddingRelativeWithADView_withInt_withInt_withInt_withInt_(((ADMTabLayout_Tab *) nil_chk(tab))->view_, [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue], [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue], [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue], [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue]);
   }
@@ -1773,7 +1794,7 @@ void ASTabLayoutImpl_setTabContentInsetStartWithId_(ASTabLayoutImpl *self, id ob
 }
 
 void ASTabLayoutImpl_setPaddingBottomWithId_(ASTabLayoutImpl *self, id objValue) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     ADXViewCompat_setPaddingRelativeWithADView_withInt_withInt_withInt_withInt_(((ADMTabLayout_Tab *) nil_chk(tab))->view_, ASTabLayoutImpl_getTabPaddingStart(self), ASTabLayoutImpl_getTabPaddingTop(self), ASTabLayoutImpl_getTabPaddingEnd(self), [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue]);
   }
@@ -1782,7 +1803,7 @@ void ASTabLayoutImpl_setPaddingBottomWithId_(ASTabLayoutImpl *self, id objValue)
 }
 
 void ASTabLayoutImpl_setPaddingEndWithId_(ASTabLayoutImpl *self, id objValue) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     ADXViewCompat_setPaddingRelativeWithADView_withInt_withInt_withInt_withInt_(((ADMTabLayout_Tab *) nil_chk(tab))->view_, ASTabLayoutImpl_getTabPaddingStart(self), ASTabLayoutImpl_getTabPaddingTop(self), [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue], ASTabLayoutImpl_getTabPaddingBottom(self));
   }
@@ -1791,7 +1812,7 @@ void ASTabLayoutImpl_setPaddingEndWithId_(ASTabLayoutImpl *self, id objValue) {
 }
 
 void ASTabLayoutImpl_setPaddingTopWithId_(ASTabLayoutImpl *self, id objValue) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     ADXViewCompat_setPaddingRelativeWithADView_withInt_withInt_withInt_withInt_(((ADMTabLayout_Tab *) nil_chk(tab))->view_, ASTabLayoutImpl_getTabPaddingStart(self), [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue], ASTabLayoutImpl_getTabPaddingEnd(self), ASTabLayoutImpl_getTabPaddingBottom(self));
   }
@@ -1800,7 +1821,7 @@ void ASTabLayoutImpl_setPaddingTopWithId_(ASTabLayoutImpl *self, id objValue) {
 }
 
 void ASTabLayoutImpl_setPaddingStartWithId_(ASTabLayoutImpl *self, id objValue) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     ADXViewCompat_setPaddingRelativeWithADView_withInt_withInt_withInt_withInt_(((ADMTabLayout_Tab *) nil_chk(tab))->view_, [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue], ASTabLayoutImpl_getTabPaddingTop(self), ASTabLayoutImpl_getTabPaddingEnd(self), ASTabLayoutImpl_getTabPaddingBottom(self));
   }
@@ -1821,8 +1842,8 @@ void ASTabLayoutImpl_selectTabWithId_(ASTabLayoutImpl *self, id objValue) {
   [((ADMTabLayout *) nil_chk(self->tabLayout_)) selectTabWithADMTabLayout_Tab:[self->tabLayout_ getTabAtWithInt:[((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue]]];
 }
 
-ADMTabLayout_Tab *ASTabLayoutImpl_findTabByIdWithInt_(ASTabLayoutImpl *self, jint id_) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+ADMTabLayout_Tab *ASTabLayoutImpl_findTabByIdWithInt_(ASTabLayoutImpl *self, int32_t id_) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     if ([((ADMTabLayout_Tab *) nil_chk(tab)) getId] == id_) {
       return tab;
@@ -1853,21 +1874,21 @@ void ASTabLayoutImpl_setupWithViewPagerWithNSString_(ASTabLayoutImpl *self, NSSt
 }
 
 void ASTabLayoutImpl_setBackgroundDrawableWithId_(ASTabLayoutImpl *self, id objValue) {
-  for (jint i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
+  for (int32_t i = 0; i < [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount]; i++) {
     ADMTabLayout_Tab *tab = [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabAtWithInt:i];
     ASTabLayoutImpl_applyTabBackgroundWithADMTabLayout_Tab_withId_(self, tab, objValue);
   }
   [((ADMTabLayout *) nil_chk(self->tabLayout_)) invalidate];
 }
 
-void ASTabLayoutImpl_removeTabByIdWithInt_(ASTabLayoutImpl *self, jint id_) {
+void ASTabLayoutImpl_removeTabByIdWithInt_(ASTabLayoutImpl *self, int32_t id_) {
   ADMTabLayout_Tab *tab = ASTabLayoutImpl_findTabByIdWithInt_(self, id_);
   if (tab != nil) {
     [((ADMTabLayout *) nil_chk(self->tabLayout_)) removeTabWithADMTabLayout_Tab:tab];
   }
 }
 
-void ASTabLayoutImpl_removeTabByAtWithInt_(ASTabLayoutImpl *self, jint pos) {
+void ASTabLayoutImpl_removeTabByAtWithInt_(ASTabLayoutImpl *self, int32_t pos) {
   if ([((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabCount] > pos) {
     [((ADMTabLayout *) nil_chk(self->tabLayout_)) removeTabAtWithInt:pos];
   }
@@ -1888,8 +1909,8 @@ void ASTabLayoutImpl_setBadgeBackgroundColorsWithId_(ASTabLayoutImpl *self, id o
 void ASTabLayoutImpl_setValueOnBadgeDrawableWithId_withASTabLayoutImpl_ValueSetter_(ASTabLayoutImpl *self, id objValue, id<ASTabLayoutImpl_ValueSetter> valueSetter) {
   if (self->badgeMenuItemIds_ != nil) {
     id<JavaUtilList> badgeAttrs = ASPluginInvoker_getListWithId_(objValue);
-    for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) size]; i++) {
-      jint id_ = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) getWithInt:i], [JavaLangInteger class]))) intValue];
+    for (int32_t i = 0; i < [((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) size]; i++) {
+      int32_t id_ = [((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk([((id<JavaUtilList>) nil_chk(self->badgeMenuItemIds_)) getWithInt:i], [JavaLangInteger class]))) intValue];
       ADXBadgeDrawable *badge = [((ADMTabLayout_Tab *) nil_chk(ASTabLayoutImpl_findTabByIdWithInt_(self, id_))) getOrCreateBadge];
       id value = [((id<JavaUtilList>) nil_chk(badgeAttrs)) getWithInt:i];
       [((id<ASTabLayoutImpl_ValueSetter>) nil_chk(valueSetter)) setValueOnBadgeDrawableWithADXBadgeDrawable:badge withId:value];
@@ -1953,19 +1974,19 @@ void ASTabLayoutImpl_applyRequestedTabMaxWidthWithId_(ASTabLayoutImpl *self, id 
   [((ADMTabLayout *) nil_chk(self->tabLayout_)) setRequestedTabMaxWidthWithInt:[((JavaLangInteger *) nil_chk((JavaLangInteger *) cast_chk(objValue, [JavaLangInteger class]))) intValue]];
 }
 
-jint ASTabLayoutImpl_getTabPaddingBottom(ASTabLayoutImpl *self) {
+int32_t ASTabLayoutImpl_getTabPaddingBottom(ASTabLayoutImpl *self) {
   return [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabPaddingBottom];
 }
 
-jint ASTabLayoutImpl_getTabPaddingEnd(ASTabLayoutImpl *self) {
+int32_t ASTabLayoutImpl_getTabPaddingEnd(ASTabLayoutImpl *self) {
   return [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabPaddingEnd];
 }
 
-jint ASTabLayoutImpl_getTabPaddingTop(ASTabLayoutImpl *self) {
+int32_t ASTabLayoutImpl_getTabPaddingTop(ASTabLayoutImpl *self) {
   return [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabPaddingTop];
 }
 
-jint ASTabLayoutImpl_getTabPaddingStart(ASTabLayoutImpl *self) {
+int32_t ASTabLayoutImpl_getTabPaddingStart(ASTabLayoutImpl *self) {
   return [((ADMTabLayout *) nil_chk(self->tabLayout_)) getTabPaddingStart];
 }
 
@@ -2012,6 +2033,8 @@ void ASTabLayoutImpl_initThumbHeight(ASTabLayoutImpl *self) {
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl)
 
+J2OBJC_NAME_MAPPING(ASTabLayoutImpl, "com.ashera.tablayout", "AS")
+
 @implementation ASTabLayoutImpl_TabGravity
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
@@ -2056,9 +2079,9 @@ void ASTabLayoutImpl_TabGravity_init(ASTabLayoutImpl_TabGravity *self) {
   ASAbstractEnumToIntConverter_init(self);
   self->mapping_ = new_JavaUtilHashMap_init();
   {
-    (void) [self->mapping_ putWithId:@"fill" withId:JavaLangInteger_valueOfWithInt_((jint) 0x0)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"center" withId:JavaLangInteger_valueOfWithInt_((jint) 0x1)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"start" withId:JavaLangInteger_valueOfWithInt_((jint) 0x2)];
+    (void) [self->mapping_ putWithId:@"fill" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x0)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"center" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x1)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"start" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x2)];
   }
 }
 
@@ -2176,10 +2199,10 @@ void ASTabLayoutImpl_TabIndicatorGravity_init(ASTabLayoutImpl_TabIndicatorGravit
   ASAbstractEnumToIntConverter_init(self);
   self->mapping_ = new_JavaUtilHashMap_init();
   {
-    (void) [self->mapping_ putWithId:@"bottom" withId:JavaLangInteger_valueOfWithInt_((jint) 0x0)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"center" withId:JavaLangInteger_valueOfWithInt_((jint) 0x1)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"top" withId:JavaLangInteger_valueOfWithInt_((jint) 0x2)];
-    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"stretch" withId:JavaLangInteger_valueOfWithInt_((jint) 0x3)];
+    (void) [self->mapping_ putWithId:@"bottom" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x0)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"center" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x1)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"top" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x2)];
+    (void) [((id<JavaUtilMap>) nil_chk(self->mapping_)) putWithId:@"stretch" withId:JavaLangInteger_valueOfWithInt_((int32_t) 0x3)];
   }
 }
 
@@ -2259,19 +2282,19 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_TabMode)
   return this$0_;
 }
 
-- (void)setMaxWidthWithInt:(jint)width {
+- (void)setMaxWidthWithInt:(int32_t)width {
   mMaxWidth_ = width;
 }
 
-- (void)setMaxHeightWithInt:(jint)height {
+- (void)setMaxHeightWithInt:(int32_t)height {
   mMaxHeight_ = height;
 }
 
-- (jint)getMaxWidth {
+- (int32_t)getMaxWidth {
   return mMaxWidth_;
 }
 
-- (jint)getMaxHeight {
+- (int32_t)getMaxHeight {
   return mMaxHeight_;
 }
 
@@ -2280,8 +2303,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_TabMode)
   return self;
 }
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec {
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec {
   if (mMaxWidth_ > 0) {
     widthMeasureSpec = ADView_MeasureSpec_makeMeasureSpecWithInt_withInt_(mMaxWidth_, ADView_MeasureSpec_AT_MOST);
   }
@@ -2297,15 +2320,15 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_TabMode)
   }
 }
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b {
+- (void)onLayoutWithBoolean:(bool)changed
+                    withInt:(int32_t)l
+                    withInt:(int32_t)t
+                    withInt:(int32_t)r
+                    withInt:(int32_t)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   ASViewImpl_setDrawableBoundsWithASIWidget_withInt_withInt_withInt_withInt_(this$0_, l, t, r, b);
   if (![self isOverlay]) {
-    ASViewImpl_nativeMakeFrameForHorizontalScrollViewWithId_withInt_withInt_withInt_withInt_withInt_([this$0_ asNativeWidget], l, t, r, b, (jint) ([self computeHorizontalScrollRange]));
+    ASViewImpl_nativeMakeFrameForHorizontalScrollViewWithId_withInt_withInt_withInt_withInt_withInt_([this$0_ asNativeWidget], l, t, r, b, (int32_t) ([self computeHorizontalScrollRange]));
   }
   [this$0_ replayBufferedEvents];
   ASViewImpl_redrawDrawablesWithASIWidget_(this$0_);
@@ -2328,8 +2351,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_TabMode)
           withNSObjectArray:(IOSObjectArray *)canvas {
 }
 
-- (void)updateMeasuredDimensionWithInt:(jint)width
-                               withInt:(jint)height {
+- (void)updateMeasuredDimensionWithInt:(int32_t)width
+                               withInt:(int32_t)height {
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
@@ -2397,12 +2420,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_TabMode)
   displayFrame->bottom_ = displayFrame->top_ + [self getHeight];
 }
 
-- (void)offsetTopAndBottomWithInt:(jint)offset {
+- (void)offsetTopAndBottomWithInt:(int32_t)offset {
   [super offsetTopAndBottomWithInt:offset];
   ASViewImpl_nativeMakeFrameWithId_withInt_withInt_withInt_withInt_([this$0_ asNativeWidget], [self getLeft], [self getTop], [self getRight], [self getBottom]);
 }
 
-- (void)offsetLeftAndRightWithInt:(jint)offset {
+- (void)offsetLeftAndRightWithInt:(int32_t)offset {
   [super offsetLeftAndRightWithInt:offset];
   ASViewImpl_nativeMakeFrameWithId_withInt_withInt_withInt_withInt_([this$0_ asNativeWidget], [self getLeft], [self getTop], [self getRight], [self getBottom]);
 }
@@ -2432,7 +2455,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_TabMode)
   [this$0_ setAttributeWithNSString:name withId:value withBoolean:!([value isKindOfClass:[NSString class]])];
 }
 
-- (void)setVisibilityWithInt:(jint)visibility {
+- (void)setVisibilityWithInt:(int32_t)visibility {
   [super setVisibilityWithInt:visibility];
   ASViewImpl_nativeSetVisibilityWithId_withBoolean_([this$0_ asNativeWidget], visibility != ADView_VISIBLE);
 }
@@ -2674,7 +2697,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_ValueSetter)
     if ([((id<ASIWidget>) nil_chk(w_)) getModelUiToPojoEventIds] != nil) {
       ASViewImpl_refreshUiFromModelWithASIWidget_withId_withBoolean_(w_, [((id<ASIWidget>) nil_chk(w_)) getModelUiToPojoEventIds], true);
     }
-    if (strValue_ != nil && ![strValue_ java_isEmpty] && ![((NSString *) nil_chk([((NSString *) nil_chk(strValue_)) java_trim])) java_hasPrefix:@"+"]) {
+    if (strValue_ != nil && ![strValue_ isEmpty] && ![((NSString *) nil_chk([((NSString *) nil_chk(strValue_)) java_trim])) java_hasPrefix:@"+"]) {
       id<ASIActivity> activity = [((id<ASIFragment>) nil_chk([((id<ASIWidget>) nil_chk(w_)) getFragment])) getRootActivity];
       if (activity != nil) {
         [activity sendEventMessageWithJavaUtilMap:obj];
@@ -2723,7 +2746,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_ValueSetter)
     if ([((id<ASIWidget>) nil_chk(w_)) getModelUiToPojoEventIds] != nil) {
       ASViewImpl_refreshUiFromModelWithASIWidget_withId_withBoolean_(w_, [((id<ASIWidget>) nil_chk(w_)) getModelUiToPojoEventIds], true);
     }
-    if (strValue_ != nil && ![strValue_ java_isEmpty] && ![((NSString *) nil_chk([((NSString *) nil_chk(strValue_)) java_trim])) java_hasPrefix:@"+"]) {
+    if (strValue_ != nil && ![strValue_ isEmpty] && ![((NSString *) nil_chk([((NSString *) nil_chk(strValue_)) java_trim])) java_hasPrefix:@"+"]) {
       id<ASIActivity> activity = [((id<ASIFragment>) nil_chk([((id<ASIWidget>) nil_chk(w_)) getFragment])) getRootActivity];
       if (activity != nil) {
         [activity sendEventMessageWithJavaUtilMap:obj];
@@ -2772,7 +2795,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ASTabLayoutImpl_ValueSetter)
     if ([((id<ASIWidget>) nil_chk(w_)) getModelUiToPojoEventIds] != nil) {
       ASViewImpl_refreshUiFromModelWithASIWidget_withId_withBoolean_(w_, [((id<ASIWidget>) nil_chk(w_)) getModelUiToPojoEventIds], true);
     }
-    if (strValue_ != nil && ![strValue_ java_isEmpty] && ![((NSString *) nil_chk([((NSString *) nil_chk(strValue_)) java_trim])) java_hasPrefix:@"+"]) {
+    if (strValue_ != nil && ![strValue_ isEmpty] && ![((NSString *) nil_chk([((NSString *) nil_chk(strValue_)) java_trim])) java_hasPrefix:@"+"]) {
       id<ASIActivity> activity = [((id<ASIFragment>) nil_chk([((id<ASIWidget>) nil_chk(w_)) getFragment])) getRootActivity];
       if (activity != nil) {
         [activity sendEventMessageWithJavaUtilMap:obj];

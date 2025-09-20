@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-ios-widgets\IOSTabLayoutPlugin\src\main\java\com\ashera\tablayout\TabLayoutPlugin.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_TabLayoutPlugin")
@@ -39,6 +40,7 @@ FOUNDATION_EXPORT void ASTabLayoutPlugin_initPlugin(void);
 J2OBJC_TYPE_LITERAL_HEADER(ASTabLayoutPlugin)
 
 @compatibility_alias ComAsheraTablayoutTabLayoutPlugin ASTabLayoutPlugin;
+
 
 #endif
 

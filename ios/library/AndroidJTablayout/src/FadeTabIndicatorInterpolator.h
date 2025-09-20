@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\FadeTabIndicatorInterpolator.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_FadeTabIndicatorInterpolator")
@@ -23,6 +24,7 @@
 @class ADDrawable;
 @class ADMTabLayout;
 @class ADView;
+@class JavaLangFloat;
 
 @interface ADMFadeTabIndicatorInterpolator : ADMTabIndicatorInterpolator
 
@@ -33,7 +35,7 @@
 - (void)updateIndicatorForOffsetWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)startTitle
                                       withADView:(ADView *)endTitle
-                                       withFloat:(jfloat)offset
+                                       withFloat:(float)offset
                                   withADDrawable:(ADDrawable *)indicator;
 
 @end
@@ -49,6 +51,7 @@ FOUNDATION_EXPORT ADMFadeTabIndicatorInterpolator *create_ADMFadeTabIndicatorInt
 J2OBJC_TYPE_LITERAL_HEADER(ADMFadeTabIndicatorInterpolator)
 
 @compatibility_alias ComGoogleAndroidMaterialTabsFadeTabIndicatorInterpolator ADMFadeTabIndicatorInterpolator;
+
 
 #endif
 

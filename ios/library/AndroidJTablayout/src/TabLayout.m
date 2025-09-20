@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\TabLayout.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "BadgeDrawable.h"
 #include "BadgeUtils.h"
 #include "Canvas.h"
@@ -48,6 +53,7 @@
 #include "ViewParent.h"
 #include "java/lang/Boolean.h"
 #include "java/lang/CharSequence.h"
+#include "java/lang/Float.h"
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/IllegalStateException.h"
 #include "java/lang/Integer.h"
@@ -56,10 +62,13 @@
 #include "java/util/ArrayList.h"
 #include "java/util/Iterator.h"
 
+
 @class ADMTabLayout_AdapterChangeListener;
-@class JavaLangRefWeakReference;
-@class JavaUtilArrayList;
-@protocol JavaLangCharSequence;
+@class NSString;
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 @interface ADMTabLayout () {
@@ -69,11 +78,11 @@
   NSString *defaultTabTextAppearance_;
   NSString *tabTextAppearance_;
   NSString *selectedTabTextAppearance_;
-  jint tabSelectedIndicatorColor_;
-  jint requestedTabMinWidth_;
-  jint requestedTabMaxWidth_;
-  jint scrollableTabMinWidth_;
-  jint contentInsetStart_;
+  int32_t tabSelectedIndicatorColor_;
+  int32_t requestedTabMinWidth_;
+  int32_t requestedTabMaxWidth_;
+  int32_t scrollableTabMinWidth_;
+  int32_t contentInsetStart_;
   ADMTabIndicatorInterpolator *tabIndicatorInterpolator_;
   id<ADTimeInterpolator> tabIndicatorTimeInterpolator_;
   id<ADMTabLayout_BaseOnTabSelectedListener> selectedListener_;
@@ -84,25 +93,25 @@
   ADDataSetObserver *pagerAdapterObserver_;
   ADMTabLayout_TabLayoutOnPageChangeListener *pageChangeListener_;
   ADMTabLayout_AdapterChangeListener *adapterChangeListener_;
-  jboolean setupViewPagerImplicitly_;
-  jint viewPagerScrollState_;
+  bool setupViewPagerImplicitly_;
+  int32_t viewPagerScrollState_;
   id<ADPools_Pool> tabViewPool_;
 }
 
 - (void)setupWithViewPagerWithADXViewPager:(ADXViewPager *)viewPager
-                               withBoolean:(jboolean)autoRefresh
-                               withBoolean:(jboolean)implicitSetup;
+                               withBoolean:(bool)autoRefresh
+                               withBoolean:(bool)implicitSetup;
 
 - (ADMTabLayout_TabView *)createTabViewWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
 - (void)configureTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                                 withInt:(jint)position;
+                                 withInt:(int32_t)position;
 
 - (ADLinearLayout_LayoutParams *)createLayoutParamsForTabs;
 
 - (void)updateTabViewLayoutParamsWithADLinearLayout_LayoutParams:(ADLinearLayout_LayoutParams *)lp;
 
-- (void)removeTabViewAtWithInt:(jint)position;
+- (void)removeTabViewAtWithInt:(int32_t)position;
 
 - (void)ensureScrollAnimator;
 
@@ -112,19 +121,19 @@
 
 - (void)dispatchTabReselectedWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
-- (jint)calculateScrollXForTabWithInt:(jint)position
-                            withFloat:(jfloat)positionOffset;
+- (int32_t)calculateScrollXForTabWithInt:(int32_t)position
+                               withFloat:(float)positionOffset;
 
-- (void)applyGravityForModeScrollableWithInt:(jint)tabGravity;
+- (void)applyGravityForModeScrollableWithInt:(int32_t)tabGravity;
 
-+ (ADColorStateList *)createColorStateListWithInt:(jint)defaultColor
-                                          withInt:(jint)selectedColor;
++ (ADColorStateList *)createColorStateListWithInt:(int32_t)defaultColor
+                                          withInt:(int32_t)selectedColor;
 
-- (jint)getDefaultHeight;
+- (int32_t)getDefaultHeight;
 
-- (jint)getTabMinWidth;
+- (int32_t)getTabMinWidth;
 
-- (jint)getChildTabItemCount;
+- (int32_t)getChildTabItemCount;
 
 @end
 
@@ -145,29 +154,29 @@ J2OBJC_FIELD_SETTER(ADMTabLayout, pageChangeListener_, ADMTabLayout_TabLayoutOnP
 J2OBJC_FIELD_SETTER(ADMTabLayout, adapterChangeListener_, ADMTabLayout_AdapterChangeListener *)
 J2OBJC_FIELD_SETTER(ADMTabLayout, tabViewPool_, id<ADPools_Pool>)
 
-inline jint ADMTabLayout_get_DEFAULT_HEIGHT_WITH_TEXT_ICON(void);
+inline int32_t ADMTabLayout_get_DEFAULT_HEIGHT_WITH_TEXT_ICON(void);
 #define ADMTabLayout_DEFAULT_HEIGHT_WITH_TEXT_ICON 72
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, DEFAULT_HEIGHT_WITH_TEXT_ICON, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, DEFAULT_HEIGHT_WITH_TEXT_ICON, int32_t)
 
-inline jint ADMTabLayout_get_DEFAULT_HEIGHT(void);
+inline int32_t ADMTabLayout_get_DEFAULT_HEIGHT(void);
 #define ADMTabLayout_DEFAULT_HEIGHT 48
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, DEFAULT_HEIGHT, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, DEFAULT_HEIGHT, int32_t)
 
-inline jint ADMTabLayout_get_TAB_MIN_WIDTH_MARGIN(void);
+inline int32_t ADMTabLayout_get_TAB_MIN_WIDTH_MARGIN(void);
 #define ADMTabLayout_TAB_MIN_WIDTH_MARGIN 56
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, TAB_MIN_WIDTH_MARGIN, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, TAB_MIN_WIDTH_MARGIN, int32_t)
 
-inline jint ADMTabLayout_get_INVALID_WIDTH(void);
+inline int32_t ADMTabLayout_get_INVALID_WIDTH(void);
 #define ADMTabLayout_INVALID_WIDTH -1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INVALID_WIDTH, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INVALID_WIDTH, int32_t)
 
-inline jint ADMTabLayout_get_ANIMATION_DURATION(void);
+inline int32_t ADMTabLayout_get_ANIMATION_DURATION(void);
 #define ADMTabLayout_ANIMATION_DURATION 300
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, ANIMATION_DURATION, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, ANIMATION_DURATION, int32_t)
 
-inline jint ADMTabLayout_get_SELECTED_INDICATOR_HEIGHT_DEFAULT(void);
+inline int32_t ADMTabLayout_get_SELECTED_INDICATOR_HEIGHT_DEFAULT(void);
 #define ADMTabLayout_SELECTED_INDICATOR_HEIGHT_DEFAULT -1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, SELECTED_INDICATOR_HEIGHT_DEFAULT, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, SELECTED_INDICATOR_HEIGHT_DEFAULT, int32_t)
 
 inline id<ADPools_Pool> ADMTabLayout_get_tabPool(void);
 static id<ADPools_Pool> ADMTabLayout_tabPool;
@@ -177,21 +186,21 @@ inline NSString *ADMTabLayout_get_LOG_TAG(void);
 static NSString *ADMTabLayout_LOG_TAG = @"TabLayout";
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ADMTabLayout, LOG_TAG, NSString *)
 
-inline jint ADMTabLayout_get_tintColor(void);
-static jint ADMTabLayout_tintColor;
-J2OBJC_STATIC_FIELD_PRIMITIVE_FINAL(ADMTabLayout, tintColor, jint)
+inline int32_t ADMTabLayout_get_tintColor(void);
+static int32_t ADMTabLayout_tintColor;
+J2OBJC_STATIC_FIELD_PRIMITIVE_FINAL(ADMTabLayout, tintColor, int32_t)
 
-__attribute__((unused)) static void ADMTabLayout_setupWithViewPagerWithADXViewPager_withBoolean_withBoolean_(ADMTabLayout *self, ADXViewPager *viewPager, jboolean autoRefresh, jboolean implicitSetup);
+__attribute__((unused)) static void ADMTabLayout_setupWithViewPagerWithADXViewPager_withBoolean_withBoolean_(ADMTabLayout *self, ADXViewPager *viewPager, bool autoRefresh, bool implicitSetup);
 
 __attribute__((unused)) static ADMTabLayout_TabView *ADMTabLayout_createTabViewWithADMTabLayout_Tab_(ADMTabLayout *self, ADMTabLayout_Tab *tab);
 
-__attribute__((unused)) static void ADMTabLayout_configureTabWithADMTabLayout_Tab_withInt_(ADMTabLayout *self, ADMTabLayout_Tab *tab, jint position);
+__attribute__((unused)) static void ADMTabLayout_configureTabWithADMTabLayout_Tab_withInt_(ADMTabLayout *self, ADMTabLayout_Tab *tab, int32_t position);
 
 __attribute__((unused)) static ADLinearLayout_LayoutParams *ADMTabLayout_createLayoutParamsForTabs(ADMTabLayout *self);
 
 __attribute__((unused)) static void ADMTabLayout_updateTabViewLayoutParamsWithADLinearLayout_LayoutParams_(ADMTabLayout *self, ADLinearLayout_LayoutParams *lp);
 
-__attribute__((unused)) static void ADMTabLayout_removeTabViewAtWithInt_(ADMTabLayout *self, jint position);
+__attribute__((unused)) static void ADMTabLayout_removeTabViewAtWithInt_(ADMTabLayout *self, int32_t position);
 
 __attribute__((unused)) static void ADMTabLayout_ensureScrollAnimator(ADMTabLayout *self);
 
@@ -201,17 +210,17 @@ __attribute__((unused)) static void ADMTabLayout_dispatchTabUnselectedWithADMTab
 
 __attribute__((unused)) static void ADMTabLayout_dispatchTabReselectedWithADMTabLayout_Tab_(ADMTabLayout *self, ADMTabLayout_Tab *tab);
 
-__attribute__((unused)) static jint ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(ADMTabLayout *self, jint position, jfloat positionOffset);
+__attribute__((unused)) static int32_t ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(ADMTabLayout *self, int32_t position, float positionOffset);
 
-__attribute__((unused)) static void ADMTabLayout_applyGravityForModeScrollableWithInt_(ADMTabLayout *self, jint tabGravity);
+__attribute__((unused)) static void ADMTabLayout_applyGravityForModeScrollableWithInt_(ADMTabLayout *self, int32_t tabGravity);
 
-__attribute__((unused)) static ADColorStateList *ADMTabLayout_createColorStateListWithInt_withInt_(jint defaultColor, jint selectedColor);
+__attribute__((unused)) static ADColorStateList *ADMTabLayout_createColorStateListWithInt_withInt_(int32_t defaultColor, int32_t selectedColor);
 
-__attribute__((unused)) static jint ADMTabLayout_getDefaultHeight(ADMTabLayout *self);
+__attribute__((unused)) static int32_t ADMTabLayout_getDefaultHeight(ADMTabLayout *self);
 
-__attribute__((unused)) static jint ADMTabLayout_getTabMinWidth(ADMTabLayout *self);
+__attribute__((unused)) static int32_t ADMTabLayout_getTabMinWidth(ADMTabLayout *self);
 
-__attribute__((unused)) static jint ADMTabLayout_getChildTabItemCount(ADMTabLayout *self);
+__attribute__((unused)) static int32_t ADMTabLayout_getChildTabItemCount(ADMTabLayout *self);
 
 @interface ADMTabLayout_BaseOnTabSelectedListener : NSObject
 
@@ -240,16 +249,17 @@ __attribute__((unused)) static ADMTabLayout_1 *new_ADMTabLayout_1_initWithADMTab
 
 __attribute__((unused)) static ADMTabLayout_1 *create_ADMTabLayout_1_initWithADMTabLayout_(ADMTabLayout *outer$);
 
+
 @interface ADMTabLayout_Tab () {
  @public
   id tag_;
   ADDrawable *icon_;
   id<JavaLangCharSequence> text_;
   id<JavaLangCharSequence> contentDesc_;
-  jint position_;
+  int32_t position_;
   ADView *customView_;
-  jint labelVisibilityMode_;
-  jint id__;
+  int32_t labelVisibilityMode_;
+  int32_t id__;
 }
 
 @end
@@ -272,7 +282,7 @@ J2OBJC_FIELD_SETTER(ADMTabLayout_Tab, customView_, ADView *)
   ADTextView *customTextView_;
   ADImageView *customIconView_;
   ADDrawable *baseBackgroundDrawable_;
-  jint defaultMaxLines_;
+  int32_t defaultMaxLines_;
 }
 
 - (void)updateBackgroundDrawableWithADContext:(ADContext *)context;
@@ -297,21 +307,21 @@ J2OBJC_FIELD_SETTER(ADMTabLayout_Tab, customView_, ADView *)
 
 - (void)tryRemoveBadgeFromAnchor;
 
-- (void)clipViewToPaddingForBadgeWithBoolean:(jboolean)flag;
+- (void)clipViewToPaddingForBadgeWithBoolean:(bool)flag;
 
 - (void)updateTextAndIconWithADTextView:(ADTextView *)textView
                         withADImageView:(ADImageView *)iconView
-                            withBoolean:(jboolean)addDefaultMargins;
+                            withBoolean:(bool)addDefaultMargins;
 
 - (void)tryUpdateBadgeDrawableBoundsWithADView:(ADView *)anchor;
 
-- (jboolean)hasBadgeDrawable;
+- (bool)hasBadgeDrawable;
 
 - (ADFrameLayout *)getCustomParentForBadgeWithADView:(ADView *)anchor;
 
-- (jfloat)approximateLineWidthWithADMTabLayout_Layout:(ADMTabLayout_Layout *)layout
-                                              withInt:(jint)line
-                                            withFloat:(jfloat)textSize;
+- (float)approximateLineWidthWithADMTabLayout_Layout:(ADMTabLayout_Layout *)layout
+                                             withInt:(int32_t)line
+                                           withFloat:(float)textSize;
 
 @end
 
@@ -351,19 +361,19 @@ __attribute__((unused)) static void ADMTabLayout_TabView_tryAttachBadgeToAnchorW
 
 __attribute__((unused)) static void ADMTabLayout_TabView_tryRemoveBadgeFromAnchor(ADMTabLayout_TabView *self);
 
-__attribute__((unused)) static void ADMTabLayout_TabView_clipViewToPaddingForBadgeWithBoolean_(ADMTabLayout_TabView *self, jboolean flag);
+__attribute__((unused)) static void ADMTabLayout_TabView_clipViewToPaddingForBadgeWithBoolean_(ADMTabLayout_TabView *self, bool flag);
 
 __attribute__((unused)) static void ADMTabLayout_TabView_updateOrientation(ADMTabLayout_TabView *self);
 
-__attribute__((unused)) static void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBoolean_(ADMTabLayout_TabView *self, ADTextView *textView, ADImageView *iconView, jboolean addDefaultMargins);
+__attribute__((unused)) static void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBoolean_(ADMTabLayout_TabView *self, ADTextView *textView, ADImageView *iconView, bool addDefaultMargins);
 
 __attribute__((unused)) static void ADMTabLayout_TabView_tryUpdateBadgeDrawableBoundsWithADView_(ADMTabLayout_TabView *self, ADView *anchor);
 
-__attribute__((unused)) static jboolean ADMTabLayout_TabView_hasBadgeDrawable(ADMTabLayout_TabView *self);
+__attribute__((unused)) static bool ADMTabLayout_TabView_hasBadgeDrawable(ADMTabLayout_TabView *self);
 
 __attribute__((unused)) static ADFrameLayout *ADMTabLayout_TabView_getCustomParentForBadgeWithADView_(ADMTabLayout_TabView *self, ADView *anchor);
 
-__attribute__((unused)) static jfloat ADMTabLayout_TabView_approximateLineWidthWithADMTabLayout_Layout_withInt_withFloat_(ADMTabLayout_TabView *self, ADMTabLayout_Layout *layout, jint line, jfloat textSize);
+__attribute__((unused)) static float ADMTabLayout_TabView_approximateLineWidthWithADMTabLayout_Layout_withInt_withFloat_(ADMTabLayout_TabView *self, ADMTabLayout_Layout *layout, int32_t line, float textSize);
 
 @interface ADMTabLayout_TabView_1 : NSObject < ADView_OnClickListener > {
  @public
@@ -384,6 +394,7 @@ __attribute__((unused)) static ADMTabLayout_TabView_1 *new_ADMTabLayout_TabView_
 
 __attribute__((unused)) static ADMTabLayout_TabView_1 *create_ADMTabLayout_TabView_1_initWithADMTabLayout_TabView_(ADMTabLayout_TabView *outer$);
 
+
 @interface ADMTabLayout_TabView_2 : NSObject < ADView_OnLayoutChangeListener > {
  @public
   ADMTabLayout_TabView *this$0_;
@@ -394,14 +405,14 @@ __attribute__((unused)) static ADMTabLayout_TabView_1 *create_ADMTabLayout_TabVi
                                   withADView:(ADView *)capture$0;
 
 - (void)onLayoutChangeWithADView:(ADView *)v
-                         withInt:(jint)left
-                         withInt:(jint)top
-                         withInt:(jint)right
-                         withInt:(jint)bottom
-                         withInt:(jint)oldLeft
-                         withInt:(jint)oldTop
-                         withInt:(jint)oldRight
-                         withInt:(jint)oldBottom;
+                         withInt:(int32_t)left
+                         withInt:(int32_t)top
+                         withInt:(int32_t)right
+                         withInt:(int32_t)bottom
+                         withInt:(int32_t)oldLeft
+                         withInt:(int32_t)oldTop
+                         withInt:(int32_t)oldRight
+                         withInt:(int32_t)oldBottom;
 
 @end
 
@@ -413,13 +424,14 @@ __attribute__((unused)) static ADMTabLayout_TabView_2 *new_ADMTabLayout_TabView_
 
 __attribute__((unused)) static ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabView_withADView_(ADMTabLayout_TabView *outer$, ADView *capture$0);
 
+
 @interface ADMTabLayout_SlidingTabIndicator () {
  @public
   ADMTabLayout *this$0_;
-  jint layoutDirection_;
+  int32_t layoutDirection_;
 }
 
-- (void)jumpIndicatorToPositionWithInt:(jint)position;
+- (void)jumpIndicatorToPositionWithInt:(int32_t)position;
 
 - (void)jumpIndicatorToSelectedPosition;
 
@@ -427,23 +439,23 @@ __attribute__((unused)) static ADMTabLayout_TabView_2 *create_ADMTabLayout_TabVi
 
 - (void)tweenIndicatorPositionWithADView:(ADView *)startTitle
                               withADView:(ADView *)endTitle
-                               withFloat:(jfloat)fraction;
+                               withFloat:(float)fraction;
 
-- (void)updateOrRecreateIndicatorAnimationWithBoolean:(jboolean)recreateAnimation
-                                              withInt:(jint)position
-                                              withInt:(jint)duration;
+- (void)updateOrRecreateIndicatorAnimationWithBoolean:(bool)recreateAnimation
+                                              withInt:(int32_t)position
+                                              withInt:(int32_t)duration;
 
 @end
 
-__attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToPositionWithInt_(ADMTabLayout_SlidingTabIndicator *self, jint position);
+__attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToPositionWithInt_(ADMTabLayout_SlidingTabIndicator *self, int32_t position);
 
 __attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToSelectedPosition(ADMTabLayout_SlidingTabIndicator *self);
 
 __attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToIndicatorPosition(ADMTabLayout_SlidingTabIndicator *self);
 
-__attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADView_withFloat_(ADMTabLayout_SlidingTabIndicator *self, ADView *startTitle, ADView *endTitle, jfloat fraction);
+__attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADView_withFloat_(ADMTabLayout_SlidingTabIndicator *self, ADView *startTitle, ADView *endTitle, float fraction);
 
-__attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(ADMTabLayout_SlidingTabIndicator *self, jboolean recreateAnimation, jint position, jint duration);
+__attribute__((unused)) static void ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(ADMTabLayout_SlidingTabIndicator *self, bool recreateAnimation, int32_t position, int32_t duration);
 
 @interface ADMTabLayout_SlidingTabIndicator_1 : NSObject < ADValueAnimator_AnimatorUpdateListener > {
  @public
@@ -468,11 +480,12 @@ __attribute__((unused)) static ADMTabLayout_SlidingTabIndicator_1 *new_ADMTabLay
 
 __attribute__((unused)) static ADMTabLayout_SlidingTabIndicator_1 *create_ADMTabLayout_SlidingTabIndicator_1_initWithADMTabLayout_SlidingTabIndicator_withADView_withADView_(ADMTabLayout_SlidingTabIndicator *outer$, ADView *capture$0, ADView *capture$1);
 
+
 @interface ADMTabLayout_TabLayoutOnPageChangeListener () {
  @public
   JavaLangRefWeakReference *tabLayoutRef_;
-  jint previousScrollState_;
-  jint scrollState_;
+  int32_t previousScrollState_;
+  int32_t scrollState_;
 }
 
 @end
@@ -511,10 +524,11 @@ __attribute__((unused)) static ADMTabLayout_PagerAdapterObserver *create_ADMTabL
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_PagerAdapterObserver)
 
+
 @interface ADMTabLayout_AdapterChangeListener : NSObject < ADXViewPager_OnAdapterChangeListener > {
  @public
   ADMTabLayout *this$0_;
-  jboolean autoRefresh_;
+  bool autoRefresh_;
 }
 
 - (instancetype)initWithADMTabLayout:(ADMTabLayout *)outer$;
@@ -523,7 +537,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_PagerAdapterObserver)
                      withADXPagerAdapter:(ADXPagerAdapter *)oldAdapter
                      withADXPagerAdapter:(ADXPagerAdapter *)newAdapter;
 
-- (void)setAutoRefreshWithBoolean:(jboolean)autoRefresh;
+- (void)setAutoRefreshWithBoolean:(bool)autoRefresh;
 
 @end
 
@@ -537,40 +551,41 @@ __attribute__((unused)) static ADMTabLayout_AdapterChangeListener *create_ADMTab
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_AdapterChangeListener)
 
+
 J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 
 @implementation ADMTabLayout
 
-- (void)setSelectedTabIndicatorColorWithInt:(jint)color {
+- (void)setSelectedTabIndicatorColorWithInt:(int32_t)color {
   self->tabSelectedIndicatorColor_ = color;
   [((ADDrawable *) nil_chk(tabSelectedIndicator_)) setDrawableWithId:JavaLangInteger_valueOfWithInt_(tabSelectedIndicatorColor_)];
   [self updateTabViewsWithBoolean:false];
 }
 
-- (void)setSelectedTabIndicatorHeightWithInt:(jint)height {
+- (void)setSelectedTabIndicatorHeightWithInt:(int32_t)height {
   tabIndicatorHeight_ = height;
   [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) setSelectedIndicatorHeightWithInt:height];
 }
 
-- (void)setScrollPositionWithInt:(jint)position
-                       withFloat:(jfloat)positionOffset
-                     withBoolean:(jboolean)updateSelectedTabView {
+- (void)setScrollPositionWithInt:(int32_t)position
+                       withFloat:(float)positionOffset
+                     withBoolean:(bool)updateSelectedTabView {
   [self setScrollPositionWithInt:position withFloat:positionOffset withBoolean:updateSelectedTabView withBoolean:true];
 }
 
-- (void)setScrollPositionWithInt:(jint)position
-                       withFloat:(jfloat)positionOffset
-                     withBoolean:(jboolean)updateSelectedTabView
-                     withBoolean:(jboolean)updateIndicatorPosition {
+- (void)setScrollPositionWithInt:(int32_t)position
+                       withFloat:(float)positionOffset
+                     withBoolean:(bool)updateSelectedTabView
+                     withBoolean:(bool)updateIndicatorPosition {
   [self setScrollPositionWithInt:position withFloat:positionOffset withBoolean:updateSelectedTabView withBoolean:updateIndicatorPosition withBoolean:true];
 }
 
-- (void)setScrollPositionWithInt:(jint)position
-                       withFloat:(jfloat)positionOffset
-                     withBoolean:(jboolean)updateSelectedTabView
-                     withBoolean:(jboolean)updateIndicatorPosition
-                     withBoolean:(jboolean)alwaysScroll {
-  jint roundedPosition = JavaLangMath_roundWithFloat_(position + positionOffset);
+- (void)setScrollPositionWithInt:(int32_t)position
+                       withFloat:(float)positionOffset
+                     withBoolean:(bool)updateSelectedTabView
+                     withBoolean:(bool)updateIndicatorPosition
+                     withBoolean:(bool)alwaysScroll {
+  int32_t roundedPosition = JavaLangMath_roundWithFloat_(position + positionOffset);
   if (roundedPosition < 0 || roundedPosition >= [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount]) {
     return;
   }
@@ -580,9 +595,9 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   if (scrollAnimator_ != nil && [scrollAnimator_ isRunning]) {
     [scrollAnimator_ cancel];
   }
-  jint scrollXForPosition = ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(self, position, positionOffset);
-  jint scrollX = [self getScrollX];
-  jboolean toMove = (position < [self getSelectedTabPosition] && scrollXForPosition >= scrollX) || (position > [self getSelectedTabPosition] && scrollXForPosition <= scrollX) || (position == [self getSelectedTabPosition]);
+  int32_t scrollXForPosition = ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(self, position, positionOffset);
+  int32_t scrollX = [self getScrollX];
+  bool toMove = (position < [self getSelectedTabPosition] && scrollXForPosition >= scrollX) || (position > [self getSelectedTabPosition] && scrollXForPosition <= scrollX) || (position == [self getSelectedTabPosition]);
   if (ADXViewCompat_getLayoutDirectionWithADView_(self) == ADXViewCompat_LAYOUT_DIRECTION_RTL) {
     toMove = ((position < [self getSelectedTabPosition] && scrollXForPosition <= scrollX) || (position > [self getSelectedTabPosition] && scrollXForPosition >= scrollX) || (position == [self getSelectedTabPosition]));
   }
@@ -599,19 +614,19 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                           withInt:(jint)position {
+                           withInt:(int32_t)position {
   [self addTabWithADMTabLayout_Tab:tab withInt:position withBoolean:[((JavaUtilArrayList *) nil_chk(tabs_)) isEmpty]];
 }
 
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                       withBoolean:(jboolean)setSelected {
+                       withBoolean:(bool)setSelected {
   [self addTabWithADMTabLayout_Tab:tab withInt:[((JavaUtilArrayList *) nil_chk(tabs_)) size] withBoolean:setSelected];
 }
 
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                           withInt:(jint)position
-                       withBoolean:(jboolean)setSelected {
-  if (((ADMTabLayout_Tab *) nil_chk(tab))->parent_ != self) {
+                           withInt:(int32_t)position
+                       withBoolean:(bool)setSelected {
+  if (!JreObjectEqualsEquals(((ADMTabLayout_Tab *) nil_chk(tab))->parent_, self)) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Tab belongs to a different TabLayout.");
   }
   ADMTabLayout_configureTabWithADMTabLayout_Tab_withInt_(self, tab, position);
@@ -671,40 +686,40 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   return tab;
 }
 
-- (jboolean)releaseFromTabPoolWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab {
+- (bool)releaseFromTabPoolWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab {
   return [((id<ADPools_Pool>) nil_chk(ADMTabLayout_tabPool)) release__WithId:tab];
 }
 
-- (jint)getTabCount {
+- (int32_t)getTabCount {
   return [((JavaUtilArrayList *) nil_chk(tabs_)) size];
 }
 
-- (ADMTabLayout_Tab *)getTabAtWithInt:(jint)index {
+- (ADMTabLayout_Tab *)getTabAtWithInt:(int32_t)index {
   return (index < 0 || index >= [self getTabCount]) ? nil : [((JavaUtilArrayList *) nil_chk(tabs_)) getWithInt:index];
 }
 
-- (jint)getSelectedTabPosition {
+- (int32_t)getSelectedTabPosition {
   return selectedTab_ != nil ? [selectedTab_ getPosition] : -1;
 }
 
 - (void)removeTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab {
-  if (((ADMTabLayout_Tab *) nil_chk(tab))->parent_ != self) {
+  if (!JreObjectEqualsEquals(((ADMTabLayout_Tab *) nil_chk(tab))->parent_, self)) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Tab does not belong to this TabLayout.");
   }
   [self removeTabAtWithInt:[tab getPosition]];
 }
 
-- (void)removeTabAtWithInt:(jint)position {
-  jint selectedTabPosition = selectedTab_ != nil ? [selectedTab_ getPosition] : 0;
+- (void)removeTabAtWithInt:(int32_t)position {
+  int32_t selectedTabPosition = selectedTab_ != nil ? [selectedTab_ getPosition] : 0;
   ADMTabLayout_removeTabViewAtWithInt_(self, position);
   ADMTabLayout_Tab *removedTab = [((JavaUtilArrayList *) nil_chk(tabs_)) removeWithInt:position];
   if (removedTab != nil) {
     [removedTab reset];
     [self releaseFromTabPoolWithADMTabLayout_Tab:removedTab];
   }
-  jint newTabCount = [tabs_ size];
-  jint newIndicatorPosition = -1;
-  for (jint i = position; i < newTabCount; i++) {
+  int32_t newTabCount = [tabs_ size];
+  int32_t newIndicatorPosition = -1;
+  for (int32_t i = position; i < newTabCount; i++) {
     if ([((ADMTabLayout_Tab *) nil_chk([tabs_ getWithInt:i])) getPosition] == indicatorPosition_) {
       newIndicatorPosition = i;
     }
@@ -717,7 +732,7 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)removeAllTabs {
-  for (jint i = [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount] - 1; i >= 0; i--) {
+  for (int32_t i = [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount] - 1; i >= 0; i--) {
     ADMTabLayout_removeTabViewAtWithInt_(self, i);
   }
   for (id<JavaUtilIterator> i = [((JavaUtilArrayList *) nil_chk(tabs_)) iterator]; [((id<JavaUtilIterator>) nil_chk(i)) hasNext]; ) {
@@ -729,27 +744,27 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   JreStrongAssign(&selectedTab_, nil);
 }
 
-- (void)setTabModeWithInt:(jint)mode {
+- (void)setTabModeWithInt:(int32_t)mode {
   if (mode != self->mode_) {
     self->mode_ = mode;
     [self applyModeAndGravity];
   }
 }
 
-- (void)setTabGravityWithInt:(jint)gravity {
+- (void)setTabGravityWithInt:(int32_t)gravity {
   if (tabGravity_ != gravity) {
     tabGravity_ = gravity;
     [self applyModeAndGravity];
   }
 }
 
-- (void)setSelectedTabIndicatorGravityWithInt:(jint)indicatorGravity {
+- (void)setSelectedTabIndicatorGravityWithInt:(int32_t)indicatorGravity {
   if (tabIndicatorGravity_ != indicatorGravity) {
     tabIndicatorGravity_ = indicatorGravity;
   }
 }
 
-- (void)setTabIndicatorAnimationModeWithInt:(jint)tabIndicatorAnimationMode {
+- (void)setTabIndicatorAnimationModeWithInt:(int32_t)tabIndicatorAnimationMode {
   self->tabIndicatorAnimationMode_ = tabIndicatorAnimationMode;
   switch (tabIndicatorAnimationMode) {
     case ADMTabLayout_INDICATOR_ANIMATION_MODE_LINEAR:
@@ -766,23 +781,23 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   }
 }
 
-- (jint)getTabIndicatorAnimationMode {
+- (int32_t)getTabIndicatorAnimationMode {
   return tabIndicatorAnimationMode_;
 }
 
-- (void)setTabIndicatorFullWidthWithBoolean:(jboolean)tabIndicatorFullWidth {
+- (void)setTabIndicatorFullWidthWithBoolean:(bool)tabIndicatorFullWidth {
   self->tabIndicatorFullWidth_ = tabIndicatorFullWidth;
   ADMTabLayout_SlidingTabIndicator_jumpIndicatorToSelectedPosition(nil_chk(slidingTabIndicator_));
 }
 
-- (jboolean)isTabIndicatorFullWidth {
+- (bool)isTabIndicatorFullWidth {
   return tabIndicatorFullWidth_;
 }
 
-- (void)setInlineLabelWithBoolean:(jboolean)inline_ {
+- (void)setInlineLabelWithBoolean:(bool)inline_ {
   if (inlineLabel_ != inline_) {
     inlineLabel_ = inline_;
-    for (jint i = 0; i < [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount]; i++) {
+    for (int32_t i = 0; i < [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount]; i++) {
       ADView *child = JreRetainedLocalValue([((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildAtWithInt:i]);
       if ([child isKindOfClass:[ADMTabLayout_TabView class]]) {
         ADMTabLayout_TabView_updateOrientation(nil_chk(((ADMTabLayout_TabView *) child)));
@@ -793,7 +808,7 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)setTabTextColorsWithADColorStateList:(ADColorStateList *)textColor {
-  if (tabTextColors_ != textColor) {
+  if (!JreObjectEqualsEquals(tabTextColors_, textColor)) {
     JreStrongAssign(&tabTextColors_, textColor);
     [self updateAllTabs];
   }
@@ -803,13 +818,13 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   return tabTextColors_;
 }
 
-- (void)setTabTextColorsWithInt:(jint)normalColor
-                        withInt:(jint)selectedColor {
+- (void)setTabTextColorsWithInt:(int32_t)normalColor
+                        withInt:(int32_t)selectedColor {
   [self setTabTextColorsWithADColorStateList:ADMTabLayout_createColorStateListWithInt_withInt_(normalColor, selectedColor)];
 }
 
 - (void)setTabIconTintWithADColorStateList:(ADColorStateList *)iconTint {
-  if (tabIconTint_ != iconTint) {
+  if (!JreObjectEqualsEquals(tabIconTint_, iconTint)) {
     JreStrongAssign(&tabIconTint_, iconTint);
     [self updateAllTabs];
   }
@@ -824,22 +839,22 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)setupWithViewPagerWithADXViewPager:(ADXViewPager *)viewPager
-                               withBoolean:(jboolean)autoRefresh {
+                               withBoolean:(bool)autoRefresh {
   ADMTabLayout_setupWithViewPagerWithADXViewPager_withBoolean_withBoolean_(self, viewPager, autoRefresh, false);
 }
 
 - (void)setupWithViewPagerWithADXViewPager:(ADXViewPager *)viewPager
-                               withBoolean:(jboolean)autoRefresh
-                               withBoolean:(jboolean)implicitSetup {
+                               withBoolean:(bool)autoRefresh
+                               withBoolean:(bool)implicitSetup {
   ADMTabLayout_setupWithViewPagerWithADXViewPager_withBoolean_withBoolean_(self, viewPager, autoRefresh, implicitSetup);
 }
 
-- (void)updateViewPagerScrollStateWithInt:(jint)scrollState {
+- (void)updateViewPagerScrollStateWithInt:(int32_t)scrollState {
   self->viewPagerScrollState_ = scrollState;
 }
 
 - (void)setPagerAdapterWithADXPagerAdapter:(ADXPagerAdapter *)adapter
-                               withBoolean:(jboolean)addObserver {
+                               withBoolean:(bool)addObserver {
   if (pagerAdapter_ != nil && pagerAdapterObserver_ != nil) {
     [pagerAdapter_ unregisterDataSetObserverWithADDataSetObserver:pagerAdapterObserver_];
   }
@@ -856,12 +871,12 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 - (void)populateFromPagerAdapter {
   [self removeAllTabs];
   if (pagerAdapter_ != nil) {
-    jint adapterCount = [pagerAdapter_ getCount];
-    for (jint i = 0; i < adapterCount; i++) {
+    int32_t adapterCount = [pagerAdapter_ getCount];
+    for (int32_t i = 0; i < adapterCount; i++) {
       [self addTabWithADMTabLayout_Tab:[((ADMTabLayout_Tab *) nil_chk([self newTab])) setTextWithJavaLangCharSequence:[((ADXPagerAdapter *) nil_chk(pagerAdapter_)) getPageTitleWithInt:i]] withBoolean:false];
     }
     if (viewPager_ != nil && adapterCount > 0) {
-      jint curItem = [viewPager_ getCurrentItem];
+      int32_t curItem = [viewPager_ getCurrentItem];
       if (curItem != [self getSelectedTabPosition] && curItem < [self getTabCount]) {
         [self selectTabWithADMTabLayout_Tab:[self getTabAtWithInt:curItem]];
       }
@@ -870,7 +885,7 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)updateAllTabs {
-  for (jint i = 0, z = [((JavaUtilArrayList *) nil_chk(tabs_)) size]; i < z; i++) {
+  for (int32_t i = 0, z = [((JavaUtilArrayList *) nil_chk(tabs_)) size]; i < z; i++) {
     [((ADMTabLayout_Tab *) nil_chk([tabs_ getWithInt:i])) updateView];
   }
 }
@@ -880,7 +895,7 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)configureTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                                 withInt:(jint)position {
+                                 withInt:(int32_t)position {
   ADMTabLayout_configureTabWithADMTabLayout_Tab_withInt_(self, tab, position);
 }
 
@@ -899,9 +914,9 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   ADMTabLayout_updateTabViewLayoutParamsWithADLinearLayout_LayoutParams_(self, lp);
 }
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec {
-  jint idealHeight = JavaLangMath_roundWithFloat_(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", ADMTabLayout_getDefaultHeight(self), @"dp")));
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec {
+  int32_t idealHeight = JavaLangMath_roundWithFloat_(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", ADMTabLayout_getDefaultHeight(self), @"dp")));
   switch (ADView_MeasureSpec_getModeWithInt_(heightMeasureSpec)) {
     case ADView_MeasureSpec_AT_MOST:
     if ([self getChildCount] == 1 && ADView_MeasureSpec_getSizeWithInt_(heightMeasureSpec) >= idealHeight) {
@@ -914,14 +929,14 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
     default:
     break;
   }
-  jint specWidth = ADView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
+  int32_t specWidth = ADView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   if (ADView_MeasureSpec_getModeWithInt_(widthMeasureSpec) != ADView_MeasureSpec_UNSPECIFIED) {
     tabMaxWidth_ = requestedTabMaxWidth_ > 0 ? requestedTabMaxWidth_ : JreFpToInt((specWidth - ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", ADMTabLayout_TAB_MIN_WIDTH_MARGIN, @"dp"))));
   }
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   if ([self getChildCount] - ADMTabLayout_getChildTabItemCount(self) == 1) {
     ADView *child = [self getChildAtWithInt:0];
-    jboolean remeasure = false;
+    bool remeasure = false;
     switch (mode_) {
       case ADMTabLayout_MODE_AUTO:
       case ADMTabLayout_MODE_SCROLLABLE:
@@ -932,18 +947,18 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
       break;
     }
     if (remeasure) {
-      jint childHeightMeasureSpec = ADViewGroup_getChildMeasureSpecWithInt_withInt_withInt_(heightMeasureSpec, [self getPaddingTop] + [self getPaddingBottom], ((ADViewGroup_LayoutParams *) nil_chk([((ADView *) nil_chk(child)) getLayoutParams]))->height_);
-      jint childWidthMeasureSpec = ADView_MeasureSpec_makeMeasureSpecWithInt_withInt_([self getMeasuredWidth], ADView_MeasureSpec_EXACTLY);
+      int32_t childHeightMeasureSpec = ADViewGroup_getChildMeasureSpecWithInt_withInt_withInt_(heightMeasureSpec, [self getPaddingTop] + [self getPaddingBottom], ((ADViewGroup_LayoutParams *) nil_chk([((ADView *) nil_chk(child)) getLayoutParams]))->height_);
+      int32_t childWidthMeasureSpec = ADView_MeasureSpec_makeMeasureSpecWithInt_withInt_([self getMeasuredWidth], ADView_MeasureSpec_EXACTLY);
       [child measureWithInt:childWidthMeasureSpec withInt:childHeightMeasureSpec];
     }
   }
 }
 
-- (void)removeTabViewAtWithInt:(jint)position {
+- (void)removeTabViewAtWithInt:(int32_t)position {
   ADMTabLayout_removeTabViewAtWithInt_(self, position);
 }
 
-- (void)animateToTabWithInt:(jint)newPosition {
+- (void)animateToTabWithInt:(int32_t)newPosition {
   if (newPosition == ADMTabLayout_Tab_INVALID_POSITION) {
     return;
   }
@@ -951,11 +966,11 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
     [self setScrollPositionWithInt:newPosition withFloat:0.0f withBoolean:true];
     return;
   }
-  jint startScrollX = [self getScrollX];
-  jint targetScrollX = ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(self, newPosition, 0);
+  int32_t startScrollX = [self getScrollX];
+  int32_t targetScrollX = ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(self, newPosition, 0);
   if (startScrollX != targetScrollX) {
     ADMTabLayout_ensureScrollAnimator(self);
-    [((ADValueAnimator *) nil_chk(scrollAnimator_)) setIntValuesWithIntArray:[IOSIntArray arrayWithInts:(jint[]){ startScrollX, targetScrollX } count:2]];
+    [((ADValueAnimator *) nil_chk(scrollAnimator_)) setIntValuesWithIntArray:[IOSIntArray arrayWithInts:(int32_t[]){ startScrollX, targetScrollX } count:2]];
     [((ADValueAnimator *) nil_chk(scrollAnimator_)) start];
   }
   [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) animateIndicatorToPositionWithInt:newPosition withInt:tabIndicatorAnimationDuration_];
@@ -965,10 +980,10 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   ADMTabLayout_ensureScrollAnimator(self);
 }
 
-- (void)setSelectedTabViewWithInt:(jint)position {
-  jint tabCount = [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount];
+- (void)setSelectedTabViewWithInt:(int32_t)position {
+  int32_t tabCount = [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount];
   if (position < tabCount) {
-    for (jint i = 0; i < tabCount; i++) {
+    for (int32_t i = 0; i < tabCount; i++) {
       ADView *child = [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildAtWithInt:i];
       if ((i == position && ![((ADView *) nil_chk(child)) isSelected]) || (i != position && [((ADView *) nil_chk(child)) isSelected])) {
         [((ADView *) nil_chk(child)) setSelectedWithBoolean:i == position];
@@ -989,16 +1004,16 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
 }
 
 - (void)selectTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                          withBoolean:(jboolean)updateIndicator {
+                          withBoolean:(bool)updateIndicator {
   ADMTabLayout_Tab *currentTab = selectedTab_;
-  if (currentTab == tab) {
+  if (JreObjectEqualsEquals(currentTab, tab)) {
     if (currentTab != nil) {
       ADMTabLayout_dispatchTabReselectedWithADMTabLayout_Tab_(self, tab);
       [self animateToTabWithInt:[((ADMTabLayout_Tab *) nil_chk(tab)) getPosition]];
     }
   }
   else {
-    jint newPosition = tab != nil ? [tab getPosition] : ADMTabLayout_Tab_INVALID_POSITION;
+    int32_t newPosition = tab != nil ? [tab getPosition] : ADMTabLayout_Tab_INVALID_POSITION;
     if (updateIndicator) {
       if ((currentTab == nil || [currentTab getPosition] == ADMTabLayout_Tab_INVALID_POSITION) && newPosition != ADMTabLayout_Tab_INVALID_POSITION) {
         [self setScrollPositionWithInt:newPosition withFloat:0.0f withBoolean:true];
@@ -1032,13 +1047,13 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   ADMTabLayout_dispatchTabReselectedWithADMTabLayout_Tab_(self, tab);
 }
 
-- (jint)calculateScrollXForTabWithInt:(jint)position
-                            withFloat:(jfloat)positionOffset {
+- (int32_t)calculateScrollXForTabWithInt:(int32_t)position
+                               withFloat:(float)positionOffset {
   return ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(self, position, positionOffset);
 }
 
 - (void)applyModeAndGravity {
-  jint paddingStart = 0;
+  int32_t paddingStart = 0;
   if (mode_ == ADMTabLayout_MODE_SCROLLABLE || mode_ == ADMTabLayout_MODE_AUTO) {
     paddingStart = JavaLangMath_maxWithInt_withInt_(0, contentInsetStart_ - tabPaddingStart_);
   }
@@ -1058,12 +1073,12 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   [self updateTabViewsWithBoolean:true];
 }
 
-- (void)applyGravityForModeScrollableWithInt:(jint)tabGravity {
+- (void)applyGravityForModeScrollableWithInt:(int32_t)tabGravity {
   ADMTabLayout_applyGravityForModeScrollableWithInt_(self, tabGravity);
 }
 
-- (void)updateTabViewsWithBoolean:(jboolean)requestLayout {
-  for (jint i = 0; i < [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount]; i++) {
+- (void)updateTabViewsWithBoolean:(bool)requestLayout {
+  for (int32_t i = 0; i < [((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildCount]; i++) {
     ADView *child = JreRetainedLocalValue([((ADMTabLayout_SlidingTabIndicator *) nil_chk(slidingTabIndicator_)) getChildAtWithInt:i]);
     [((ADView *) nil_chk(child)) setMinimumWidthWithInt:ADMTabLayout_getTabMinWidth(self)];
     ADMTabLayout_updateTabViewLayoutParamsWithADLinearLayout_LayoutParams_(self, (ADLinearLayout_LayoutParams *) cast_chk([child getLayoutParams], [ADLinearLayout_LayoutParams class]));
@@ -1073,25 +1088,25 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   }
 }
 
-+ (ADColorStateList *)createColorStateListWithInt:(jint)defaultColor
-                                          withInt:(jint)selectedColor {
++ (ADColorStateList *)createColorStateListWithInt:(int32_t)defaultColor
+                                          withInt:(int32_t)selectedColor {
   return ADMTabLayout_createColorStateListWithInt_withInt_(defaultColor, selectedColor);
 }
 
-- (jint)getDefaultHeight {
+- (int32_t)getDefaultHeight {
   return ADMTabLayout_getDefaultHeight(self);
 }
 
-- (jint)getTabMinWidth {
+- (int32_t)getTabMinWidth {
   return ADMTabLayout_getTabMinWidth(self);
 }
 
-- (jint)getTabMaxWidth {
+- (int32_t)getTabMaxWidth {
   return tabMaxWidth_;
 }
 
-- (jint)getScrollX {
-  jint scrollX = [((NSNumber *) nil_chk(((NSNumber *) cast_chk([((id<ASIWidget>) nil_chk([((id<ASILifeCycleDecorator>) cast_check(self, ASILifeCycleDecorator_class_())) getWidget])) getAttributeWithNSString:@"scrollX" withBoolean:true], [NSNumber class])))) intValue];
+- (int32_t)getScrollX {
+  int32_t scrollX = [((NSNumber *) nil_chk(((NSNumber *) cast_chk([((id<ASIWidget>) nil_chk([((id<ASILifeCycleDecorator>) cast_check(self, ASILifeCycleDecorator_class_())) getWidget])) getAttributeWithNSString:@"scrollX" withBoolean:true], [NSNumber class])))) intValue];
   return scrollX;
 }
 
@@ -1103,51 +1118,51 @@ J2OBJC_INITIALIZED_DEFN(ADMTabLayout)
   JreStrongAssign(&self->tabTextAppearance_, tabTextAppearance);
 }
 
-- (void)setRequestedTabMinWidthWithInt:(jint)requestedTabMinWidth {
+- (void)setRequestedTabMinWidthWithInt:(int32_t)requestedTabMinWidth {
   self->requestedTabMinWidth_ = requestedTabMinWidth;
 }
 
-- (void)setRequestedTabMaxWidthWithInt:(jint)requestedTabMaxWidth {
+- (void)setRequestedTabMaxWidthWithInt:(int32_t)requestedTabMaxWidth {
   self->requestedTabMaxWidth_ = requestedTabMaxWidth;
 }
 
-- (void)setContentInsetStartWithInt:(jint)contentInsetStart {
+- (void)setContentInsetStartWithInt:(int32_t)contentInsetStart {
   self->contentInsetStart_ = contentInsetStart;
 }
 
-- (jint)getTabPaddingStart {
+- (int32_t)getTabPaddingStart {
   return tabPaddingStart_;
 }
 
-- (void)setTabPaddingStartWithInt:(jint)tabPaddingStart {
+- (void)setTabPaddingStartWithInt:(int32_t)tabPaddingStart {
   self->tabPaddingStart_ = tabPaddingStart;
 }
 
-- (jint)getTabPaddingTop {
+- (int32_t)getTabPaddingTop {
   return tabPaddingTop_;
 }
 
-- (void)setTabPaddingTopWithInt:(jint)tabPaddingTop {
+- (void)setTabPaddingTopWithInt:(int32_t)tabPaddingTop {
   self->tabPaddingTop_ = tabPaddingTop;
 }
 
-- (jint)getTabPaddingEnd {
+- (int32_t)getTabPaddingEnd {
   return tabPaddingEnd_;
 }
 
-- (void)setTabPaddingEndWithInt:(jint)tabPaddingEnd {
+- (void)setTabPaddingEndWithInt:(int32_t)tabPaddingEnd {
   self->tabPaddingEnd_ = tabPaddingEnd;
 }
 
-- (jint)getTabPaddingBottom {
+- (int32_t)getTabPaddingBottom {
   return tabPaddingBottom_;
 }
 
-- (void)setTabPaddingBottomWithInt:(jint)tabPaddingBottom {
+- (void)setTabPaddingBottomWithInt:(int32_t)tabPaddingBottom {
   self->tabPaddingBottom_ = tabPaddingBottom;
 }
 
-- (jint)getChildTabItemCount {
+- (int32_t)getChildTabItemCount {
   return ADMTabLayout_getChildTabItemCount(self);
 }
 
@@ -1168,7 +1183,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)requestLayout {
   [super requestLayout];
-  for (jint i = 0; i < [self getTabCount]; i++) {
+  for (int32_t i = 0; i < [self getTabCount]; i++) {
     ADMTabLayout_Tab *tab = JreRetainedLocalValue([self getTabAtWithInt:i]);
     if (tab != nil && tab->view_ != nil) {
       if (tab->view_->iconView_ != nil) {
@@ -1474,7 +1489,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 @end
 
-void ADMTabLayout_setupWithViewPagerWithADXViewPager_withBoolean_withBoolean_(ADMTabLayout *self, ADXViewPager *viewPager, jboolean autoRefresh, jboolean implicitSetup) {
+void ADMTabLayout_setupWithViewPagerWithADXViewPager_withBoolean_withBoolean_(ADMTabLayout *self, ADXViewPager *viewPager, bool autoRefresh, bool implicitSetup) {
   if (self->viewPager_ != nil) {
     if (self->pageChangeListener_ != nil) {
       [self->viewPager_ removeOnPageChangeListenerWithADXViewPager_OnPageChangeListener:self->pageChangeListener_];
@@ -1531,12 +1546,12 @@ ADMTabLayout_TabView *ADMTabLayout_createTabViewWithADMTabLayout_Tab_(ADMTabLayo
   return tabView;
 }
 
-void ADMTabLayout_configureTabWithADMTabLayout_Tab_withInt_(ADMTabLayout *self, ADMTabLayout_Tab *tab, jint position) {
+void ADMTabLayout_configureTabWithADMTabLayout_Tab_withInt_(ADMTabLayout *self, ADMTabLayout_Tab *tab, int32_t position) {
   [((ADMTabLayout_Tab *) nil_chk(tab)) setPositionWithInt:position];
   [((JavaUtilArrayList *) nil_chk(self->tabs_)) addWithInt:position withId:tab];
-  jint count = [self->tabs_ size];
-  jint newIndicatorPosition = -1;
-  for (jint i = position + 1; i < count; i++) {
+  int32_t count = [self->tabs_ size];
+  int32_t newIndicatorPosition = -1;
+  for (int32_t i = position + 1; i < count; i++) {
     if ([((ADMTabLayout_Tab *) nil_chk([self->tabs_ getWithInt:i])) getPosition] == self->indicatorPosition_) {
       newIndicatorPosition = i;
     }
@@ -1562,7 +1577,7 @@ void ADMTabLayout_updateTabViewLayoutParamsWithADLinearLayout_LayoutParams_(ADMT
   }
 }
 
-void ADMTabLayout_removeTabViewAtWithInt_(ADMTabLayout *self, jint position) {
+void ADMTabLayout_removeTabViewAtWithInt_(ADMTabLayout *self, int32_t position) {
   ADMTabLayout_TabView *view = (ADMTabLayout_TabView *) cast_chk([((ADMTabLayout_SlidingTabIndicator *) nil_chk(self->slidingTabIndicator_)) getChildAtWithInt:position], [ADMTabLayout_TabView class]);
   [((ADMTabLayout_SlidingTabIndicator *) nil_chk(self->slidingTabIndicator_)) removeViewAtWithInt:position];
   if (view != nil) {
@@ -1582,40 +1597,40 @@ void ADMTabLayout_ensureScrollAnimator(ADMTabLayout *self) {
 }
 
 void ADMTabLayout_dispatchTabSelectedWithADMTabLayout_Tab_(ADMTabLayout *self, ADMTabLayout_Tab *tab) {
-  for (jint i = [((JavaUtilArrayList *) nil_chk(self->selectedListeners_)) size] - 1; i >= 0; i--) {
+  for (int32_t i = [((JavaUtilArrayList *) nil_chk(self->selectedListeners_)) size] - 1; i >= 0; i--) {
     [((id<ADMTabLayout_BaseOnTabSelectedListener>) nil_chk([self->selectedListeners_ getWithInt:i])) onTabSelectedWithADMTabLayout_Tab:tab];
   }
 }
 
 void ADMTabLayout_dispatchTabUnselectedWithADMTabLayout_Tab_(ADMTabLayout *self, ADMTabLayout_Tab *tab) {
-  for (jint i = [((JavaUtilArrayList *) nil_chk(self->selectedListeners_)) size] - 1; i >= 0; i--) {
+  for (int32_t i = [((JavaUtilArrayList *) nil_chk(self->selectedListeners_)) size] - 1; i >= 0; i--) {
     [((id<ADMTabLayout_BaseOnTabSelectedListener>) nil_chk([self->selectedListeners_ getWithInt:i])) onTabUnselectedWithADMTabLayout_Tab:tab];
   }
 }
 
 void ADMTabLayout_dispatchTabReselectedWithADMTabLayout_Tab_(ADMTabLayout *self, ADMTabLayout_Tab *tab) {
-  for (jint i = [((JavaUtilArrayList *) nil_chk(self->selectedListeners_)) size] - 1; i >= 0; i--) {
+  for (int32_t i = [((JavaUtilArrayList *) nil_chk(self->selectedListeners_)) size] - 1; i >= 0; i--) {
     [((id<ADMTabLayout_BaseOnTabSelectedListener>) nil_chk([self->selectedListeners_ getWithInt:i])) onTabReselectedWithADMTabLayout_Tab:tab];
   }
 }
 
-jint ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(ADMTabLayout *self, jint position, jfloat positionOffset) {
+int32_t ADMTabLayout_calculateScrollXForTabWithInt_withFloat_(ADMTabLayout *self, int32_t position, float positionOffset) {
   if (self->mode_ == ADMTabLayout_MODE_SCROLLABLE || self->mode_ == ADMTabLayout_MODE_AUTO) {
     ADView *selectedChild = [((ADMTabLayout_SlidingTabIndicator *) nil_chk(self->slidingTabIndicator_)) getChildAtWithInt:position];
     if (selectedChild == nil) {
       return 0;
     }
     ADView *nextChild = position + 1 < [((ADMTabLayout_SlidingTabIndicator *) nil_chk(self->slidingTabIndicator_)) getChildCount] ? [((ADMTabLayout_SlidingTabIndicator *) nil_chk(self->slidingTabIndicator_)) getChildAtWithInt:position + 1] : nil;
-    jint selectedWidth = [selectedChild getWidth];
-    jint nextWidth = nextChild != nil ? [nextChild getWidth] : 0;
-    jint scrollBase = [selectedChild getLeft] + (JreIntDiv(selectedWidth, 2)) - (JreIntDiv([self getWidth], 2));
-    jint scrollOffset = JreFpToInt(((selectedWidth + nextWidth) * 0.5f * positionOffset));
+    int32_t selectedWidth = [selectedChild getWidth];
+    int32_t nextWidth = nextChild != nil ? [nextChild getWidth] : 0;
+    int32_t scrollBase = [selectedChild getLeft] + (JreIntDiv(selectedWidth, 2)) - (JreIntDiv([self getWidth], 2));
+    int32_t scrollOffset = JreFpToInt(((selectedWidth + nextWidth) * 0.5f * positionOffset));
     return (ADXViewCompat_getLayoutDirectionWithADView_(self) == ADXViewCompat_LAYOUT_DIRECTION_LTR) ? scrollBase + scrollOffset : scrollBase - scrollOffset;
   }
   return 0;
 }
 
-void ADMTabLayout_applyGravityForModeScrollableWithInt_(ADMTabLayout *self, jint tabGravity) {
+void ADMTabLayout_applyGravityForModeScrollableWithInt_(ADMTabLayout *self, int32_t tabGravity) {
   switch (tabGravity) {
     case ADMTabLayout_GRAVITY_CENTER:
     [((ADMTabLayout_SlidingTabIndicator *) nil_chk(self->slidingTabIndicator_)) setGravityWithInt:ADGravity_CENTER_HORIZONTAL];
@@ -1630,11 +1645,11 @@ void ADMTabLayout_applyGravityForModeScrollableWithInt_(ADMTabLayout *self, jint
   }
 }
 
-ADColorStateList *ADMTabLayout_createColorStateListWithInt_withInt_(jint defaultColor, jint selectedColor) {
+ADColorStateList *ADMTabLayout_createColorStateListWithInt_withInt_(int32_t defaultColor, int32_t selectedColor) {
   ADMTabLayout_initialize();
   IOSObjectArray *states = [IOSObjectArray arrayWithLength:2 type:IOSClass_intArray(1)];
   IOSIntArray *colors = [IOSIntArray arrayWithLength:2];
-  jint i = 0;
+  int32_t i = 0;
   IOSObjectArray_Set(states, i, JreLoadStatic(ADView, SELECTED_STATE_SET));
   *IOSIntArray_GetRef(colors, i) = selectedColor;
   i++;
@@ -1644,9 +1659,9 @@ ADColorStateList *ADMTabLayout_createColorStateListWithInt_withInt_(jint default
   return create_ADColorStateList_initWithIntArray2_withIntArray_(states, colors);
 }
 
-jint ADMTabLayout_getDefaultHeight(ADMTabLayout *self) {
-  jboolean hasIconAndText = false;
-  for (jint i = 0, count = [((JavaUtilArrayList *) nil_chk(self->tabs_)) size]; i < count; i++) {
+int32_t ADMTabLayout_getDefaultHeight(ADMTabLayout *self) {
+  bool hasIconAndText = false;
+  for (int32_t i = 0, count = [((JavaUtilArrayList *) nil_chk(self->tabs_)) size]; i < count; i++) {
     ADMTabLayout_Tab *tab = JreRetainedLocalValue([self->tabs_ getWithInt:i]);
     if (tab != nil && [tab getIcon] != nil && !ADTextUtils_isEmptyWithJavaLangCharSequence_([tab getText])) {
       hasIconAndText = true;
@@ -1656,16 +1671,16 @@ jint ADMTabLayout_getDefaultHeight(ADMTabLayout *self) {
   return (hasIconAndText && !self->inlineLabel_) ? ADMTabLayout_DEFAULT_HEIGHT_WITH_TEXT_ICON : ADMTabLayout_DEFAULT_HEIGHT;
 }
 
-jint ADMTabLayout_getTabMinWidth(ADMTabLayout *self) {
+int32_t ADMTabLayout_getTabMinWidth(ADMTabLayout *self) {
   if (self->requestedTabMinWidth_ != ADMTabLayout_INVALID_WIDTH) {
     return self->requestedTabMinWidth_;
   }
   return (self->mode_ == ADMTabLayout_MODE_SCROLLABLE || self->mode_ == ADMTabLayout_MODE_AUTO) ? self->scrollableTabMinWidth_ : 0;
 }
 
-jint ADMTabLayout_getChildTabItemCount(ADMTabLayout *self) {
-  jint count = 0;
-  for (jint i = 0; i < [self getChildCount]; i++) {
+int32_t ADMTabLayout_getChildTabItemCount(ADMTabLayout *self) {
+  int32_t count = 0;
+  for (int32_t i = 0; i < [self getChildCount]; i++) {
     ADView *view = JreRetainedLocalValue([self getChildAtWithInt:i]);
     if ([ASIViewStub_class_() isInstance:view]) {
       count++;
@@ -1709,6 +1724,8 @@ ADMTabLayout *create_ADMTabLayout_init() {
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout)
+
+J2OBJC_NAME_MAPPING(ADMTabLayout, "com.google.android.material.tabs", "ADM")
 
 @implementation ADMTabLayout_BaseOnTabSelectedListener
 
@@ -1777,7 +1794,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ADMTabLayout_OnTabSelectedListener)
     { "this$0_", "LADMTabLayout;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LADMTabLayout;", "onAnimationUpdate", "LADValueAnimator;", "ensureScrollAnimator" };
-  static const J2ObjcClassInfo _ADMTabLayout_1 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8010, 2, 1, 0, -1, 3, -1, -1 };
+  static const J2ObjcClassInfo _ADMTabLayout_1 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8000, 2, 1, 0, -1, 3, -1, -1 };
   return &_ADMTabLayout_1;
 }
 
@@ -1814,7 +1831,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return self;
 }
 
-- (ADMTabLayout_Tab *)setIdWithInt:(jint)id_ {
+- (ADMTabLayout_Tab *)setIdWithInt:(int32_t)id_ {
   self->id__ = id_;
   if (view_ != nil) {
     [view_ setIdWithInt:id_];
@@ -1822,7 +1839,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return self;
 }
 
-- (jint)getId {
+- (int32_t)getId {
   return id__;
 }
 
@@ -1841,11 +1858,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   return icon_;
 }
 
-- (jint)getPosition {
+- (int32_t)getPosition {
   return position_;
 }
 
-- (void)setPositionWithInt:(jint)position {
+- (void)setPositionWithInt:(int32_t)position {
   self->position_ = position;
 }
 
@@ -1882,7 +1899,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return ADMTabLayout_TabView_getBadge(nil_chk(view_));
 }
 
-- (ADMTabLayout_Tab *)setTabLabelVisibilityWithInt:(jint)mode {
+- (ADMTabLayout_Tab *)setTabLabelVisibilityWithInt:(int32_t)mode {
   self->labelVisibilityMode_ = mode;
   if ((((ADMTabLayout *) nil_chk(parent_))->tabGravity_ == ADMTabLayout_GRAVITY_CENTER) || parent_->mode_ == ADMTabLayout_MODE_AUTO) {
     [parent_ updateTabViewsWithBoolean:true];
@@ -1891,7 +1908,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   return self;
 }
 
-- (jint)getTabLabelVisibility {
+- (int32_t)getTabLabelVisibility {
   return self->labelVisibilityMode_;
 }
 
@@ -1902,11 +1919,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   [parent_ selectTabWithADMTabLayout_Tab:self];
 }
 
-- (jboolean)isSelected {
+- (bool)isSelected {
   if (parent_ == nil) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Tab not attached to a TabLayout");
   }
-  jint selectedPosition = [parent_ getSelectedTabPosition];
+  int32_t selectedPosition = [parent_ getSelectedTabPosition];
   return selectedPosition != ADMTabLayout_Tab_INVALID_POSITION && selectedPosition == position_;
 }
 
@@ -2046,7 +2063,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
 }
 
 - (void)addClickListenerWithADView:(ADView *)view
-                       withBoolean:(jboolean)allPlatforms {
+                       withBoolean:(bool)allPlatforms {
   if (!allPlatforms && ![((NSString *) nil_chk(ASPluginInvoker_getOS())) java_equalsIgnoreCase:@"swt"]) {
     return;
   }
@@ -2063,7 +2080,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
 
 - (void)drawableStateChanged {
   [super drawableStateChanged];
-  jboolean changed = false;
+  bool changed = false;
   IOSIntArray *state = [self getDrawableState];
   if (baseBackgroundDrawable_ != nil && [baseBackgroundDrawable_ isStateful]) {
     changed |= [baseBackgroundDrawable_ setStateWithIntArray:state];
@@ -2074,8 +2091,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   }
 }
 
-- (jboolean)performClick {
-  jboolean handled = false;
+- (bool)performClick {
+  bool handled = false;
   if (tab_ != nil) {
     {
     }
@@ -2087,8 +2104,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   }
 }
 
-- (void)setSelectedWithBoolean:(jboolean)selected {
-  jboolean changed = [self isSelected] != selected;
+- (void)setSelectedWithBoolean:(bool)selected {
+  bool changed = [self isSelected] != selected;
   [super setSelectedWithBoolean:selected];
   if (textView_ != nil) {
     [textView_ setSelectedWithBoolean:selected];
@@ -2101,13 +2118,13 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   }
 }
 
-- (void)onMeasureWithInt:(jint)origWidthMeasureSpec
-                 withInt:(jint)origHeightMeasureSpec {
-  jint specWidthSize = ADView_MeasureSpec_getSizeWithInt_(origWidthMeasureSpec);
-  jint specWidthMode = ADView_MeasureSpec_getModeWithInt_(origWidthMeasureSpec);
-  jint maxWidth = [this$0_ getTabMaxWidth];
-  jint widthMeasureSpec;
-  jint heightMeasureSpec = origHeightMeasureSpec;
+- (void)onMeasureWithInt:(int32_t)origWidthMeasureSpec
+                 withInt:(int32_t)origHeightMeasureSpec {
+  int32_t specWidthSize = ADView_MeasureSpec_getSizeWithInt_(origWidthMeasureSpec);
+  int32_t specWidthMode = ADView_MeasureSpec_getModeWithInt_(origWidthMeasureSpec);
+  int32_t maxWidth = [this$0_ getTabMaxWidth];
+  int32_t widthMeasureSpec;
+  int32_t heightMeasureSpec = origHeightMeasureSpec;
   if (maxWidth > 0 && (specWidthMode == ADView_MeasureSpec_UNSPECIFIED || specWidthSize > maxWidth)) {
     widthMeasureSpec = ADView_MeasureSpec_makeMeasureSpecWithInt_withInt_(this$0_->tabMaxWidth_, ADView_MeasureSpec_AT_MOST);
   }
@@ -2116,19 +2133,19 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   }
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   if (textView_ != nil) {
-    jfloat textSize = this$0_->tabTextSize_;
-    jint maxLines = defaultMaxLines_;
+    float textSize = this$0_->tabTextSize_;
+    int32_t maxLines = defaultMaxLines_;
     if (iconView_ != nil && [iconView_ getVisibility] == ADView_VISIBLE) {
       maxLines = 1;
     }
     else if (textView_ != nil && ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(textView_) > 1) {
       textSize = this$0_->tabTextMultiLineSize_;
     }
-    jfloat curTextSize = ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(textView_);
-    jint curLineCount = ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(textView_);
-    jint curMaxLines = ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(textView_);
+    float curTextSize = ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(textView_);
+    int32_t curLineCount = ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(textView_);
+    int32_t curMaxLines = ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(textView_);
     if (textSize != curTextSize || (curMaxLines >= 0 && maxLines != curMaxLines)) {
-      jboolean updateTextView = true;
+      bool updateTextView = true;
       if (this$0_->mode_ == ADMTabLayout_MODE_FIXED && textSize > curTextSize && curLineCount == 1) {
         ADMTabLayout_Layout *layout = ADMTabLayout_TextViewCompat_getLayoutWithADTextView_(textView_);
         if (layout == nil || ADMTabLayout_TabView_approximateLineWidthWithADMTabLayout_Layout_withInt_withFloat_(self, layout, 0, textSize) > [self getMeasuredWidth] - [self getPaddingLeft] - [self getPaddingRight]) {
@@ -2145,7 +2162,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
 }
 
 - (void)setTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab {
-  if (tab != self->tab_) {
+  if (!JreObjectEqualsEquals(tab, self->tab_)) {
     JreStrongAssign(&self->tab_, tab);
     ADMTabLayout_TabView_update(self);
   }
@@ -2204,7 +2221,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   ADMTabLayout_TabView_tryRemoveBadgeFromAnchor(self);
 }
 
-- (void)clipViewToPaddingForBadgeWithBoolean:(jboolean)flag {
+- (void)clipViewToPaddingForBadgeWithBoolean:(bool)flag {
   ADMTabLayout_TabView_clipViewToPaddingForBadgeWithBoolean_(self, flag);
 }
 
@@ -2214,7 +2231,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
 
 - (void)updateTextAndIconWithADTextView:(ADTextView *)textView
                         withADImageView:(ADImageView *)iconView
-                            withBoolean:(jboolean)addDefaultMargins {
+                            withBoolean:(bool)addDefaultMargins {
   ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBoolean_(self, textView, iconView, addDefaultMargins);
 }
 
@@ -2222,7 +2239,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   ADMTabLayout_TabView_tryUpdateBadgeDrawableBoundsWithADView_(self, anchor);
 }
 
-- (jboolean)hasBadgeDrawable {
+- (bool)hasBadgeDrawable {
   return ADMTabLayout_TabView_hasBadgeDrawable(self);
 }
 
@@ -2230,16 +2247,16 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   return ADMTabLayout_TabView_getCustomParentForBadgeWithADView_(self, anchor);
 }
 
-- (jint)getContentWidth {
-  jboolean initialized = false;
-  jint left = 0;
-  jint right = 0;
+- (int32_t)getContentWidth {
+  bool initialized = false;
+  int32_t left = 0;
+  int32_t right = 0;
   {
     IOSObjectArray *a__ = [IOSObjectArray arrayWithObjects:(id[]){ textView_, iconView_, customView_ } count:3 type:ADView_class_()];
     ADView * const *b__ = a__->buffer_;
     ADView * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      ADView *view = *b__++;
+      ADView *view = RETAIN_AND_AUTORELEASE(*b__++);
       if (view != nil && [view getVisibility] == ADView_VISIBLE) {
         left = initialized ? JavaLangMath_minWithInt_withInt_(left, [view getLeft]) : [view getLeft];
         right = initialized ? JavaLangMath_maxWithInt_withInt_(right, [view getRight]) : [view getRight];
@@ -2250,16 +2267,16 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   return right - left;
 }
 
-- (jint)getContentHeight {
-  jboolean initialized = false;
-  jint top = 0;
-  jint bottom = 0;
+- (int32_t)getContentHeight {
+  bool initialized = false;
+  int32_t top = 0;
+  int32_t bottom = 0;
   {
     IOSObjectArray *a__ = [IOSObjectArray arrayWithObjects:(id[]){ textView_, iconView_, customView_ } count:3 type:ADView_class_()];
     ADView * const *b__ = a__->buffer_;
     ADView * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      ADView *view = *b__++;
+      ADView *view = RETAIN_AND_AUTORELEASE(*b__++);
       if (view != nil && [view getVisibility] == ADView_VISIBLE) {
         top = initialized ? JavaLangMath_minWithInt_withInt_(top, [view getTop]) : [view getTop];
         bottom = initialized ? JavaLangMath_maxWithInt_withInt_(bottom, [view getBottom]) : [view getBottom];
@@ -2274,9 +2291,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_Tab)
   return tab_;
 }
 
-- (jfloat)approximateLineWidthWithADMTabLayout_Layout:(ADMTabLayout_Layout *)layout
-                                              withInt:(jint)line
-                                            withFloat:(jfloat)textSize {
+- (float)approximateLineWidthWithADMTabLayout_Layout:(ADMTabLayout_Layout *)layout
+                                             withInt:(int32_t)line
+                                           withFloat:(float)textSize {
   return ADMTabLayout_TabView_approximateLineWidthWithADMTabLayout_Layout_withInt_withFloat_(self, layout, line, textSize);
 }
 
@@ -2426,7 +2443,7 @@ void ADMTabLayout_TabView_updateTab(ADMTabLayout_TabView *self) {
   ADView *custom = tab != nil ? [tab getCustomView] : nil;
   if (custom != nil) {
     id<ADViewParent> customParent = [custom getParent];
-    if (customParent != self) {
+    if (!JreObjectEqualsEquals(customParent, self)) {
       if (customParent != nil) {
         [((ADViewGroup *) cast_chk(customParent, [ADViewGroup class])) removeViewWithADView:custom];
       }
@@ -2554,7 +2571,7 @@ void ADMTabLayout_TabView_tryUpdateBadgeAnchor(ADMTabLayout_TabView *self) {
   }
   else {
     if (self->iconView_ != nil && self->tab_ != nil && [self->tab_ getIcon] != nil) {
-      if (self->badgeAnchorView_ != self->iconView_) {
+      if (!JreObjectEqualsEquals(self->badgeAnchorView_, self->iconView_)) {
         ADMTabLayout_TabView_tryRemoveBadgeFromAnchor(self);
         ADMTabLayout_TabView_tryAttachBadgeToAnchorWithADView_(self, self->iconView_);
       }
@@ -2563,7 +2580,7 @@ void ADMTabLayout_TabView_tryUpdateBadgeAnchor(ADMTabLayout_TabView *self) {
       }
     }
     else if (self->textView_ != nil && self->tab_ != nil && [self->tab_ getTabLabelVisibility] == ADMTabLayout_TAB_LABEL_VISIBILITY_LABELED) {
-      if (self->badgeAnchorView_ != self->textView_) {
+      if (!JreObjectEqualsEquals(self->badgeAnchorView_, self->textView_)) {
         ADMTabLayout_TabView_tryRemoveBadgeFromAnchor(self);
         ADMTabLayout_TabView_tryAttachBadgeToAnchorWithADView_(self, self->textView_);
       }
@@ -2599,7 +2616,7 @@ void ADMTabLayout_TabView_tryRemoveBadgeFromAnchor(ADMTabLayout_TabView *self) {
   }
 }
 
-void ADMTabLayout_TabView_clipViewToPaddingForBadgeWithBoolean_(ADMTabLayout_TabView *self, jboolean flag) {
+void ADMTabLayout_TabView_clipViewToPaddingForBadgeWithBoolean_(ADMTabLayout_TabView *self, bool flag) {
   [self setMyAttributeWithNSString:@"clipChildren" withId:JavaLangBoolean_valueOfWithBoolean_(flag)];
   [self setClipToPaddingWithBoolean:flag];
   ADViewGroup *parent = (ADViewGroup *) cast_chk([self getParent], [ADViewGroup class]);
@@ -2619,7 +2636,7 @@ void ADMTabLayout_TabView_updateOrientation(ADMTabLayout_TabView *self) {
   }
 }
 
-void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBoolean_(ADMTabLayout_TabView *self, ADTextView *textView, ADImageView *iconView, jboolean addDefaultMargins) {
+void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBoolean_(ADMTabLayout_TabView *self, ADTextView *textView, ADImageView *iconView, bool addDefaultMargins) {
   ADDrawable *icon = (self->tab_ != nil && [self->tab_ getIcon] != nil) ? [((ADMTabLayout_Tab *) nil_chk(self->tab_)) getIcon] : nil;
   if (icon != nil) {
     [((ADImageView *) nil_chk(iconView)) setMyAttributeWithNSString:@"tint" withId:self->this$0_->tabIconTint_];
@@ -2636,8 +2653,8 @@ void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBo
       [iconView setImageDrawableWithADDrawable:nil];
     }
   }
-  jboolean hasText = !ADTextUtils_isEmptyWithJavaLangCharSequence_(text);
-  jboolean showingText;
+  bool hasText = !ADTextUtils_isEmptyWithJavaLangCharSequence_(text);
+  bool showingText;
   if (textView != nil) {
     showingText = (hasText && ((ADMTabLayout_Tab *) nil_chk(self->tab_))->labelVisibilityMode_ == ADMTabLayout_TAB_LABEL_VISIBILITY_LABELED);
     [textView setMyAttributeWithNSString:@"text" withId:hasText ? text : nil];
@@ -2651,7 +2668,7 @@ void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBo
   }
   if (addDefaultMargins && iconView != nil) {
     ADViewGroup_MarginLayoutParams *lp = ((ADViewGroup_MarginLayoutParams *) cast_chk([iconView getLayoutParams], [ADViewGroup_MarginLayoutParams class]));
-    jint iconMargin = 0;
+    int32_t iconMargin = 0;
     if (showingText && [iconView getVisibility] == ADView_VISIBLE) {
       iconMargin = JreFpToInt(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", ADMTabLayout_DEFAULT_GAP_TEXT_ICON, @"dp")));
     }
@@ -2678,23 +2695,23 @@ void ADMTabLayout_TabView_updateTextAndIconWithADTextView_withADImageView_withBo
 }
 
 void ADMTabLayout_TabView_tryUpdateBadgeDrawableBoundsWithADView_(ADMTabLayout_TabView *self, ADView *anchor) {
-  if (ADMTabLayout_TabView_hasBadgeDrawable(self) && anchor == self->badgeAnchorView_) {
+  if (ADMTabLayout_TabView_hasBadgeDrawable(self) && JreObjectEqualsEquals(anchor, self->badgeAnchorView_)) {
     ADXBadgeUtils_setBadgeDrawableBoundsWithADXBadgeDrawable_withADView_withADFrameLayout_(self->badgeDrawable_, anchor, ADMTabLayout_TabView_getCustomParentForBadgeWithADView_(self, anchor));
   }
 }
 
-jboolean ADMTabLayout_TabView_hasBadgeDrawable(ADMTabLayout_TabView *self) {
+bool ADMTabLayout_TabView_hasBadgeDrawable(ADMTabLayout_TabView *self) {
   return self->badgeDrawable_ != nil;
 }
 
 ADFrameLayout *ADMTabLayout_TabView_getCustomParentForBadgeWithADView_(ADMTabLayout_TabView *self, ADView *anchor) {
-  if (anchor != self->iconView_ && anchor != self->textView_) {
+  if (!JreObjectEqualsEquals(anchor, self->iconView_) && !JreObjectEqualsEquals(anchor, self->textView_)) {
     return nil;
   }
   return nil;
 }
 
-jfloat ADMTabLayout_TabView_approximateLineWidthWithADMTabLayout_Layout_withInt_withFloat_(ADMTabLayout_TabView *self, ADMTabLayout_Layout *layout, jint line, jfloat textSize) {
+float ADMTabLayout_TabView_approximateLineWidthWithADMTabLayout_Layout_withInt_withFloat_(ADMTabLayout_TabView *self, ADMTabLayout_Layout *layout, int32_t line, float textSize) {
   return [((ADMTabLayout_Layout *) nil_chk(layout)) getLineWidthWithInt:line] * (textSize / [((ADMTabLayout_Paint *) nil_chk([layout getPaint])) getTextSize]);
 }
 
@@ -2731,7 +2748,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_TabView)
     { "this$0_", "LADMTabLayout_TabView;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LADMTabLayout_TabView;", "onClick", "LADView;", "addClickListenerWithADView:withBoolean:" };
-  static const J2ObjcClassInfo _ADMTabLayout_TabView_1 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8010, 2, 1, 0, -1, 3, -1, -1 };
+  static const J2ObjcClassInfo _ADMTabLayout_TabView_1 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8000, 2, 1, 0, -1, 3, -1, -1 };
   return &_ADMTabLayout_TabView_1;
 }
 
@@ -2759,14 +2776,14 @@ ADMTabLayout_TabView_1 *create_ADMTabLayout_TabView_1_initWithADMTabLayout_TabVi
 }
 
 - (void)onLayoutChangeWithADView:(ADView *)v
-                         withInt:(jint)left
-                         withInt:(jint)top
-                         withInt:(jint)right
-                         withInt:(jint)bottom
-                         withInt:(jint)oldLeft
-                         withInt:(jint)oldTop
-                         withInt:(jint)oldRight
-                         withInt:(jint)oldBottom {
+                         withInt:(int32_t)left
+                         withInt:(int32_t)top
+                         withInt:(int32_t)right
+                         withInt:(int32_t)bottom
+                         withInt:(int32_t)oldLeft
+                         withInt:(int32_t)oldTop
+                         withInt:(int32_t)oldRight
+                         withInt:(int32_t)oldBottom {
   if ([((ADView *) nil_chk(val$view_)) getVisibility] == ADView_VISIBLE) {
     ADMTabLayout_TabView_tryUpdateBadgeDrawableBoundsWithADView_(this$0_, val$view_);
   }
@@ -2794,7 +2811,7 @@ ADMTabLayout_TabView_1 *create_ADMTabLayout_TabView_1_initWithADMTabLayout_TabVi
     { "val$view_", "LADView;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LADMTabLayout_TabView;LADView;", "onLayoutChange", "LADView;IIIIIIII", "LADMTabLayout_TabView;", "addOnLayoutChangeListenerWithADView:" };
-  static const J2ObjcClassInfo _ADMTabLayout_TabView_2 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8010, 2, 2, 3, -1, 4, -1, -1 };
+  static const J2ObjcClassInfo _ADMTabLayout_TabView_2 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8000, 2, 2, 3, -1, 4, -1, -1 };
   return &_ADMTabLayout_TabView_2;
 }
 
@@ -2822,14 +2839,14 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
   return self;
 }
 
-- (void)setSelectedIndicatorHeightWithInt:(jint)height {
+- (void)setSelectedIndicatorHeightWithInt:(int32_t)height {
   ADRect *bounds = JreRetainedLocalValue([((ADDrawable *) nil_chk(this$0_->tabSelectedIndicator_)) getBounds]);
   [((ADDrawable *) nil_chk(this$0_->tabSelectedIndicator_)) setBoundsWithInt:((ADRect *) nil_chk(bounds))->left_ withInt:0 withInt:bounds->right_ withInt:height];
   [self requestLayout];
 }
 
-- (jboolean)childrenNeedLayout {
-  for (jint i = 0, z = [self getChildCount]; i < z; i++) {
+- (bool)childrenNeedLayout {
+  for (int32_t i = 0, z = [self getChildCount]; i < z; i++) {
     ADView *child = [self getChildAtWithInt:i];
     if ([((ADView *) nil_chk(child)) getWidth] <= 0) {
       return true;
@@ -2838,8 +2855,8 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
   return false;
 }
 
-- (void)setIndicatorPositionFromTabPositionWithInt:(jint)position
-                                         withFloat:(jfloat)positionOffset {
+- (void)setIndicatorPositionFromTabPositionWithInt:(int32_t)position
+                                         withFloat:(float)positionOffset {
   this$0_->indicatorPosition_ = JavaLangMath_roundWithFloat_(position + positionOffset);
   if (indicatorAnimator_ != nil && [indicatorAnimator_ isRunning]) {
     [indicatorAnimator_ cancel];
@@ -2849,20 +2866,20 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
   ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADView_withFloat_(self, firstTitle, nextTitle, positionOffset);
 }
 
-- (void)onRtlPropertiesChangedWithInt:(jint)layoutDirection {
+- (void)onRtlPropertiesChangedWithInt:(int32_t)layoutDirection {
   [super onRtlPropertiesChangedWithInt:layoutDirection];
 }
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec {
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec {
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   if (ADView_MeasureSpec_getModeWithInt_(widthMeasureSpec) != ADView_MeasureSpec_EXACTLY) {
     return;
   }
   if ((this$0_->tabGravity_ == ADMTabLayout_GRAVITY_CENTER) || this$0_->mode_ == ADMTabLayout_MODE_AUTO) {
-    jint count = [self getChildCount];
-    jint largestTabWidth = 0;
-    for (jint i = 0, z = count; i < z; i++) {
+    int32_t count = [self getChildCount];
+    int32_t largestTabWidth = 0;
+    for (int32_t i = 0, z = count; i < z; i++) {
       ADView *child = JreRetainedLocalValue([self getChildAtWithInt:i]);
       if ([((ADView *) nil_chk(child)) getVisibility] == ADView_VISIBLE) {
         largestTabWidth = JavaLangMath_maxWithInt_withInt_(largestTabWidth, [child getMeasuredWidth]);
@@ -2871,10 +2888,10 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
     if (largestTabWidth <= 0) {
       return;
     }
-    jint gutter = JreFpToInt(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", ADMTabLayout_FIXED_WRAP_GUTTER_MIN, @"dp")));
-    jboolean remeasure = false;
+    int32_t gutter = JreFpToInt(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", ADMTabLayout_FIXED_WRAP_GUTTER_MIN, @"dp")));
+    bool remeasure = false;
     if (largestTabWidth * count <= [self getMeasuredWidth] - gutter * 2) {
-      for (jint i = 0; i < count; i++) {
+      for (int32_t i = 0; i < count; i++) {
         ADLinearLayout_LayoutParams *lp = (ADLinearLayout_LayoutParams *) cast_chk([((ADView *) nil_chk([self getChildAtWithInt:i])) getLayoutParams], [ADLinearLayout_LayoutParams class]);
         if (((ADLinearLayout_LayoutParams *) nil_chk(lp))->width_ != largestTabWidth || lp->weight_ != 0) {
           lp->width_ = largestTabWidth;
@@ -2894,11 +2911,11 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
   }
 }
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b {
+- (void)onLayoutWithBoolean:(bool)changed
+                    withInt:(int32_t)l
+                    withInt:(int32_t)t
+                    withInt:(int32_t)r
+                    withInt:(int32_t)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   if (indicatorAnimator_ != nil && [indicatorAnimator_ isRunning]) {
     ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(self, false, [this$0_ getSelectedTabPosition], -1);
@@ -2908,7 +2925,7 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
   }
 }
 
-- (void)jumpIndicatorToPositionWithInt:(jint)position {
+- (void)jumpIndicatorToPositionWithInt:(int32_t)position {
   ADMTabLayout_SlidingTabIndicator_jumpIndicatorToPositionWithInt_(self, position);
 }
 
@@ -2922,31 +2939,31 @@ ADMTabLayout_TabView_2 *create_ADMTabLayout_TabView_2_initWithADMTabLayout_TabVi
 
 - (void)tweenIndicatorPositionWithADView:(ADView *)startTitle
                               withADView:(ADView *)endTitle
-                               withFloat:(jfloat)fraction {
+                               withFloat:(float)fraction {
   ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADView_withFloat_(self, startTitle, endTitle, fraction);
 }
 
-- (void)animateIndicatorToPositionWithInt:(jint)position
-                                  withInt:(jint)duration {
+- (void)animateIndicatorToPositionWithInt:(int32_t)position
+                                  withInt:(int32_t)duration {
   if (indicatorAnimator_ != nil && [indicatorAnimator_ isRunning] && this$0_->indicatorPosition_ != position) {
     [indicatorAnimator_ cancel];
   }
   ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(self, true, position, duration);
 }
 
-- (void)updateOrRecreateIndicatorAnimationWithBoolean:(jboolean)recreateAnimation
-                                              withInt:(jint)position
-                                              withInt:(jint)duration {
+- (void)updateOrRecreateIndicatorAnimationWithBoolean:(bool)recreateAnimation
+                                              withInt:(int32_t)position
+                                              withInt:(int32_t)duration {
   ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(self, recreateAnimation, position, duration);
 }
 
 - (void)onDrawWithADCanvas:(id<ADCanvas>)canvas {
-  jint indicatorHeight = [((ADRect *) nil_chk([((ADDrawable *) nil_chk(this$0_->tabSelectedIndicator_)) getBounds])) height];
+  int32_t indicatorHeight = [((ADRect *) nil_chk([((ADDrawable *) nil_chk(this$0_->tabSelectedIndicator_)) getBounds])) height];
   if (indicatorHeight < 0) {
     indicatorHeight = [((ADDrawable *) nil_chk(this$0_->tabSelectedIndicator_)) getIntrinsicHeight];
   }
-  jint indicatorTop = 0;
-  jint indicatorBottom = 0;
+  int32_t indicatorTop = 0;
+  int32_t indicatorBottom = 0;
   switch (this$0_->tabIndicatorGravity_) {
     case ADMTabLayout_INDICATOR_GRAVITY_BOTTOM:
     indicatorTop = [self getHeight] - indicatorHeight;
@@ -3043,7 +3060,7 @@ ADMTabLayout_SlidingTabIndicator *create_ADMTabLayout_SlidingTabIndicator_initWi
   J2OBJC_CREATE_IMPL(ADMTabLayout_SlidingTabIndicator, initWithADMTabLayout_withADContext_, outer$, context)
 }
 
-void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToPositionWithInt_(ADMTabLayout_SlidingTabIndicator *self, jint position) {
+void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToPositionWithInt_(ADMTabLayout_SlidingTabIndicator *self, int32_t position) {
   if (self->this$0_->viewPagerScrollState_ != ADXViewPager_SCROLL_STATE_IDLE && !(((ADRect *) nil_chk([((ADDrawable *) nil_chk([self->this$0_ getTabSelectedIndicator])) getBounds]))->left_ == -1 && ((ADRect *) nil_chk([((ADDrawable *) nil_chk([self->this$0_ getTabSelectedIndicator])) getBounds]))->right_ == -1)) {
     return;
   }
@@ -3063,8 +3080,8 @@ void ADMTabLayout_SlidingTabIndicator_jumpIndicatorToIndicatorPosition(ADMTabLay
   ADMTabLayout_SlidingTabIndicator_jumpIndicatorToPositionWithInt_(self, self->this$0_->indicatorPosition_);
 }
 
-void ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADView_withFloat_(ADMTabLayout_SlidingTabIndicator *self, ADView *startTitle, ADView *endTitle, jfloat fraction) {
-  jboolean hasVisibleTitle = startTitle != nil && [startTitle getWidth] > 0;
+void ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADView_withFloat_(ADMTabLayout_SlidingTabIndicator *self, ADView *startTitle, ADView *endTitle, float fraction) {
+  bool hasVisibleTitle = startTitle != nil && [startTitle getWidth] > 0;
   if (hasVisibleTitle) {
     [((ADMTabIndicatorInterpolator *) nil_chk(self->this$0_->tabIndicatorInterpolator_)) updateIndicatorForOffsetWithADMTabLayout:self->this$0_ withADView:startTitle withADView:endTitle withFloat:fraction withADDrawable:self->this$0_->tabSelectedIndicator_];
   }
@@ -3073,7 +3090,7 @@ void ADMTabLayout_SlidingTabIndicator_tweenIndicatorPositionWithADView_withADVie
   }
 }
 
-void ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(ADMTabLayout_SlidingTabIndicator *self, jboolean recreateAnimation, jint position, jint duration) {
+void ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBoolean_withInt_withInt_(ADMTabLayout_SlidingTabIndicator *self, bool recreateAnimation, int32_t position, int32_t duration) {
   if (self->this$0_->indicatorPosition_ == position) {
     return;
   }
@@ -3089,7 +3106,7 @@ void ADMTabLayout_SlidingTabIndicator_updateOrRecreateIndicatorAnimationWithBool
     ADValueAnimator *animator = JreStrongAssignAndConsume(&self->indicatorAnimator_, new_ADValueAnimator_init());
     [animator setInterpolatorWithADTimeInterpolator:self->this$0_->tabIndicatorTimeInterpolator_];
     [animator setDurationWithLong:duration];
-    [animator setFloatValuesWithFloatArray:[IOSFloatArray arrayWithFloats:(jfloat[]){ 0.0f, 1.0f } count:2]];
+    [animator setFloatValuesWithFloatArray:[IOSFloatArray arrayWithFloats:(float[]){ 0.0f, 1.0f } count:2]];
     [animator addUpdateListenerWithADValueAnimator_AnimatorUpdateListener:updateListener];
     [animator start];
   }
@@ -3138,7 +3155,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_SlidingTabIndicator)
     { "val$targetView_", "LADView;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LADMTabLayout_SlidingTabIndicator;LADView;LADView;", "onAnimationUpdate", "LADValueAnimator;", "LADMTabLayout_SlidingTabIndicator;", "updateOrRecreateIndicatorAnimationWithBoolean:withInt:withInt:" };
-  static const J2ObjcClassInfo _ADMTabLayout_SlidingTabIndicator_1 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8010, 2, 3, 3, -1, 4, -1, -1 };
+  static const J2ObjcClassInfo _ADMTabLayout_SlidingTabIndicator_1 = { "", "com.google.android.material.tabs", ptrTable, methods, fields, 7, 0x8000, 2, 3, 3, -1, 4, -1, -1 };
   return &_ADMTabLayout_SlidingTabIndicator_1;
 }
 
@@ -3166,7 +3183,7 @@ ADMTabLayout_SlidingTabIndicator_1 *create_ADMTabLayout_SlidingTabIndicator_1_in
   return self;
 }
 
-- (void)onPageScrollStateChangedWithInt:(jint)state {
+- (void)onPageScrollStateChangedWithInt:(int32_t)state {
   previousScrollState_ = scrollState_;
   scrollState_ = state;
   ADMTabLayout *tabLayout = JreRetainedLocalValue([((JavaLangRefWeakReference *) nil_chk(tabLayoutRef_)) get]);
@@ -3175,21 +3192,21 @@ ADMTabLayout_SlidingTabIndicator_1 *create_ADMTabLayout_SlidingTabIndicator_1_in
   }
 }
 
-- (void)onPageScrolledWithInt:(jint)position
-                    withFloat:(jfloat)positionOffset
-                      withInt:(jint)positionOffsetPixels {
+- (void)onPageScrolledWithInt:(int32_t)position
+                    withFloat:(float)positionOffset
+                      withInt:(int32_t)positionOffsetPixels {
   ADMTabLayout *tabLayout = [((JavaLangRefWeakReference *) nil_chk(tabLayoutRef_)) get];
   if (tabLayout != nil) {
-    jboolean updateSelectedTabView = scrollState_ != ADXViewPager_SCROLL_STATE_SETTLING || previousScrollState_ == ADXViewPager_SCROLL_STATE_DRAGGING;
-    jboolean updateIndicator = !(scrollState_ == ADXViewPager_SCROLL_STATE_SETTLING && previousScrollState_ == ADXViewPager_SCROLL_STATE_IDLE);
+    bool updateSelectedTabView = scrollState_ != ADXViewPager_SCROLL_STATE_SETTLING || previousScrollState_ == ADXViewPager_SCROLL_STATE_DRAGGING;
+    bool updateIndicator = !(scrollState_ == ADXViewPager_SCROLL_STATE_SETTLING && previousScrollState_ == ADXViewPager_SCROLL_STATE_IDLE);
     [tabLayout setScrollPositionWithInt:position withFloat:positionOffset withBoolean:updateSelectedTabView withBoolean:updateIndicator withBoolean:false];
   }
 }
 
-- (void)onPageSelectedWithInt:(jint)position {
+- (void)onPageSelectedWithInt:(int32_t)position {
   ADMTabLayout *tabLayout = [((JavaLangRefWeakReference *) nil_chk(tabLayoutRef_)) get];
   if (tabLayout != nil && [tabLayout getSelectedTabPosition] != position && position < [tabLayout getTabCount]) {
-    jboolean updateIndicator = scrollState_ == ADXViewPager_SCROLL_STATE_IDLE || (scrollState_ == ADXViewPager_SCROLL_STATE_SETTLING && previousScrollState_ == ADXViewPager_SCROLL_STATE_IDLE);
+    bool updateIndicator = scrollState_ == ADXViewPager_SCROLL_STATE_IDLE || (scrollState_ == ADXViewPager_SCROLL_STATE_SETTLING && previousScrollState_ == ADXViewPager_SCROLL_STATE_IDLE);
     [tabLayout selectTabWithADMTabLayout_Tab:[tabLayout getTabAtWithInt:position] withBoolean:updateIndicator];
   }
 }
@@ -3377,12 +3394,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMTabLayout_PagerAdapterObserver)
 - (void)onAdapterChangedWithADXViewPager:(ADXViewPager *)viewPager
                      withADXPagerAdapter:(ADXPagerAdapter *)oldAdapter
                      withADXPagerAdapter:(ADXPagerAdapter *)newAdapter {
-  if (this$0_->viewPager_ == viewPager) {
+  if (JreObjectEqualsEquals(this$0_->viewPager_, viewPager)) {
     [this$0_ setPagerAdapterWithADXPagerAdapter:newAdapter withBoolean:autoRefresh_];
   }
 }
 
-- (void)setAutoRefreshWithBoolean:(jboolean)autoRefresh {
+- (void)setAutoRefreshWithBoolean:(bool)autoRefresh {
   self->autoRefresh_ = autoRefresh;
 }
 
@@ -3439,7 +3456,7 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-+ (jint)getMaxLinesWithADTextView:(ADTextView *)textView {
++ (int32_t)getMaxLinesWithADTextView:(ADTextView *)textView {
   return ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(textView);
 }
 
@@ -3448,11 +3465,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   ADMTabLayout_TextViewCompat_setTextAppearanceWithADTextView_withNSString_(textView, textAppearance);
 }
 
-+ (jint)getLineCountWithADTextView:(ADTextView *)textView {
++ (int32_t)getLineCountWithADTextView:(ADTextView *)textView {
   return ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(textView);
 }
 
-+ (jint)getTextSizeWithADTextView:(ADTextView *)textView {
++ (int32_t)getTextSizeWithADTextView:(ADTextView *)textView {
   return ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(textView);
 }
 
@@ -3461,7 +3478,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 + (void)setTextSizeWithADTextView:(ADTextView *)textView
-                        withFloat:(jfloat)textSize {
+                        withFloat:(float)textSize {
   ADMTabLayout_TextViewCompat_setTextSizeWithADTextView_withFloat_(textView, textSize);
 }
 
@@ -3505,7 +3522,7 @@ ADMTabLayout_TextViewCompat *create_ADMTabLayout_TextViewCompat_init() {
   J2OBJC_CREATE_IMPL(ADMTabLayout_TextViewCompat, init)
 }
 
-jint ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(ADTextView *textView) {
+int32_t ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(ADTextView *textView) {
   ADMTabLayout_TextViewCompat_initialize();
   return 0;
 }
@@ -3517,12 +3534,12 @@ void ADMTabLayout_TextViewCompat_setTextAppearanceWithADTextView_withNSString_(A
   }
 }
 
-jint ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(ADTextView *textView) {
+int32_t ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(ADTextView *textView) {
   ADMTabLayout_TextViewCompat_initialize();
   return 1;
 }
 
-jint ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(ADTextView *textView) {
+int32_t ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(ADTextView *textView) {
   ADMTabLayout_TextViewCompat_initialize();
   return 1;
 }
@@ -3532,7 +3549,7 @@ ADMTabLayout_Layout *ADMTabLayout_TextViewCompat_getLayoutWithADTextView_(ADText
   return nil;
 }
 
-void ADMTabLayout_TextViewCompat_setTextSizeWithADTextView_withFloat_(ADTextView *textView, jfloat textSize) {
+void ADMTabLayout_TextViewCompat_setTextSizeWithADTextView_withFloat_(ADTextView *textView, float textSize) {
   ADMTabLayout_TextViewCompat_initialize();
 }
 
@@ -3547,7 +3564,7 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (jfloat)getTextSize {
+- (float)getTextSize {
   return 0;
 }
 
@@ -3592,7 +3609,7 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (jint)getLineWidthWithInt:(jint)line {
+- (int32_t)getLineWidthWithInt:(int32_t)line {
   return 0;
 }
 

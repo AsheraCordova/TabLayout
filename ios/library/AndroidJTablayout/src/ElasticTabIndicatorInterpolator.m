@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\ElasticTabIndicatorInterpolator.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "Drawable.h"
 #include "ElasticTabIndicatorInterpolator.h"
 #include "J2ObjC_source.h"
@@ -12,20 +17,30 @@
 #include "TabIndicatorInterpolator.h"
 #include "TabLayout.h"
 #include "View.h"
+#include "java/lang/Boolean.h"
+#include "java/lang/Double.h"
+#include "java/lang/Float.h"
+#include "java/lang/Integer.h"
 #include "java/lang/Math.h"
+
+
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 @interface ADMElasticTabIndicatorInterpolator ()
 
-+ (jfloat)decInterpWithFloat:(jfloat)fraction;
++ (float)decInterpWithFloat:(float)fraction;
 
-+ (jfloat)accInterpWithFloat:(jfloat)fraction;
++ (float)accInterpWithFloat:(float)fraction;
 
 @end
 
-__attribute__((unused)) static jfloat ADMElasticTabIndicatorInterpolator_decInterpWithFloat_(jfloat fraction);
+__attribute__((unused)) static float ADMElasticTabIndicatorInterpolator_decInterpWithFloat_(float fraction);
 
-__attribute__((unused)) static jfloat ADMElasticTabIndicatorInterpolator_accInterpWithFloat_(jfloat fraction);
+__attribute__((unused)) static float ADMElasticTabIndicatorInterpolator_accInterpWithFloat_(float fraction);
 
 @implementation ADMElasticTabIndicatorInterpolator
 
@@ -34,24 +49,24 @@ __attribute__((unused)) static jfloat ADMElasticTabIndicatorInterpolator_accInte
   return self;
 }
 
-+ (jfloat)decInterpWithFloat:(jfloat)fraction {
++ (float)decInterpWithFloat:(float)fraction {
   return ADMElasticTabIndicatorInterpolator_decInterpWithFloat_(fraction);
 }
 
-+ (jfloat)accInterpWithFloat:(jfloat)fraction {
++ (float)accInterpWithFloat:(float)fraction {
   return ADMElasticTabIndicatorInterpolator_accInterpWithFloat_(fraction);
 }
 
 - (void)updateIndicatorForOffsetWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)startTitle
                                       withADView:(ADView *)endTitle
-                                       withFloat:(jfloat)offset
+                                       withFloat:(float)offset
                                   withADDrawable:(ADDrawable *)indicator {
   ADRectF *startIndicator = ADMTabIndicatorInterpolator_calculateIndicatorWidthForTabWithADMTabLayout_withADView_(tabLayout, startTitle);
   ADRectF *endIndicator = ADMTabIndicatorInterpolator_calculateIndicatorWidthForTabWithADMTabLayout_withADView_(tabLayout, endTitle);
-  jfloat leftFraction;
-  jfloat rightFraction;
-  jboolean isMovingRight = ((ADRectF *) nil_chk(startIndicator))->left_ < ((ADRectF *) nil_chk(endIndicator))->left_;
+  float leftFraction;
+  float rightFraction;
+  bool isMovingRight = ((ADRectF *) nil_chk(startIndicator))->left_ < ((ADRectF *) nil_chk(endIndicator))->left_;
   if (isMovingRight) {
     leftFraction = ADMElasticTabIndicatorInterpolator_accInterpWithFloat_(offset);
     rightFraction = ADMElasticTabIndicatorInterpolator_decInterpWithFloat_(offset);
@@ -97,14 +112,14 @@ ADMElasticTabIndicatorInterpolator *create_ADMElasticTabIndicatorInterpolator_in
   J2OBJC_CREATE_IMPL(ADMElasticTabIndicatorInterpolator, initPackagePrivate)
 }
 
-jfloat ADMElasticTabIndicatorInterpolator_decInterpWithFloat_(jfloat fraction) {
+float ADMElasticTabIndicatorInterpolator_decInterpWithFloat_(float fraction) {
   ADMElasticTabIndicatorInterpolator_initialize();
-  return (jfloat) JavaLangMath_sinWithDouble_((fraction * JavaLangMath_PI) / 2.0);
+  return (float) JavaLangMath_sinWithDouble_((fraction * JavaLangMath_PI) / 2.0);
 }
 
-jfloat ADMElasticTabIndicatorInterpolator_accInterpWithFloat_(jfloat fraction) {
+float ADMElasticTabIndicatorInterpolator_accInterpWithFloat_(float fraction) {
   ADMElasticTabIndicatorInterpolator_initialize();
-  return (jfloat) (1.0 - JavaLangMath_cosWithDouble_((fraction * JavaLangMath_PI) / 2.0));
+  return (float) (1.0 - JavaLangMath_cosWithDouble_((fraction * JavaLangMath_PI) / 2.0));
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ADMElasticTabIndicatorInterpolator)

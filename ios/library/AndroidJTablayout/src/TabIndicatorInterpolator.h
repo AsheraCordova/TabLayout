@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\TabIndicatorInterpolator.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_TabIndicatorInterpolator")
@@ -21,6 +22,8 @@
 @class ADMTabLayout_TabView;
 @class ADRectF;
 @class ADView;
+@class JavaLangFloat;
+@class JavaLangInteger;
 
 @interface ADMTabIndicatorInterpolator : NSObject
 
@@ -32,7 +35,7 @@
                                                 withADView:(ADView *)tab;
 
 + (ADRectF *)calculateTabViewContentBoundsWithADMTabLayout_TabView:(ADMTabLayout_TabView *)tabView
-                                                           withInt:(jint)minWidth;
+                                                           withInt:(int32_t)minWidth;
 
 - (void)setIndicatorBoundsForTabWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)tab
@@ -41,7 +44,7 @@
 - (void)updateIndicatorForOffsetWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)startTitle
                                       withADView:(ADView *)endTitle
-                                       withFloat:(jfloat)offset
+                                       withFloat:(float)offset
                                   withADDrawable:(ADDrawable *)indicator;
 
 // Disallowed inherited constructors, do not use.
@@ -58,13 +61,14 @@ FOUNDATION_EXPORT ADMTabIndicatorInterpolator *new_ADMTabIndicatorInterpolator_i
 
 FOUNDATION_EXPORT ADMTabIndicatorInterpolator *create_ADMTabIndicatorInterpolator_initPackagePrivate(void);
 
-FOUNDATION_EXPORT ADRectF *ADMTabIndicatorInterpolator_calculateTabViewContentBoundsWithADMTabLayout_TabView_withInt_(ADMTabLayout_TabView *tabView, jint minWidth);
+FOUNDATION_EXPORT ADRectF *ADMTabIndicatorInterpolator_calculateTabViewContentBoundsWithADMTabLayout_TabView_withInt_(ADMTabLayout_TabView *tabView, int32_t minWidth);
 
 FOUNDATION_EXPORT ADRectF *ADMTabIndicatorInterpolator_calculateIndicatorWidthForTabWithADMTabLayout_withADView_(ADMTabLayout *tabLayout, ADView *tab);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabIndicatorInterpolator)
 
 @compatibility_alias ComGoogleAndroidMaterialTabsTabIndicatorInterpolator ADMTabIndicatorInterpolator;
+
 
 #endif
 

@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\ElasticTabIndicatorInterpolator.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_ElasticTabIndicatorInterpolator")
@@ -23,6 +24,7 @@
 @class ADDrawable;
 @class ADMTabLayout;
 @class ADView;
+@class JavaLangFloat;
 
 @interface ADMElasticTabIndicatorInterpolator : ADMTabIndicatorInterpolator
 
@@ -33,7 +35,7 @@
 - (void)updateIndicatorForOffsetWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)startTitle
                                       withADView:(ADView *)endTitle
-                                       withFloat:(jfloat)offset
+                                       withFloat:(float)offset
                                   withADDrawable:(ADDrawable *)indicator;
 
 @end
@@ -49,6 +51,7 @@ FOUNDATION_EXPORT ADMElasticTabIndicatorInterpolator *create_ADMElasticTabIndica
 J2OBJC_TYPE_LITERAL_HEADER(ADMElasticTabIndicatorInterpolator)
 
 @compatibility_alias ComGoogleAndroidMaterialTabsElasticTabIndicatorInterpolator ADMElasticTabIndicatorInterpolator;
+
 
 #endif
 

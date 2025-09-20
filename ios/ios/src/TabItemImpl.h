@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-ios-widgets\IOSTabLayoutPlugin\src\main\java\com\ashera\tablayout\TabItemImpl.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_TabItemImpl")
@@ -22,6 +23,7 @@
 
 @class ASWidgetAttribute;
 @class IOSClass;
+@class NSString;
 @protocol ASIFragment;
 @protocol ASILifeCycleDecorator;
 @protocol ASIWidget;
@@ -115,6 +117,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ASTabItemImpl)
 
 @compatibility_alias ComAsheraTablayoutTabItemImpl ASTabItemImpl;
 
+
 #endif
 
 #if !defined (ASTabItemImpl_ViewExt_) && (INCLUDE_ALL_TabItemImpl || defined(INCLUDE_ASTabItemImpl_ViewExt))
@@ -129,6 +132,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ASTabItemImpl)
 #include "IViewStub.h"
 
 @class ASTabItemImpl;
+@class NSString;
 
 @interface ASTabItemImpl_ViewExt : ADView < ASIViewStub >
 
@@ -155,6 +159,7 @@ FOUNDATION_EXPORT ASTabItemImpl_ViewExt *new_ASTabItemImpl_ViewExt_initWithASTab
 FOUNDATION_EXPORT ASTabItemImpl_ViewExt *create_ASTabItemImpl_ViewExt_initWithASTabItemImpl_(ASTabItemImpl *outer$);
 
 J2OBJC_TYPE_LITERAL_HEADER(ASTabItemImpl_ViewExt)
+
 
 #endif
 

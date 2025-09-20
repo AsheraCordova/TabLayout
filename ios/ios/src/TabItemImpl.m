@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-ios-widgets\IOSTabLayoutPlugin\src\main\java\com\ashera\tablayout\TabItemImpl.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "BaseWidget.h"
 #include "HasWidgets.h"
 #include "IFragment.h"
@@ -16,13 +21,18 @@
 #include "ViewImpl.h"
 #include "WidgetAttribute.h"
 #include "WidgetFactory.h"
+#include "java/lang/Integer.h"
 #include "java/util/HashMap.h"
 #include "java/util/Map.h"
 
 #include <UIKit/UIKit.h>
 #include "ASUIView.h"
 
-@protocol JavaUtilMap;
+
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 @interface ASTabItemImpl () {
@@ -329,6 +339,8 @@ void ASTabItemImpl_nativeCreateWithASIFragment_withJavaUtilMap_(ASTabItemImpl *s
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabItemImpl)
+
+J2OBJC_NAME_MAPPING(ASTabItemImpl, "com.ashera.tablayout", "AS")
 
 @implementation ASTabItemImpl_ViewExt
 

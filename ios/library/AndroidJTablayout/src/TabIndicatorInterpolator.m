@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\TabIndicatorInterpolator.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "Drawable.h"
 #include "J2ObjC_source.h"
 #include "MaterialAnimationUtils.h"
@@ -12,11 +17,20 @@
 #include "TabIndicatorInterpolator.h"
 #include "TabLayout.h"
 #include "View.h"
+#include "java/lang/Boolean.h"
+#include "java/lang/Float.h"
+#include "java/lang/Integer.h"
 
 
-inline jint ADMTabIndicatorInterpolator_get_MIN_INDICATOR_WIDTH(void);
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
+
+
+inline int32_t ADMTabIndicatorInterpolator_get_MIN_INDICATOR_WIDTH(void);
 #define ADMTabIndicatorInterpolator_MIN_INDICATOR_WIDTH 24
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabIndicatorInterpolator, MIN_INDICATOR_WIDTH, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabIndicatorInterpolator, MIN_INDICATOR_WIDTH, int32_t)
 
 @implementation ADMTabIndicatorInterpolator
 
@@ -26,7 +40,7 @@ J2OBJC_STATIC_FIELD_CONSTANT(ADMTabIndicatorInterpolator, MIN_INDICATOR_WIDTH, j
 }
 
 + (ADRectF *)calculateTabViewContentBoundsWithADMTabLayout_TabView:(ADMTabLayout_TabView *)tabView
-                                                           withInt:(jint)minWidth {
+                                                           withInt:(int32_t)minWidth {
   return ADMTabIndicatorInterpolator_calculateTabViewContentBoundsWithADMTabLayout_TabView_withInt_(tabView, minWidth);
 }
 
@@ -45,7 +59,7 @@ J2OBJC_STATIC_FIELD_CONSTANT(ADMTabIndicatorInterpolator, MIN_INDICATOR_WIDTH, j
 - (void)updateIndicatorForOffsetWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)startTitle
                                       withADView:(ADView *)endTitle
-                                       withFloat:(jfloat)offset
+                                       withFloat:(float)offset
                                   withADDrawable:(ADDrawable *)indicator {
   ADRectF *startIndicator = ADMTabIndicatorInterpolator_calculateIndicatorWidthForTabWithADMTabLayout_withADView_(tabLayout, startTitle);
   ADRectF *endIndicator = ADMTabIndicatorInterpolator_calculateIndicatorWidthForTabWithADMTabLayout_withADView_(tabLayout, endTitle);
@@ -91,20 +105,20 @@ ADMTabIndicatorInterpolator *create_ADMTabIndicatorInterpolator_initPackagePriva
   J2OBJC_CREATE_IMPL(ADMTabIndicatorInterpolator, initPackagePrivate)
 }
 
-ADRectF *ADMTabIndicatorInterpolator_calculateTabViewContentBoundsWithADMTabLayout_TabView_withInt_(ADMTabLayout_TabView *tabView, jint minWidth) {
+ADRectF *ADMTabIndicatorInterpolator_calculateTabViewContentBoundsWithADMTabLayout_TabView_withInt_(ADMTabLayout_TabView *tabView, int32_t minWidth) {
   ADMTabIndicatorInterpolator_initialize();
-  jint tabViewContentWidth = [((ADMTabLayout_TabView *) nil_chk(tabView)) getContentWidth];
-  jint tabViewContentHeight = [tabView getContentHeight];
-  jint minWidthPx = JreFpToInt(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", minWidth, @"dp")));
+  int32_t tabViewContentWidth = [((ADMTabLayout_TabView *) nil_chk(tabView)) getContentWidth];
+  int32_t tabViewContentHeight = [tabView getContentHeight];
+  int32_t minWidthPx = JreFpToInt(ASPluginInvoker_convertDpToPixelWithNSString_(JreStrcat("I$", minWidth, @"dp")));
   if (tabViewContentWidth < minWidthPx) {
     tabViewContentWidth = minWidthPx;
   }
-  jint tabViewCenterX = JreIntDiv(([tabView getLeft] + [tabView getRight]), 2);
-  jint tabViewCenterY = JreIntDiv(([tabView getTop] + [tabView getBottom]), 2);
-  jint contentLeftBounds = tabViewCenterX - (JreIntDiv(tabViewContentWidth, 2));
-  jint contentTopBounds = tabViewCenterY - (JreIntDiv(tabViewContentHeight, 2));
-  jint contentRightBounds = tabViewCenterX + (JreIntDiv(tabViewContentWidth, 2));
-  jint contentBottomBounds = tabViewCenterY + (JreIntDiv(tabViewCenterX, 2));
+  int32_t tabViewCenterX = JreIntDiv(([tabView getLeft] + [tabView getRight]), 2);
+  int32_t tabViewCenterY = JreIntDiv(([tabView getTop] + [tabView getBottom]), 2);
+  int32_t contentLeftBounds = tabViewCenterX - (JreIntDiv(tabViewContentWidth, 2));
+  int32_t contentTopBounds = tabViewCenterY - (JreIntDiv(tabViewContentHeight, 2));
+  int32_t contentRightBounds = tabViewCenterX + (JreIntDiv(tabViewContentWidth, 2));
+  int32_t contentBottomBounds = tabViewCenterY + (JreIntDiv(tabViewCenterX, 2));
   return create_ADRectF_initWithFloat_withFloat_withFloat_withFloat_(contentLeftBounds, contentTopBounds, contentRightBounds, contentBottomBounds);
 }
 

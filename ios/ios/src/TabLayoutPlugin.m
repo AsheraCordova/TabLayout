@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-ios-widgets\IOSTabLayoutPlugin\src\main\java\com\ashera\tablayout\TabLayoutPlugin.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "J2ObjC_source.h"
 #include "SlidingTabIndicatorImpl.h"
 #include "TabItemImpl.h"
@@ -10,6 +15,12 @@
 #include "TabLayoutPlugin.h"
 #include "TabViewImpl.h"
 #include "WidgetFactory.h"
+
+
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 @implementation ASTabLayoutPlugin
@@ -63,3 +74,5 @@ void ASTabLayoutPlugin_initPlugin() {
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASTabLayoutPlugin)
+
+J2OBJC_NAME_MAPPING(ASTabLayoutPlugin, "com.ashera.tablayout", "AS")

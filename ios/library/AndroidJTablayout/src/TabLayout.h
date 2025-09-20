@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\TabLayout.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_TabLayout")
@@ -32,32 +33,36 @@
 @class ADMTabLayout_Tab;
 @class ADXPagerAdapter;
 @class ADXViewPager;
+@class JavaLangBoolean;
+@class JavaLangFloat;
+@class JavaLangInteger;
+@class NSString;
 @protocol ADMTabLayout_BaseOnTabSelectedListener;
 @protocol ADMTabLayout_OnTabSelectedListener;
 
 @interface ADMTabLayout : ADHorizontalScrollView {
  @public
-  jint indicatorPosition_;
+  int32_t indicatorPosition_;
   ADMTabLayout_SlidingTabIndicator *slidingTabIndicator_;
-  jint tabPaddingStart_;
-  jint tabPaddingTop_;
-  jint tabPaddingEnd_;
-  jint tabPaddingBottom_;
+  int32_t tabPaddingStart_;
+  int32_t tabPaddingTop_;
+  int32_t tabPaddingEnd_;
+  int32_t tabPaddingBottom_;
   ADColorStateList *tabTextColors_;
   ADColorStateList *tabIconTint_;
   ADDrawable *tabSelectedIndicator_;
-  jfloat tabTextSize_;
-  jfloat tabTextMultiLineSize_;
-  jint tabBackgroundResId_;
-  jint tabMaxWidth_;
-  jint tabGravity_;
-  jint tabIndicatorAnimationDuration_;
-  jint tabIndicatorGravity_;
-  jint mode_;
-  jboolean inlineLabel_;
-  jboolean tabIndicatorFullWidth_;
-  jint tabIndicatorHeight_;
-  jint tabIndicatorAnimationMode_;
+  float tabTextSize_;
+  float tabTextMultiLineSize_;
+  int32_t tabBackgroundResId_;
+  int32_t tabMaxWidth_;
+  int32_t tabGravity_;
+  int32_t tabIndicatorAnimationDuration_;
+  int32_t tabIndicatorGravity_;
+  int32_t mode_;
+  bool inlineLabel_;
+  bool tabIndicatorFullWidth_;
+  int32_t tabIndicatorHeight_;
+  int32_t tabIndicatorAnimationMode_;
   ADXViewPager *viewPager_;
 }
 
@@ -72,40 +77,40 @@
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                       withBoolean:(jboolean)setSelected;
+                       withBoolean:(bool)setSelected;
 
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                           withInt:(jint)position;
+                           withInt:(int32_t)position;
 
 - (void)addTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                           withInt:(jint)position
-                       withBoolean:(jboolean)setSelected;
+                           withInt:(int32_t)position
+                       withBoolean:(bool)setSelected;
 
 - (void)addTabViewWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
-- (void)animateToTabWithInt:(jint)newPosition;
+- (void)animateToTabWithInt:(int32_t)newPosition;
 
 - (void)applyModeAndGravity;
 
-- (jint)getScrollX;
+- (int32_t)getScrollX;
 
-- (jint)getSelectedTabPosition;
+- (int32_t)getSelectedTabPosition;
 
-- (ADMTabLayout_Tab *)getTabAtWithInt:(jint)index;
+- (ADMTabLayout_Tab *)getTabAtWithInt:(int32_t)index;
 
-- (jint)getTabCount;
+- (int32_t)getTabCount;
 
 - (ADColorStateList *)getTabIconTint;
 
-- (jint)getTabIndicatorAnimationMode;
+- (int32_t)getTabIndicatorAnimationMode;
 
-- (jint)getTabPaddingBottom;
+- (int32_t)getTabPaddingBottom;
 
-- (jint)getTabPaddingEnd;
+- (int32_t)getTabPaddingEnd;
 
-- (jint)getTabPaddingStart;
+- (int32_t)getTabPaddingStart;
 
-- (jint)getTabPaddingTop;
+- (int32_t)getTabPaddingTop;
 
 - (ADDrawable *)getTabSelectedIndicator;
 
@@ -113,7 +118,7 @@
 
 - (void)initTabLayout OBJC_METHOD_FAMILY_NONE;
 
-- (jboolean)isTabIndicatorFullWidth;
+- (bool)isTabIndicatorFullWidth;
 
 - (ADMTabLayout_Tab *)newTab OBJC_METHOD_FAMILY_NONE;
 
@@ -125,79 +130,79 @@
 
 - (void)removeTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
-- (void)removeTabAtWithInt:(jint)position;
+- (void)removeTabAtWithInt:(int32_t)position;
 
 - (void)requestLayout;
 
 - (void)selectTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
 - (void)selectTabWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab
-                          withBoolean:(jboolean)updateIndicator;
+                          withBoolean:(bool)updateIndicator;
 
-- (void)setContentInsetStartWithInt:(jint)contentInsetStart;
+- (void)setContentInsetStartWithInt:(int32_t)contentInsetStart;
 
-- (void)setInlineLabelWithBoolean:(jboolean)inline_;
+- (void)setInlineLabelWithBoolean:(bool)inline_;
 
 - (void)setOnTabSelectedListenerWithADMTabLayout_BaseOnTabSelectedListener:(id<ADMTabLayout_BaseOnTabSelectedListener>)listener;
 
 - (void)setOnTabSelectedListenerWithADMTabLayout_OnTabSelectedListener:(id<ADMTabLayout_OnTabSelectedListener>)listener;
 
-- (void)setRequestedTabMaxWidthWithInt:(jint)requestedTabMaxWidth;
+- (void)setRequestedTabMaxWidthWithInt:(int32_t)requestedTabMaxWidth;
 
-- (void)setRequestedTabMinWidthWithInt:(jint)requestedTabMinWidth;
+- (void)setRequestedTabMinWidthWithInt:(int32_t)requestedTabMinWidth;
 
-- (void)setScrollPositionWithInt:(jint)position
-                       withFloat:(jfloat)positionOffset
-                     withBoolean:(jboolean)updateSelectedTabView;
+- (void)setScrollPositionWithInt:(int32_t)position
+                       withFloat:(float)positionOffset
+                     withBoolean:(bool)updateSelectedTabView;
 
-- (void)setScrollPositionWithInt:(jint)position
-                       withFloat:(jfloat)positionOffset
-                     withBoolean:(jboolean)updateSelectedTabView
-                     withBoolean:(jboolean)updateIndicatorPosition;
+- (void)setScrollPositionWithInt:(int32_t)position
+                       withFloat:(float)positionOffset
+                     withBoolean:(bool)updateSelectedTabView
+                     withBoolean:(bool)updateIndicatorPosition;
 
-- (void)setScrollPositionWithInt:(jint)position
-                       withFloat:(jfloat)positionOffset
-                     withBoolean:(jboolean)updateSelectedTabView
-                     withBoolean:(jboolean)updateIndicatorPosition
-                     withBoolean:(jboolean)alwaysScroll;
+- (void)setScrollPositionWithInt:(int32_t)position
+                       withFloat:(float)positionOffset
+                     withBoolean:(bool)updateSelectedTabView
+                     withBoolean:(bool)updateIndicatorPosition
+                     withBoolean:(bool)alwaysScroll;
 
-- (void)setSelectedTabIndicatorColorWithInt:(jint)color;
+- (void)setSelectedTabIndicatorColorWithInt:(int32_t)color;
 
-- (void)setSelectedTabIndicatorGravityWithInt:(jint)indicatorGravity;
+- (void)setSelectedTabIndicatorGravityWithInt:(int32_t)indicatorGravity;
 
-- (void)setSelectedTabIndicatorHeightWithInt:(jint)height;
+- (void)setSelectedTabIndicatorHeightWithInt:(int32_t)height;
 
-- (void)setSelectedTabViewWithInt:(jint)position;
+- (void)setSelectedTabViewWithInt:(int32_t)position;
 
-- (void)setTabGravityWithInt:(jint)gravity;
+- (void)setTabGravityWithInt:(int32_t)gravity;
 
 - (void)setTabIconTintWithADColorStateList:(ADColorStateList *)iconTint;
 
-- (void)setTabIndicatorAnimationModeWithInt:(jint)tabIndicatorAnimationMode;
+- (void)setTabIndicatorAnimationModeWithInt:(int32_t)tabIndicatorAnimationMode;
 
-- (void)setTabIndicatorFullWidthWithBoolean:(jboolean)tabIndicatorFullWidth;
+- (void)setTabIndicatorFullWidthWithBoolean:(bool)tabIndicatorFullWidth;
 
-- (void)setTabModeWithInt:(jint)mode;
+- (void)setTabModeWithInt:(int32_t)mode;
 
-- (void)setTabPaddingBottomWithInt:(jint)tabPaddingBottom;
+- (void)setTabPaddingBottomWithInt:(int32_t)tabPaddingBottom;
 
-- (void)setTabPaddingEndWithInt:(jint)tabPaddingEnd;
+- (void)setTabPaddingEndWithInt:(int32_t)tabPaddingEnd;
 
-- (void)setTabPaddingStartWithInt:(jint)tabPaddingStart;
+- (void)setTabPaddingStartWithInt:(int32_t)tabPaddingStart;
 
-- (void)setTabPaddingTopWithInt:(jint)tabPaddingTop;
+- (void)setTabPaddingTopWithInt:(int32_t)tabPaddingTop;
 
 - (void)setTabTextAppearanceWithNSString:(NSString *)tabTextAppearance;
 
 - (void)setTabTextColorsWithADColorStateList:(ADColorStateList *)textColor;
 
-- (void)setTabTextColorsWithInt:(jint)normalColor
-                        withInt:(jint)selectedColor;
+- (void)setTabTextColorsWithInt:(int32_t)normalColor
+                        withInt:(int32_t)selectedColor;
 
 - (void)setupWithViewPagerWithADXViewPager:(ADXViewPager *)viewPager;
 
 - (void)setupWithViewPagerWithADXViewPager:(ADXViewPager *)viewPager
-                               withBoolean:(jboolean)autoRefresh;
+                               withBoolean:(bool)autoRefresh;
 
 - (void)updateAllTabs;
 
@@ -205,23 +210,23 @@
 
 - (ADMTabLayout_Tab *)createTabFromPool;
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec;
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec;
 
-- (jboolean)releaseFromTabPoolWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
+- (bool)releaseFromTabPoolWithADMTabLayout_Tab:(ADMTabLayout_Tab *)tab;
 
 #pragma mark Package-Private
 
-- (jint)getTabMaxWidth;
+- (int32_t)getTabMaxWidth;
 
 - (void)populateFromPagerAdapter;
 
 - (void)setPagerAdapterWithADXPagerAdapter:(ADXPagerAdapter *)adapter
-                               withBoolean:(jboolean)addObserver;
+                               withBoolean:(bool)addObserver;
 
-- (void)updateTabViewsWithBoolean:(jboolean)requestLayout;
+- (void)updateTabViewsWithBoolean:(bool)requestLayout;
 
-- (void)updateViewPagerScrollStateWithInt:(jint)scrollState;
+- (void)updateViewPagerScrollStateWithInt:(int32_t)scrollState;
 
 @end
 
@@ -233,73 +238,73 @@ J2OBJC_FIELD_SETTER(ADMTabLayout, tabIconTint_, ADColorStateList *)
 J2OBJC_FIELD_SETTER(ADMTabLayout, tabSelectedIndicator_, ADDrawable *)
 J2OBJC_FIELD_SETTER(ADMTabLayout, viewPager_, ADXViewPager *)
 
-inline jint ADMTabLayout_get_DEFAULT_GAP_TEXT_ICON(void);
+inline int32_t ADMTabLayout_get_DEFAULT_GAP_TEXT_ICON(void);
 #define ADMTabLayout_DEFAULT_GAP_TEXT_ICON 8
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, DEFAULT_GAP_TEXT_ICON, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, DEFAULT_GAP_TEXT_ICON, int32_t)
 
-inline jint ADMTabLayout_get_FIXED_WRAP_GUTTER_MIN(void);
+inline int32_t ADMTabLayout_get_FIXED_WRAP_GUTTER_MIN(void);
 #define ADMTabLayout_FIXED_WRAP_GUTTER_MIN 16
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, FIXED_WRAP_GUTTER_MIN, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, FIXED_WRAP_GUTTER_MIN, int32_t)
 
-inline jint ADMTabLayout_get_MODE_SCROLLABLE(void);
+inline int32_t ADMTabLayout_get_MODE_SCROLLABLE(void);
 #define ADMTabLayout_MODE_SCROLLABLE 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, MODE_SCROLLABLE, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, MODE_SCROLLABLE, int32_t)
 
-inline jint ADMTabLayout_get_MODE_FIXED(void);
+inline int32_t ADMTabLayout_get_MODE_FIXED(void);
 #define ADMTabLayout_MODE_FIXED 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, MODE_FIXED, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, MODE_FIXED, int32_t)
 
-inline jint ADMTabLayout_get_MODE_AUTO(void);
+inline int32_t ADMTabLayout_get_MODE_AUTO(void);
 #define ADMTabLayout_MODE_AUTO 2
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, MODE_AUTO, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, MODE_AUTO, int32_t)
 
-inline jint ADMTabLayout_get_TAB_LABEL_VISIBILITY_UNLABELED(void);
+inline int32_t ADMTabLayout_get_TAB_LABEL_VISIBILITY_UNLABELED(void);
 #define ADMTabLayout_TAB_LABEL_VISIBILITY_UNLABELED 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, TAB_LABEL_VISIBILITY_UNLABELED, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, TAB_LABEL_VISIBILITY_UNLABELED, int32_t)
 
-inline jint ADMTabLayout_get_TAB_LABEL_VISIBILITY_LABELED(void);
+inline int32_t ADMTabLayout_get_TAB_LABEL_VISIBILITY_LABELED(void);
 #define ADMTabLayout_TAB_LABEL_VISIBILITY_LABELED 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, TAB_LABEL_VISIBILITY_LABELED, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, TAB_LABEL_VISIBILITY_LABELED, int32_t)
 
-inline jint ADMTabLayout_get_GRAVITY_FILL(void);
+inline int32_t ADMTabLayout_get_GRAVITY_FILL(void);
 #define ADMTabLayout_GRAVITY_FILL 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, GRAVITY_FILL, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, GRAVITY_FILL, int32_t)
 
-inline jint ADMTabLayout_get_GRAVITY_CENTER(void);
+inline int32_t ADMTabLayout_get_GRAVITY_CENTER(void);
 #define ADMTabLayout_GRAVITY_CENTER 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, GRAVITY_CENTER, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, GRAVITY_CENTER, int32_t)
 
-inline jint ADMTabLayout_get_GRAVITY_START(void);
+inline int32_t ADMTabLayout_get_GRAVITY_START(void);
 #define ADMTabLayout_GRAVITY_START 2
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, GRAVITY_START, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, GRAVITY_START, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_GRAVITY_BOTTOM(void);
+inline int32_t ADMTabLayout_get_INDICATOR_GRAVITY_BOTTOM(void);
 #define ADMTabLayout_INDICATOR_GRAVITY_BOTTOM 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_BOTTOM, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_BOTTOM, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_GRAVITY_CENTER(void);
+inline int32_t ADMTabLayout_get_INDICATOR_GRAVITY_CENTER(void);
 #define ADMTabLayout_INDICATOR_GRAVITY_CENTER 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_CENTER, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_CENTER, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_GRAVITY_TOP(void);
+inline int32_t ADMTabLayout_get_INDICATOR_GRAVITY_TOP(void);
 #define ADMTabLayout_INDICATOR_GRAVITY_TOP 2
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_TOP, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_TOP, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_GRAVITY_STRETCH(void);
+inline int32_t ADMTabLayout_get_INDICATOR_GRAVITY_STRETCH(void);
 #define ADMTabLayout_INDICATOR_GRAVITY_STRETCH 3
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_STRETCH, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_GRAVITY_STRETCH, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_ANIMATION_MODE_LINEAR(void);
+inline int32_t ADMTabLayout_get_INDICATOR_ANIMATION_MODE_LINEAR(void);
 #define ADMTabLayout_INDICATOR_ANIMATION_MODE_LINEAR 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_ANIMATION_MODE_LINEAR, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_ANIMATION_MODE_LINEAR, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_ANIMATION_MODE_ELASTIC(void);
+inline int32_t ADMTabLayout_get_INDICATOR_ANIMATION_MODE_ELASTIC(void);
 #define ADMTabLayout_INDICATOR_ANIMATION_MODE_ELASTIC 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_ANIMATION_MODE_ELASTIC, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_ANIMATION_MODE_ELASTIC, int32_t)
 
-inline jint ADMTabLayout_get_INDICATOR_ANIMATION_MODE_FADE(void);
+inline int32_t ADMTabLayout_get_INDICATOR_ANIMATION_MODE_FADE(void);
 #define ADMTabLayout_INDICATOR_ANIMATION_MODE_FADE 2
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_ANIMATION_MODE_FADE, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout, INDICATOR_ANIMATION_MODE_FADE, int32_t)
 
 FOUNDATION_EXPORT void ADMTabLayout_init(ADMTabLayout *self);
 
@@ -310,6 +315,7 @@ FOUNDATION_EXPORT ADMTabLayout *create_ADMTabLayout_init(void);
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout)
 
 @compatibility_alias ComGoogleAndroidMaterialTabsTabLayout ADMTabLayout;
+
 
 #endif
 
@@ -332,6 +338,7 @@ J2OBJC_EMPTY_STATIC_INIT(ADMTabLayout_BaseOnTabSelectedListener)
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_BaseOnTabSelectedListener)
 
+
 #endif
 
 #if !defined (ADMTabLayout_OnTabSelectedListener_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_OnTabSelectedListener))
@@ -345,6 +352,7 @@ J2OBJC_EMPTY_STATIC_INIT(ADMTabLayout_OnTabSelectedListener)
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_OnTabSelectedListener)
 
+
 #endif
 
 #if !defined (ADMTabLayout_Tab_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_Tab))
@@ -355,6 +363,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_OnTabSelectedListener)
 @class ADMTabLayout_TabView;
 @class ADView;
 @class ADXBadgeDrawable;
+@class JavaLangBoolean;
+@class JavaLangInteger;
 @protocol JavaLangCharSequence;
 
 @interface ADMTabLayout_Tab : NSObject {
@@ -373,19 +383,19 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_OnTabSelectedListener)
 
 - (ADDrawable *)getIcon;
 
-- (jint)getId;
+- (int32_t)getId;
 
 - (ADXBadgeDrawable *)getOrCreateBadge;
 
-- (jint)getPosition;
+- (int32_t)getPosition;
 
-- (jint)getTabLabelVisibility;
+- (int32_t)getTabLabelVisibility;
 
 - (id)getTag;
 
 - (id<JavaLangCharSequence>)getText;
 
-- (jboolean)isSelected;
+- (bool)isSelected;
 
 - (void)removeBadge;
 
@@ -395,9 +405,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_OnTabSelectedListener)
 
 - (ADMTabLayout_Tab *)setIconWithADDrawable:(ADDrawable *)icon;
 
-- (ADMTabLayout_Tab *)setIdWithInt:(jint)id_;
+- (ADMTabLayout_Tab *)setIdWithInt:(int32_t)id_;
 
-- (ADMTabLayout_Tab *)setTabLabelVisibilityWithInt:(jint)mode;
+- (ADMTabLayout_Tab *)setTabLabelVisibilityWithInt:(int32_t)mode;
 
 - (ADMTabLayout_Tab *)setTagWithId:(id)tag;
 
@@ -407,7 +417,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_OnTabSelectedListener)
 
 - (void)reset;
 
-- (void)setPositionWithInt:(jint)position;
+- (void)setPositionWithInt:(int32_t)position;
 
 - (void)updateView;
 
@@ -418,9 +428,9 @@ J2OBJC_EMPTY_STATIC_INIT(ADMTabLayout_Tab)
 J2OBJC_FIELD_SETTER(ADMTabLayout_Tab, parent_, ADMTabLayout *)
 J2OBJC_FIELD_SETTER(ADMTabLayout_Tab, view_, ADMTabLayout_TabView *)
 
-inline jint ADMTabLayout_Tab_get_INVALID_POSITION(void);
+inline int32_t ADMTabLayout_Tab_get_INVALID_POSITION(void);
 #define ADMTabLayout_Tab_INVALID_POSITION -1
-J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout_Tab, INVALID_POSITION, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMTabLayout_Tab, INVALID_POSITION, int32_t)
 
 FOUNDATION_EXPORT void ADMTabLayout_Tab_init(ADMTabLayout_Tab *self);
 
@@ -429,6 +439,7 @@ FOUNDATION_EXPORT ADMTabLayout_Tab *new_ADMTabLayout_Tab_init(void) NS_RETURNS_R
 FOUNDATION_EXPORT ADMTabLayout_Tab *create_ADMTabLayout_Tab_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_Tab)
+
 
 #endif
 
@@ -444,6 +455,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_Tab)
 @class ADMTabLayout;
 @class ADMTabLayout_Tab;
 @class ADView;
+@class JavaLangBoolean;
+@class JavaLangInteger;
 
 @interface ADMTabLayout_TabView : ADLinearLayout
 
@@ -453,20 +466,20 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_Tab)
                        withADContext:(ADContext *)context;
 
 - (void)addClickListenerWithADView:(ADView *)view
-                       withBoolean:(jboolean)allPlatforms;
+                       withBoolean:(bool)allPlatforms;
 
 - (ADMTabLayout_Tab *)getTab;
 
 - (void)initTabView OBJC_METHOD_FAMILY_NONE;
 
-- (void)onMeasureWithInt:(jint)origWidthMeasureSpec
-                 withInt:(jint)origHeightMeasureSpec;
+- (void)onMeasureWithInt:(int32_t)origWidthMeasureSpec
+                 withInt:(int32_t)origHeightMeasureSpec;
 
-- (jboolean)performClick;
+- (bool)performClick;
 
 - (void)setBaseBackgroundDrawableWithADDrawable:(ADDrawable *)baseBackgroundDrawable;
 
-- (void)setSelectedWithBoolean:(jboolean)selected;
+- (void)setSelectedWithBoolean:(bool)selected;
 
 #pragma mark Protected
 
@@ -474,9 +487,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_Tab)
 
 #pragma mark Package-Private
 
-- (jint)getContentHeight;
+- (int32_t)getContentHeight;
 
-- (jint)getContentWidth;
+- (int32_t)getContentWidth;
 
 - (void)reset;
 
@@ -506,6 +519,7 @@ FOUNDATION_EXPORT ADMTabLayout_TabView *create_ADMTabLayout_TabView_initWithADMT
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_TabView)
 
+
 #endif
 
 #if !defined (ADMTabLayout_SlidingTabIndicator_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_SlidingTabIndicator))
@@ -518,6 +532,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_TabView)
 @class ADContext;
 @class ADMTabLayout;
 @class ADValueAnimator;
+@class JavaLangBoolean;
+@class JavaLangFloat;
+@class JavaLangInteger;
 @protocol ADCanvas;
 
 @interface ADMTabLayout_SlidingTabIndicator : ADLinearLayout {
@@ -532,30 +549,30 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_TabView)
 
 - (void)onDrawWithADCanvas:(id<ADCanvas>)canvas;
 
-- (void)onRtlPropertiesChangedWithInt:(jint)layoutDirection;
+- (void)onRtlPropertiesChangedWithInt:(int32_t)layoutDirection;
 
 #pragma mark Protected
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b;
+- (void)onLayoutWithBoolean:(bool)changed
+                    withInt:(int32_t)l
+                    withInt:(int32_t)t
+                    withInt:(int32_t)r
+                    withInt:(int32_t)b;
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec;
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec;
 
 #pragma mark Package-Private
 
-- (void)animateIndicatorToPositionWithInt:(jint)position
-                                  withInt:(jint)duration;
+- (void)animateIndicatorToPositionWithInt:(int32_t)position
+                                  withInt:(int32_t)duration;
 
-- (jboolean)childrenNeedLayout;
+- (bool)childrenNeedLayout;
 
-- (void)setIndicatorPositionFromTabPositionWithInt:(jint)position
-                                         withFloat:(jfloat)positionOffset;
+- (void)setIndicatorPositionFromTabPositionWithInt:(int32_t)position
+                                         withFloat:(float)positionOffset;
 
-- (void)setSelectedIndicatorHeightWithInt:(jint)height;
+- (void)setSelectedIndicatorHeightWithInt:(int32_t)height;
 
 // Disallowed inherited constructors, do not use.
 
@@ -577,6 +594,7 @@ FOUNDATION_EXPORT ADMTabLayout_SlidingTabIndicator *create_ADMTabLayout_SlidingT
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_SlidingTabIndicator)
 
+
 #endif
 
 #if !defined (ADMTabLayout_TabLayoutOnPageChangeListener_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_TabLayoutOnPageChangeListener))
@@ -587,6 +605,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_SlidingTabIndicator)
 #include "ViewPager.h"
 
 @class ADMTabLayout;
+@class JavaLangFloat;
+@class JavaLangInteger;
 
 @interface ADMTabLayout_TabLayoutOnPageChangeListener : NSObject < ADXViewPager_OnPageChangeListener >
 
@@ -594,13 +614,13 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_SlidingTabIndicator)
 
 - (instancetype)initWithADMTabLayout:(ADMTabLayout *)tabLayout;
 
-- (void)onPageScrolledWithInt:(jint)position
-                    withFloat:(jfloat)positionOffset
-                      withInt:(jint)positionOffsetPixels;
+- (void)onPageScrolledWithInt:(int32_t)position
+                    withFloat:(float)positionOffset
+                      withInt:(int32_t)positionOffsetPixels;
 
-- (void)onPageScrollStateChangedWithInt:(jint)state;
+- (void)onPageScrollStateChangedWithInt:(int32_t)state;
 
-- (void)onPageSelectedWithInt:(jint)position;
+- (void)onPageSelectedWithInt:(int32_t)position;
 
 #pragma mark Package-Private
 
@@ -621,6 +641,7 @@ FOUNDATION_EXPORT ADMTabLayout_TabLayoutOnPageChangeListener *new_ADMTabLayout_T
 FOUNDATION_EXPORT ADMTabLayout_TabLayoutOnPageChangeListener *create_ADMTabLayout_TabLayoutOnPageChangeListener_initWithADMTabLayout_(ADMTabLayout *tabLayout);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_TabLayoutOnPageChangeListener)
+
 
 #endif
 
@@ -658,6 +679,7 @@ FOUNDATION_EXPORT ADMTabLayout_ViewPagerOnTabSelectedListener *create_ADMTabLayo
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_ViewPagerOnTabSelectedListener)
 
+
 #endif
 
 #if !defined (ADMTabLayout_TextViewCompat_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_TextViewCompat))
@@ -665,6 +687,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_ViewPagerOnTabSelectedListener)
 
 @class ADMTabLayout_Layout;
 @class ADTextView;
+@class JavaLangFloat;
+@class JavaLangInteger;
+@class NSString;
 
 @interface ADMTabLayout_TextViewCompat : NSObject
 
@@ -672,17 +697,17 @@ J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_ViewPagerOnTabSelectedListener)
 
 + (ADMTabLayout_Layout *)getLayoutWithADTextView:(ADTextView *)textView;
 
-+ (jint)getLineCountWithADTextView:(ADTextView *)textView;
++ (int32_t)getLineCountWithADTextView:(ADTextView *)textView;
 
-+ (jint)getMaxLinesWithADTextView:(ADTextView *)textView;
++ (int32_t)getMaxLinesWithADTextView:(ADTextView *)textView;
 
-+ (jint)getTextSizeWithADTextView:(ADTextView *)textView;
++ (int32_t)getTextSizeWithADTextView:(ADTextView *)textView;
 
 + (void)setTextAppearanceWithADTextView:(ADTextView *)textView
                            withNSString:(NSString *)textAppearance;
 
 + (void)setTextSizeWithADTextView:(ADTextView *)textView
-                        withFloat:(jfloat)textSize;
+                        withFloat:(float)textSize;
 
 #pragma mark Package-Private
 
@@ -698,30 +723,33 @@ FOUNDATION_EXPORT ADMTabLayout_TextViewCompat *new_ADMTabLayout_TextViewCompat_i
 
 FOUNDATION_EXPORT ADMTabLayout_TextViewCompat *create_ADMTabLayout_TextViewCompat_init(void);
 
-FOUNDATION_EXPORT jint ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(ADTextView *textView);
+FOUNDATION_EXPORT int32_t ADMTabLayout_TextViewCompat_getMaxLinesWithADTextView_(ADTextView *textView);
 
 FOUNDATION_EXPORT void ADMTabLayout_TextViewCompat_setTextAppearanceWithADTextView_withNSString_(ADTextView *textView, NSString *textAppearance);
 
-FOUNDATION_EXPORT jint ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(ADTextView *textView);
+FOUNDATION_EXPORT int32_t ADMTabLayout_TextViewCompat_getLineCountWithADTextView_(ADTextView *textView);
 
-FOUNDATION_EXPORT jint ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(ADTextView *textView);
+FOUNDATION_EXPORT int32_t ADMTabLayout_TextViewCompat_getTextSizeWithADTextView_(ADTextView *textView);
 
 FOUNDATION_EXPORT ADMTabLayout_Layout *ADMTabLayout_TextViewCompat_getLayoutWithADTextView_(ADTextView *textView);
 
-FOUNDATION_EXPORT void ADMTabLayout_TextViewCompat_setTextSizeWithADTextView_withFloat_(ADTextView *textView, jfloat textSize);
+FOUNDATION_EXPORT void ADMTabLayout_TextViewCompat_setTextSizeWithADTextView_withFloat_(ADTextView *textView, float textSize);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_TextViewCompat)
+
 
 #endif
 
 #if !defined (ADMTabLayout_Paint_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_Paint))
 #define ADMTabLayout_Paint_
 
+@class JavaLangFloat;
+
 @interface ADMTabLayout_Paint : NSObject
 
 #pragma mark Public
 
-- (jfloat)getTextSize;
+- (float)getTextSize;
 
 #pragma mark Package-Private
 
@@ -739,18 +767,20 @@ FOUNDATION_EXPORT ADMTabLayout_Paint *create_ADMTabLayout_Paint_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_Paint)
 
+
 #endif
 
 #if !defined (ADMTabLayout_Layout_) && (INCLUDE_ALL_TabLayout || defined(INCLUDE_ADMTabLayout_Layout))
 #define ADMTabLayout_Layout_
 
 @class ADMTabLayout_Paint;
+@class JavaLangInteger;
 
 @interface ADMTabLayout_Layout : NSObject
 
 #pragma mark Public
 
-- (jint)getLineWidthWithInt:(jint)line;
+- (int32_t)getLineWidthWithInt:(int32_t)line;
 
 - (ADMTabLayout_Paint *)getPaint;
 
@@ -769,6 +799,7 @@ FOUNDATION_EXPORT ADMTabLayout_Layout *new_ADMTabLayout_Layout_init(void) NS_RET
 FOUNDATION_EXPORT ADMTabLayout_Layout *create_ADMTabLayout_Layout_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADMTabLayout_Layout)
+
 
 #endif
 

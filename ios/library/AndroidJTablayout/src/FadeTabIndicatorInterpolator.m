@@ -3,6 +3,11 @@
 //  source: D:\Java\git\core-javafx-widget\AndroidJTablayout\src\main\java\com\google\android\material\tabs\FadeTabIndicatorInterpolator.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "Drawable.h"
 #include "FadeTabIndicatorInterpolator.h"
 #include "J2ObjC_source.h"
@@ -12,11 +17,19 @@
 #include "TabIndicatorInterpolator.h"
 #include "TabLayout.h"
 #include "View.h"
+#include "java/lang/Float.h"
+#include "java/lang/Integer.h"
 
 
-inline jfloat ADMFadeTabIndicatorInterpolator_get_FADE_THRESHOLD(void);
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
+
+
+inline float ADMFadeTabIndicatorInterpolator_get_FADE_THRESHOLD(void);
 #define ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD 0.5f
-J2OBJC_STATIC_FIELD_CONSTANT(ADMFadeTabIndicatorInterpolator, FADE_THRESHOLD, jfloat)
+J2OBJC_STATIC_FIELD_CONSTANT(ADMFadeTabIndicatorInterpolator, FADE_THRESHOLD, float)
 
 @implementation ADMFadeTabIndicatorInterpolator
 
@@ -28,11 +41,11 @@ J2OBJC_STATIC_FIELD_CONSTANT(ADMFadeTabIndicatorInterpolator, FADE_THRESHOLD, jf
 - (void)updateIndicatorForOffsetWithADMTabLayout:(ADMTabLayout *)tabLayout
                                       withADView:(ADView *)startTitle
                                       withADView:(ADView *)endTitle
-                                       withFloat:(jfloat)offset
+                                       withFloat:(float)offset
                                   withADDrawable:(ADDrawable *)indicator {
   ADView *tab = offset < ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD ? startTitle : endTitle;
   ADRectF *bounds = ADMTabIndicatorInterpolator_calculateIndicatorWidthForTabWithADMTabLayout_withADView_(tabLayout, tab);
-  jfloat alpha = offset < ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD ? ADXMaterialAnimationUtils_lerpWithFloat_withFloat_withFloat_withFloat_withFloat_(1.0f, 0.0f, 0.0f, ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD, offset) : ADXMaterialAnimationUtils_lerpWithFloat_withFloat_withFloat_withFloat_withFloat_(0.0f, 1.0f, ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD, 1.0f, offset);
+  float alpha = offset < ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD ? ADXMaterialAnimationUtils_lerpWithFloat_withFloat_withFloat_withFloat_withFloat_(1.0f, 0.0f, 0.0f, ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD, offset) : ADXMaterialAnimationUtils_lerpWithFloat_withFloat_withFloat_withFloat_withFloat_(0.0f, 1.0f, ADMFadeTabIndicatorInterpolator_FADE_THRESHOLD, 1.0f, offset);
   [((ADDrawable *) nil_chk(indicator)) setBoundsWithInt:JreFpToInt(((ADRectF *) nil_chk(bounds))->left_) withInt:((ADRect *) nil_chk([indicator getBounds]))->top_ withInt:JreFpToInt(bounds->right_) withInt:((ADRect *) nil_chk([indicator getBounds]))->bottom_];
   [indicator setAlphaWithInt:JreFpToInt((alpha * 255.0f))];
 }
