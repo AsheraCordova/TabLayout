@@ -1,3 +1,18 @@
+//start - license
+/*
+ * Copyright (c) 2025 Ashera Cordova
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ */
+//end - license
 package com.ashera.tablayout;
 // start - imports
 import java.util.*;
@@ -901,7 +916,7 @@ private void nativeCreate(Map<String, Object> params) {
 	tabLayout = new CustomTabFolderExt();
 	tabFolder = new org.eclipse.swt.widgets.TabFolder(ViewImpl.getParent(this), org.eclipse.swt.SWT.TOP);
 	pane = tabFolder;
-	tabFolder.setLayout(new org.eclipse.nebula.widgets.layout.AbsoluteLayout());
+	tabFolder.setLayout(new com.ashera.common.AbsoluteLayout());
 	tabFolder.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 		@Override
 		public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
