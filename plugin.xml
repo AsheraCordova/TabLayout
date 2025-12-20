@@ -36,7 +36,7 @@
   </platform>
   <platform name="ios">
     <config-file target="config.xml" parent="/widget">
-      <feature name="com.ashera.tablayout.ios">
+      <feature name="CordovaTabLayoutPlugin">
         	<param name="ios-package" value="CordovaTabLayoutPlugin" />
          	<param name="onload" value="true" />
       </feature>
